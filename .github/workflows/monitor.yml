@@ -1,0 +1,96 @@
+name: X モニタリング 自動実行
+
+on:
+  # ========================================
+  # ⏰ 定期実行のスケジュール設定
+  # cron形式: 分 時 日 月 曜日（UTC時間）
+  # 日本時間 = UTC + 9時間
+  # ========================================
+  schedule:
+    # 【日次レポート】毎朝9時（日本時間）= UTC 0時
+    - cron: '0 0 * * *'
+
+    # 【週次レポート】毎週月曜 朝9時（日本時間）= UTC 0時
+    # - cron: '0 0 * * 1'
+
+  # 手動実行ボタン（GitHubのActionsページから手動で実行できる）
+  workflow_dispatch:
+    inputs:
+      report_type:
+        description: 'レポートタイプ'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+      test_mode:
+        description: 'テストモード（メール送信しない）'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # リポジトリをチェックアウト
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      # Pythonセットアップ
+      - name: Python 3.11 セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # 依存ライブラリのインストール
+      - name: 依存ライブラリのインストール
+        run: pip install -r requirements.txt
+
+      # 日次レポート実行（スケジュール または 手動でdaily選択）
+      - name: 日次レポート実行
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'daily' && github.event.inputs.test_mode == 'false')
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+        run: python main.py
+
+      # 週次レポート実行
+      - name: 週次レポート実行
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'weekly' && github.event.inputs.test_mode == 'false'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+        run: python main.py --weekly
+
+      # テストモード実行（メール送信なし）
+      - name: テスト実行（メール送信なし）
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+        run: |
+          if [ "${{ github.event.inputs.report_type }}" = "weekly" ]; then
+            python main.py --weekly --test
+          else
+            python main.py --test
+          fi
+
+      # 実行ログをアーティファクトとして保存（7日間）
+      - name: ログをアーティファクトとして保存
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ github.run_number }}
+          path: logs/
+          retention-days: 7

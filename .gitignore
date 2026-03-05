@@ -1,0 +1,29 @@
+# === 秘密情報ファイル（絶対にGitHubにあげない） ===
+config.py
+.env
+*.env
+cookies.json
+
+# === データ・ログ（ローカルのみ） ===
+data/
+logs/
+reports/
+
+# === Python キャッシュ ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# === Windows ===
+Thumbs.db
+desktop.ini
+
+# === その他 ===
+*.ico
+*.png
+create_shortcut.ps1
+ショートカット作成.bat
+管理画面.vbs
+web_admin.py
