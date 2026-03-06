@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X モニタリング レポート一覧</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#eef4fb; color:#1a2744; }
+.container { max-width:800px; margin:0 auto; padding:24px; }
+.header { background:linear-gradient(135deg,#1a6fd4,#0ea5e9); color:white; padding:28px; border-radius:16px; margin-bottom:24px; box-shadow:0 4px 20px rgba(26,111,212,0.25); }
+.header h1 { font-size:22px; margin-bottom:6px; }
+.header p { font-size:13px; opacity:0.8; }
+.card { background:white; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(26,111,212,0.06); border:1px solid #c5d8f0; }
+.card-title { font-size:12px; font-weight:700; color:#1a6fd4; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #0ea5e9; }
+ul { list-style:none; }
+li { padding:12px 0; border-bottom:1px solid #f0f4f8; }
+li:last-child { border-bottom:none; }
+a { color:#1a6fd4; text-decoration:none; font-size:14px; font-weight:500; }
+a:hover { text-decoration:underline; }
+.empty { color:#999; font-size:14px; }
+.footer { text-align:center; color:#999; font-size:12px; padding:24px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>👁 X モニタリング レポート一覧</h1>
+        <p>有名人に関するXの投稿を毎日自動収集・分析しています</p>
+    </div>
+    <div class="card">
+        <div class="card-title">レポート履歴</div>
+        <ul>
+        <!-- REPORTS -->
+        <li class="empty">レポートはまだありません。初回実行後にここに表示されます。</li>
+        </ul>
+    </div>
+    <div class="footer">X有名人モニタリングシステム - 自動生成</div>
+</div>
+</body>
+</html>
