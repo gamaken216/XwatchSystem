@@ -494,20 +494,19 @@
   <!-- 設定・実行タブ -->
   <div id="tab-settings" class="tab-content">
 
-    <!-- テスト実行 -->
+    <!-- 実行方法 -->
     <div class="test-panel">
-      <div class="test-panel-title">🚀 テスト実行</div>
+      <div class="test-panel-title">🚀 実行方法</div>
       <div class="test-panel-desc">
-        GitHub Actionsのページを開いて手動でシステムを起動できます。<br>
-        メール送信なしのテストモードで動作確認ができます。
+        タスクスケジューラで毎日自動実行されます。<br>
+        手動で今すぐ実行したい場合はPowerShellで以下を実行してください。
       </div>
-      <div class="test-buttons">
-        <a class="btn btn-primary" href="https://github.com/gamaken216/XwatchSystem/actions/workflows/monitor.yml" target="_blank">
-          ▶ GitHub Actionsを開く
-        </a>
+      <div class="info-box blue" style="margin-top:8px;">
+        <code>cd C:\Users\mats\Dropbox\GAI\有名人のX投稿監視システム</code><br>
+        <code>python main.py</code>
       </div>
       <div class="hint" style="margin-top:12px;">
-        ページを開いたら「Run workflow」ボタン → test_mode を「true」にして実行するとメール送信なしでテストできます
+        実行後、メールにレポートが届き、ウェブページが自動更新されます。
       </div>
     </div>
 

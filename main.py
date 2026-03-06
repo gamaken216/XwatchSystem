@@ -192,6 +192,27 @@ def main():
     logger.info("処理完了")
     logger.info("=" * 60)
 
+    # ウェブレポートをGitHubに自動push
+    if not test_mode:
+        import subprocess
+        try:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            env = os.environ.copy()
+            env["GIT_ASKPASS"] = "echo"
+            env["GIT_TERMINAL_PROMPT"] = "0"
+            subprocess.run(["git", "-C", script_dir, "add", "docs/"], check=True, env=env)
+            result = subprocess.run(
+                ["git", "-C", script_dir, "commit", "-m", f"レポート自動更新 {datetime.now().strftime('%Y-%m-%d')}"],
+                env=env, capture_output=True, text=True
+            )
+            if result.returncode == 0 or "nothing to commit" in result.stdout:
+                subprocess.run(["git", "-C", script_dir, "push", "origin", "master"], check=True, env=env)
+                logger.info("✅ GitHub Pagesにウェブレポートを公開しました")
+            else:
+                logger.warning(f"⚠️ git commit失敗: {result.stderr}")
+        except subprocess.CalledProcessError as e:
+            logger.warning(f"⚠️ GitHub pushに失敗しました: {e}")
+
 
 if __name__ == "__main__":
     main()

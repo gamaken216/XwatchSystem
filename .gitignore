@@ -1,5 +1,6 @@
 # === 秘密情報ファイル（絶対にGitHubにあげない） ===
 config.py
+settings.json
 .env
 *.env
 cookies.json
