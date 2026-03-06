@@ -14,6 +14,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "data")
 
 
+
 def load_targets():
     """targets.json から対象人物リストを読み込む"""
     path = os.path.join(SCRIPT_DIR, "targets.json")
