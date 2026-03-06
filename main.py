@@ -47,6 +47,7 @@ def load_config():
     x_cookies_env = os.environ.get("X_COOKIES_JSON")
     if x_cookies_env:
         X_COOKIES = json.loads(x_cookies_env)
+        logger.info(f"  Cookie確認: auth_token={X_COOKIES.get('auth_token','')[:8]}...")
     else:
         try:
             from config import X_COOKIES
