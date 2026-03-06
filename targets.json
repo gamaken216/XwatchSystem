@@ -2,17 +2,15 @@
     "targets": [
         {
             "id": "ohtani_001",
-            "name": "金",
+            "name": "大谷翔平",
             "keywords": [
-                "ゴールド",
-                "金価格",
-                "金相場"
+                "大谷翔平",
+                "Otani shohei",
+                "おおたに　しょうへい"
             ],
             "x_account": "",
-            "exclude_keywords": [
-                "人物の名前"
-            ],
-            "category": "相場",
+            "exclude_keywords": [],
+            "category": "スポーツ選手",
             "recipients": [
                 "matsmoto.norihito@gmail.com"
             ],
