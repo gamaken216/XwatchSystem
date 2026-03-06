@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X監視 管理ツール</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #eef4fb;
+    --surface: #ffffff;
+    --surface2: #f0f6ff;
+    --border: #c5d8f0;
+    --accent: #1a6fd4;
+    --accent-light: #e8f1fd;
+    --accent2: #0ea5e9;
+    --danger: #e53e3e;
+    --danger-light: #fff5f5;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --success: #0d9488;
+    --success-light: #f0fdf9;
+    --text: #1a2744;
+    --text2: #5a7499;
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 32px 16px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #1a6fd4 0%, #0ea5e9 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(26,111,212,0.25);
+  }
+
+  .logo {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+  }
+
+  h1 { font-size: 22px; font-weight: 700; color: #fff; }
+  h1 span { color: #bae6fd; }
+  .subtitle { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(26,111,212,0.06);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .card-title { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-full { grid-column: 1 / -1; }
+
+  label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; font-weight: 600; }
+
+  input, textarea, select {
+    width: 100%;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    padding: 10px 12px;
+    font-size: 13px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(26,111,212,0.12);
+    background: #fff;
+  }
+
+  .hint { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+
+  .toggle-label { font-size: 13px; font-weight: 500; }
+
+  .toggle {
+    width: 46px; height: 26px;
+    background: var(--border);
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    outline: none;
+  }
+
+  .toggle.on { background: var(--accent); }
+
+  .toggle::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 3px; left: 3px;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+
+  .toggle.on::after { transform: translateX(20px); }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: linear-gradient(135deg, #1a6fd4, #0ea5e9); color: #fff; }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1.5px solid var(--border); }
+  .btn-danger { background: var(--danger-light); color: var(--danger); border: 1.5px solid #fecaca; }
+  .btn-warning { background: var(--warning-light); color: var(--warning); border: 1.5px solid #fde68a; }
+  .btn-success { background: var(--success-light); color: var(--success); border: 1.5px solid #99f6e4; }
+  .btn-sm { padding: 6px 14px; font-size: 12px; }
+  .btn-row { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+  .btn-row-left { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-start; }
+
+  .target-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .target-item {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.2s;
+  }
+
+  .target-item:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(26,111,212,0.1); }
+  .target-item.disabled { opacity: 0.45; }
+
+  .target-status {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--success);
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(13,148,136,0.5);
+  }
+
+  .target-item.disabled .target-status { background: var(--text2); box-shadow: none; }
+
+  .target-info { flex: 1; }
+  .target-name { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+  .target-meta { font-size: 12px; color: var(--text2); line-height: 1.6; }
+
+  .target-category {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-right: 6px;
+  }
+
+  .target-actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+  .json-output {
+    background: #f0f7ff;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #1a4f8a;
+    white-space: pre;
+    overflow-x: auto;
+    max-height: 320px;
+    overflow-y: auto;
+    line-height: 1.7;
+  }
+
+  .info-box {
+    font-size: 12px;
+    color: var(--text2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  .info-box.blue { background: var(--accent-light); border: 1px solid #bfdbfe; }
+  .info-box.yellow { background: var(--warning-light); border: 1px solid #fde68a; }
+  .info-box.green { background: var(--success-light); border: 1px solid #99f6e4; }
+  .info-box strong { color: var(--accent); }
+  .info-box.yellow strong { color: var(--warning); }
+  .info-box.green strong { color: var(--success); }
+  .info-box code { background: #dbeafe; padding: 1px 5px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+
+  /* スケジュール設定 */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .freq-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .freq-option {
+    flex: 1;
+    min-width: 80px;
+    padding: 14px 10px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--surface2);
+  }
+
+  .freq-option:hover { border-color: var(--accent); }
+  .freq-option.selected { border-color: var(--accent); background: var(--accent-light); }
+  .freq-option .freq-icon { font-size: 22px; margin-bottom: 6px; }
+  .freq-option .freq-label { font-size: 13px; font-weight: 700; color: var(--text); }
+  .freq-option .freq-desc { font-size: 11px; color: var(--text2); margin-top: 2px; }
+  .freq-option.selected .freq-label { color: var(--accent); }
+
+  .time-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .time-selector select { width: auto; }
+
+  /* テスト実行パネル */
+  .test-panel {
+    background: linear-gradient(135deg, #f0f7ff, #e8f4ff);
+    border: 1.5px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .test-panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .test-panel-desc {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .test-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* セパレーター */
+  .section-sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  /* モーダル */
+  .modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,55,100,0.45);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+  }
+
+  .modal-bg.open { display: flex; }
+
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(26,111,212,0.2);
+  }
+
+  .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; color: var(--accent); }
+
+  /* タブ */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: var(--surface);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(26,111,212,0.06);
+  }
+
+  .tab {
+    flex: 1;
+    padding: 9px 6px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    color: var(--text2);
+    transition: all 0.2s;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+  }
+
+  .tab.active { background: linear-gradient(135deg, #1a6fd4, #0ea5e9); color: white; box-shadow: 0 2px 8px rgba(26,111,212,0.3); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .empty { text-align: center; padding: 48px; color: var(--text2); font-size: 14px; }
+  .empty-icon { font-size: 36px; margin-bottom: 12px; }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #1a6fd4, #0ea5e9);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(26,111,212,0.35);
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  @media (max-width: 600px) {
+    .form-grid, .schedule-grid { grid-template-columns: 1fr; }
+    .form-full { grid-column: 1; }
+    .freq-options { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo">👁</div>
+    <div>
+      <h1>X監視 <span>管理ツール</span></h1>
+      <div class="subtitle">targets.json エディター — ブラウザで編集してGitHubに貼り付け</div>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('list')">📋 監視対象一覧</button>
+    <button class="tab" onclick="switchTab('add')">➕ 新規追加</button>
+    <button class="tab" onclick="switchTab('settings')">⚙️ 設定・実行</button>
+    <button class="tab" onclick="switchTab('output')">📄 JSON出力</button>
+  </div>
+
+  <!-- 一覧タブ -->
+  <div id="tab-list" class="tab-content active">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">監視対象リスト</span>
+        <span id="count-badge" style="font-size:12px;color:var(--text2);font-weight:600;">0件</span>
+      </div>
+      <div id="target-list" class="target-list">
+        <div class="empty"><div class="empty-icon">🔍</div>まだ監視対象がいません<br>「新規追加」タブから追加してください</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 追加タブ -->
+  <div id="tab-add" class="tab-content">
+    <div class="card">
+      <div class="card-header"><span class="card-title">新規追加</span></div>
+      <div class="form-grid">
+        <div>
+          <label>名前 *</label>
+          <input id="f-name" type="text" placeholder="例: 大谷翔平">
+        </div>
+        <div>
+          <label>カテゴリ</label>
+          <input id="f-category" type="text" placeholder="例: スポーツ選手">
+        </div>
+        <div class="form-full">
+          <label>検索キーワード * <span style="color:var(--text2);font-weight:400;">（カンマ区切り）</span></label>
+          <input id="f-keywords" type="text" placeholder="例: 大谷翔平, Otani Shohei, オオタニショウヘイ">
+          <div class="hint">複数のキーワードをカンマで区切って入力してください</div>
+        </div>
+        <div>
+          <label>XアカウントID <span style="color:var(--text2);font-weight:400;">（任意）</span></label>
+          <input id="f-x-account" type="text" placeholder="例: @OhtaniShohei34">
+        </div>
+        <div>
+          <label>除外キーワード <span style="color:var(--text2);font-weight:400;">（カンマ区切り・任意）</span></label>
+          <input id="f-exclude" type="text" placeholder="例: 転売, スパム">
+        </div>
+        <div class="form-full">
+          <label>レポート送信先メール <span style="color:var(--text2);font-weight:400;">（カンマ区切り）</span></label>
+          <input id="f-recipients" type="text" placeholder="例: user@gmail.com, other@gmail.com">
+        </div>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">監視を有効にする</span>
+        <button class="toggle on" id="f-enabled" onclick="toggleEnabled(this)"></button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="clearForm()">クリア</button>
+        <button class="btn btn-primary" onclick="saveTarget()">✓ 保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 設定・実行タブ -->
+  <div id="tab-settings" class="tab-content">
+
+    <!-- テスト実行 -->
+    <div class="test-panel">
+      <div class="test-panel-title">🚀 テスト実行</div>
+      <div class="test-panel-desc">
+        GitHub Actionsのページを開いて手動でシステムを起動できます。<br>
+        メール送信なしのテストモードで動作確認ができます。
+      </div>
+      <div class="test-buttons">
+        <a class="btn btn-primary" href="https://github.com/gamaken216/XwatchSystem/actions/workflows/monitor.yml" target="_blank">
+          ▶ GitHub Actionsを開く
+        </a>
+      </div>
+      <div class="hint" style="margin-top:12px;">
+        ページを開いたら「Run workflow」ボタン → test_mode を「true」にして実行するとメール送信なしでテストできます
+      </div>
+    </div>
+
+    <!-- スケジュール設定 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">📅 配信スケジュール設定</span>
+      </div>
+
+      <div class="section-label">配信頻度</div>
+      <div class="freq-options" id="freq-options">
+        <div class="freq-option selected" onclick="selectFreq('daily', this)">
+          <div class="freq-icon">📅</div>
+          <div class="freq-label">毎日</div>
+          <div class="freq-desc">日次レポート</div>
+        </div>
+        <div class="freq-option" onclick="selectFreq('weekly', this)">
+          <div class="freq-icon">📆</div>
+          <div class="freq-label">週1回</div>
+          <div class="freq-desc">週次レポート</div>
+        </div>
+        <div class="freq-option" onclick="selectFreq('both', this)">
+          <div class="freq-icon">🗓</div>
+          <div class="freq-label">両方</div>
+          <div class="freq-desc">毎日＋週次</div>
+        </div>
+        <div class="freq-option" onclick="selectFreq('manual', this)">
+          <div class="freq-icon">⏸</div>
+          <div class="freq-label">手動のみ</div>
+          <div class="freq-desc">自動配信なし</div>
+        </div>
+      </div>
+
+      <hr class="section-sep">
+
+      <div class="schedule-grid" id="time-settings">
+        <div>
+          <label>📅 日次レポート 配信時刻（日本時間）</label>
+          <div class="time-selector">
+            <select id="daily-hour">
+              <!-- 時間オプションはJSで生成 -->
+            </select>
+            <span style="color:var(--text2);font-size:13px;">時 00分</span>
+          </div>
+        </div>
+        <div id="weekly-time-wrap">
+          <label>📆 週次レポート 配信曜日・時刻</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <select id="weekly-day" style="width:auto;">
+              <option value="1">月曜日</option>
+              <option value="2">火曜日</option>
+              <option value="3">水曜日</option>
+              <option value="4">木曜日</option>
+              <option value="5">金曜日</option>
+              <option value="6">土曜日</option>
+              <option value="0">日曜日</option>
+            </select>
+            <select id="weekly-hour" style="width:auto;">
+              <!-- 時間オプションはJSで生成 -->
+            </select>
+            <span style="color:var(--text2);font-size:13px;">時</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box yellow" id="schedule-preview">
+        スケジュールを選択すると、設定内容が表示されます
+      </div>
+
+      <div class="info-box blue">
+        <strong>使い方：</strong> 設定を変えたら「YMLを生成してコピー」→ GitHubの <code>.github/workflows/monitor.yml</code> を開く → 鉛筆アイコンで編集 → 全選択して貼り付け → 「Commit changes」で保存
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="copyYML()">📋 YMLを生成してコピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON出力タブ -->
+  <div id="tab-output" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">targets.json</span>
+        <button class="btn btn-primary btn-sm" onclick="copyJSON()">📋 コピー</button>
+      </div>
+      <div class="info-box blue">
+        <strong>使い方：</strong> 上の「コピー」ボタンでコピー → GitHubの <code>targets.json</code> を開く → 鉛筆アイコンで編集 → 全選択して貼り付け → 「Commit changes」で保存
+      </div>
+      <div id="json-output" class="json-output"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 編集モーダル -->
+<div class="modal-bg" id="edit-modal">
+  <div class="modal">
+    <div class="modal-title">✏️ 編集</div>
+    <input type="hidden" id="edit-index">
+    <div class="form-grid">
+      <div><label>名前 *</label><input id="e-name" type="text"></div>
+      <div><label>カテゴリ</label><input id="e-category" type="text"></div>
+      <div class="form-full"><label>検索キーワード（カンマ区切り）</label><input id="e-keywords" type="text"></div>
+      <div><label>XアカウントID</label><input id="e-x-account" type="text"></div>
+      <div><label>除外キーワード（カンマ区切り）</label><input id="e-exclude" type="text"></div>
+      <div class="form-full"><label>レポート送信先メール（カンマ区切り）</label><input id="e-recipients" type="text"></div>
+    </div>
+    <div class="toggle-row">
+      <span class="toggle-label">監視を有効にする</span>
+      <button class="toggle on" id="e-enabled" onclick="toggleEnabled(this)"></button>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="closeModal()">キャンセル</button>
+      <button class="btn btn-primary" onclick="updateTarget()">✓ 更新</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  let targets = [
+    {
+      id: "ohtani_001",
+      name: "大谷翔平",
+      keywords: ["大谷翔平", "Otani Shohei", "オオタニショウヘイ"],
+      x_account: "",
+      exclude_keywords: [],
+      category: "スポーツ選手",
+      recipients: ["matsmoto.norihito@gmail.com"],
+      enabled: true
+    }
+  ];
+
+  let currentFreq = 'daily';
+
+  // 時間セレクトを生成
+  function buildHourOptions(selectId, defaultHour) {
+    const sel = document.getElementById(selectId);
+    for (let h = 0; h < 24; h++) {
+      const opt = document.createElement('option');
+      opt.value = h;
+      opt.textContent = h + '時';
+      if (h === defaultHour) opt.selected = true;
+      sel.appendChild(opt);
+    }
+  }
+
+  buildHourOptions('daily-hour', 9);
+  buildHourOptions('weekly-hour', 9);
+
+  document.getElementById('daily-hour').addEventListener('change', updatePreview);
+  document.getElementById('weekly-hour').addEventListener('change', updatePreview);
+  document.getElementById('weekly-day').addEventListener('change', updatePreview);
+
+  renderList();
+  renderJSON();
+  updatePreview();
+
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['list','add','settings','output'][i] === name));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    if (name === 'output') renderJSON();
+    if (name === 'settings') updatePreview();
+  }
+
+  function toggleEnabled(btn) { btn.classList.toggle('on'); }
+  function parseCSV(str) { return str.split(',').map(s => s.trim()).filter(s => s.length > 0); }
+  function generateId(name) { return name.replace(/\s+/g, '_').toLowerCase() + '_' + Date.now().toString().slice(-3); }
+
+  function selectFreq(freq, el) {
+    currentFreq = freq;
+    document.querySelectorAll('.freq-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+
+    const timeSettings = document.getElementById('time-settings');
+    const weeklyWrap = document.getElementById('weekly-time-wrap');
+    const dailyWrap = timeSettings.children[0];
+
+    if (freq === 'manual') {
+      timeSettings.style.display = 'none';
+    } else {
+      timeSettings.style.display = 'grid';
+      dailyWrap.style.display = (freq === 'weekly') ? 'none' : 'block';
+      weeklyWrap.style.display = (freq === 'daily') ? 'none' : 'block';
+    }
+    updatePreview();
+  }
+
+  function toUTC(jst) { return (jst - 9 + 24) % 24; }
+
+  function updatePreview() {
+    const dailyH = parseInt(document.getElementById('daily-hour').value);
+    const weeklyH = parseInt(document.getElementById('weekly-hour').value);
+    const weeklyD = parseInt(document.getElementById('weekly-day').value);
+    const days = ['日','月','火','水','木','金','土'];
+    const preview = document.getElementById('schedule-preview');
+
+    let msg = '';
+    if (currentFreq === 'daily') {
+      msg = `📅 毎日 <strong>${dailyH}時</strong> に日次レポートを送信します`;
+    } else if (currentFreq === 'weekly') {
+      msg = `📆 毎週<strong>${days[weeklyD]}曜日 ${weeklyH}時</strong> に週次レポートを送信します`;
+    } else if (currentFreq === 'both') {
+      msg = `📅 毎日 <strong>${dailyH}時</strong> に日次レポート<br>📆 毎週<strong>${days[weeklyD]}曜日 ${weeklyH}時</strong> に週次レポートを送信します`;
+    } else {
+      msg = `⏸ 自動配信なし。GitHub Actionsから手動で実行できます`;
+    }
+    preview.innerHTML = msg;
+  }
+
+  function generateYML() {
+    const dailyH = parseInt(document.getElementById('daily-hour').value);
+    const weeklyH = parseInt(document.getElementById('weekly-hour').value);
+    const weeklyD = parseInt(document.getElementById('weekly-day').value);
+    const dailyUTC = toUTC(dailyH);
+    const weeklyUTC = toUTC(weeklyH);
+
+    let scheduleBlock = '';
+    if (currentFreq === 'daily') {
+      scheduleBlock = `  schedule:\n    - cron: '0 ${dailyUTC} * * *'`;
+    } else if (currentFreq === 'weekly') {
+      scheduleBlock = `  schedule:\n    - cron: '0 ${weeklyUTC} * * ${weeklyD}'`;
+    } else if (currentFreq === 'both') {
+      scheduleBlock = `  schedule:\n    - cron: '0 ${dailyUTC} * * *'\n    - cron: '0 ${weeklyUTC} * * ${weeklyD}'`;
+    } else {
+      scheduleBlock = `  # 自動スケジュールなし（手動実行のみ）`;
+    }
+
+    return `name: X モニタリング 自動実行
+
+on:
+${scheduleBlock}
+
+  workflow_dispatch:
+    inputs:
+      report_type:
+        description: 'レポートタイプ'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+      test_mode:
+        description: 'テストモード（メール送信しない）'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 依存ライブラリのインストール
+        run: pip install -r requirements.txt
+
+      - name: 日次レポート実行
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'daily' && github.event.inputs.test_mode == 'false')
+        env:
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: \${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: \${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: \${{ secrets.X_COOKIES_JSON }}
+        run: python main.py
+
+      - name: 週次レポート実行
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'weekly' && github.event.inputs.test_mode == 'false'
+        env:
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: \${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: \${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: \${{ secrets.X_COOKIES_JSON }}
+        run: python main.py --weekly
+
+      - name: テスト実行（メール送信なし）
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode == 'true'
+        env:
+          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          GMAIL_USER: \${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: \${{ secrets.GMAIL_APP_PASSWORD }}
+          X_COOKIES_JSON: \${{ secrets.X_COOKIES_JSON }}
+        run: |
+          if [ "\${{ github.event.inputs.report_type }}" = "weekly" ]; then
+            python main.py --weekly --test
+          else
+            python main.py --test
+          fi
+
+      - name: ログをアーティファクトとして保存
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs-\${{ github.run_number }}
+          path: logs/
+          retention-days: 7
+`;
+  }
+
+  function copyYML() {
+    navigator.clipboard.writeText(generateYML()).then(() => {
+      showToast('📋 YMLをコピーしました！GitHubのmonitor.ymlに貼り付けてください');
+    });
+  }
+
+  function saveTarget() {
+    const name = document.getElementById('f-name').value.trim();
+    if (!name) { showToast('⚠️ 名前は必須です'); return; }
+    const keywords = parseCSV(document.getElementById('f-keywords').value);
+    if (keywords.length === 0) { showToast('⚠️ キーワードは1つ以上必要です'); return; }
+    targets.push({
+      id: generateId(name), name, keywords,
+      x_account: document.getElementById('f-x-account').value.trim(),
+      exclude_keywords: parseCSV(document.getElementById('f-exclude').value),
+      category: document.getElementById('f-category').value.trim(),
+      recipients: parseCSV(document.getElementById('f-recipients').value),
+      enabled: document.getElementById('f-enabled').classList.contains('on')
+    });
+    clearForm(); renderList(); renderJSON(); switchTab('list');
+    showToast('✓ 追加しました');
+  }
+
+  function clearForm() {
+    ['f-name','f-category','f-keywords','f-x-account','f-exclude','f-recipients'].forEach(id => document.getElementById(id).value = '');
+    const t = document.getElementById('f-enabled');
+    if (!t.classList.contains('on')) t.classList.add('on');
+  }
+
+  function renderList() {
+    const list = document.getElementById('target-list');
+    document.getElementById('count-badge').textContent = targets.length + '件';
+    if (targets.length === 0) {
+      list.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div>まだ監視対象がいません<br>「新規追加」タブから追加してください</div>';
+      return;
+    }
+    list.innerHTML = targets.map((t, i) => `
+      <div class="target-item ${t.enabled ? '' : 'disabled'}">
+        <div class="target-status"></div>
+        <div class="target-info">
+          <div class="target-name">${t.category ? `<span class="target-category">${t.category}</span>` : ''}${t.name}</div>
+          <div class="target-meta">キーワード: ${t.keywords.join(', ')}${t.recipients.length > 0 ? '<br>送信先: ' + t.recipients.join(', ') : ''}</div>
+        </div>
+        <div class="target-actions">
+          <button class="btn btn-secondary btn-sm" onclick="openEdit(${i})">編集</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteTarget(${i})">削除</button>
+        </div>
+      </div>`).join('');
+  }
+
+  function deleteTarget(i) {
+    if (!confirm(`「${targets[i].name}」を削除しますか？`)) return;
+    targets.splice(i, 1); renderList(); renderJSON();
+    showToast('🗑 削除しました');
+  }
+
+  function openEdit(i) {
+    const t = targets[i];
+    document.getElementById('edit-index').value = i;
+    document.getElementById('e-name').value = t.name;
+    document.getElementById('e-category').value = t.category || '';
+    document.getElementById('e-keywords').value = t.keywords.join(', ');
+    document.getElementById('e-x-account').value = t.x_account || '';
+    document.getElementById('e-exclude').value = t.exclude_keywords.join(', ');
+    document.getElementById('e-recipients').value = t.recipients.join(', ');
+    document.getElementById('e-enabled').className = 'toggle' + (t.enabled ? ' on' : '');
+    document.getElementById('edit-modal').classList.add('open');
+  }
+
+  function closeModal() { document.getElementById('edit-modal').classList.remove('open'); }
+
+  function updateTarget() {
+    const i = parseInt(document.getElementById('edit-index').value);
+    const name = document.getElementById('e-name').value.trim();
+    if (!name) { showToast('⚠️ 名前は必須です'); return; }
+    targets[i] = { ...targets[i], name,
+      keywords: parseCSV(document.getElementById('e-keywords').value),
+      x_account: document.getElementById('e-x-account').value.trim(),
+      exclude_keywords: parseCSV(document.getElementById('e-exclude').value),
+      category: document.getElementById('e-category').value.trim(),
+      recipients: parseCSV(document.getElementById('e-recipients').value),
+      enabled: document.getElementById('e-enabled').classList.contains('on')
+    };
+    closeModal(); renderList(); renderJSON();
+    showToast('✓ 更新しました');
+  }
+
+  function renderJSON() { document.getElementById('json-output').textContent = JSON.stringify({ targets }, null, 4); }
+
+  function copyJSON() {
+    navigator.clipboard.writeText(JSON.stringify({ targets }, null, 4)).then(() => {
+      showToast('📋 コピーしました！GitHubに貼り付けてください');
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg; toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  document.getElementById('edit-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+  // 初期表示（週次時間を非表示）
+  document.getElementById('weekly-time-wrap').style.display = 'none';
+</script>
+</body>
+</html>
