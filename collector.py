@@ -50,7 +50,7 @@ def build_query(target):
 
 
 async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
-    """指定した対象人物に関するツイートを検索・取得する"""
+    """指定した対象人物に関するツイートを検索・取得する（複数ページ対応）"""
     client = Client("ja-JP")
     client.set_cookies(cookies)
 
@@ -59,23 +59,31 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
 
     tweets = []
     try:
-        results = await client.search_tweet(query, product="Latest", count=max_tweets)
-        for tweet in results:
-            tweets.append({
-                "id": tweet.id,
-                "user": tweet.user.screen_name,
-                "user_name": tweet.user.name,
-                "text": tweet.text,
-                "created_at": tweet.created_at,
-                "favorite_count": getattr(tweet, "favorite_count", 0),
-                "retweet_count": getattr(tweet, "retweet_count", 0),
-                "quote_count": getattr(tweet, "quote_count", 0),
-                "url": f"https://x.com/{tweet.user.screen_name}/status/{tweet.id}",
-            })
+        results = await client.search_tweet(query, product="Latest", count=20)
+        while results and len(tweets) < max_tweets:
+            for tweet in results:
+                tweets.append({
+                    "id": tweet.id,
+                    "user": tweet.user.screen_name,
+                    "user_name": tweet.user.name,
+                    "text": tweet.text,
+                    "created_at": tweet.created_at,
+                    "favorite_count": getattr(tweet, "favorite_count", 0),
+                    "retweet_count": getattr(tweet, "retweet_count", 0),
+                    "quote_count": getattr(tweet, "quote_count", 0),
+                    "url": f"https://x.com/{tweet.user.screen_name}/status/{tweet.id}",
+                })
+            if len(tweets) >= max_tweets:
+                break
+            await asyncio.sleep(2)
+            try:
+                results = await results.next()
+            except Exception:
+                break
     except Exception as e:
         print(f"  エラー: {e}")
 
-    return tweets
+    return tweets[:max_tweets]
 
 
 def remove_duplicates(tweets, history_file):
