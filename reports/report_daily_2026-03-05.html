@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X モニタリングレポート（日次） - 2026-03-05</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #f5f7fa; color: #2c3e50; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, #1E2761, #4A6FA5); color: white; padding: 30px; border-radius: 12px; margin-bottom: 24px; }
+.header h1 { font-size: 24px; margin-bottom: 8px; }
+.header .date { font-size: 14px; opacity: 0.8; }
+.summary-card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.summary-card h2 { font-size: 18px; color: #1E2761; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E8C547; }
+.person-section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.person-section h3 { font-size: 20px; color: #1E2761; margin-bottom: 4px; }
+.person-category { display: inline-block; background: #EBF5FB; color: #4A6FA5; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin-bottom: 16px; }
+.stats { display: flex; gap: 12px; margin-bottom: 16px; }
+.stat-box { flex: 1; text-align: center; padding: 12px; border-radius: 8px; }
+.stat-box.positive { background: #E8F8F5; color: #27AE60; }
+.stat-box.negative { background: #FDEDEC; color: #E74C3C; }
+.stat-box.neutral { background: #F4F6F7; color: #6B7280; }
+.stat-box .num { font-size: 28px; font-weight: bold; }
+.stat-box .label { font-size: 12px; }
+.summary-text { background: #f8f9fa; padding: 16px; border-radius: 8px; margin-bottom: 16px; line-height: 1.7; }
+.alert { background: #FEF3E2; border-left: 4px solid #F39C12; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+.alert-danger { background: #FDEDEC; border-left-color: #E74C3C; }
+.tweet-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px; margin-bottom: 10px; }
+.tweet-card .meta { font-size: 12px; color: #6B7280; margin-bottom: 6px; }
+.tweet-card .text { line-height: 1.6; margin-bottom: 8px; }
+.tweet-card .engagement { font-size: 12px; color: #6B7280; }
+.tweet-card .reason { font-size: 12px; color: #4A6FA5; font-style: italic; margin-top: 6px; }
+.chart-container { max-width: 300px; margin: 16px auto; }
+.category-list { list-style: none; }
+.category-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; }
+.category-list li:last-child { border-bottom: none; }
+.footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+.all-tweets { margin-top: 20px; }
+.all-tweets summary { cursor: pointer; padding: 12px 16px; background: #1E2761; color: white; border-radius: 8px; font-size: 14px; font-weight: bold; }
+.all-tweets summary:hover { background: #2a3578; }
+.all-tweets[open] summary { border-radius: 8px 8px 0 0; }
+.all-tweets .tweets-list { border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px; max-height: 600px; overflow-y: auto; }
+.all-tweets .tweet-item { padding: 12px 16px; border-bottom: 1px solid #f0f0f0; }
+.all-tweets .tweet-item:last-child { border-bottom: none; }
+.all-tweets .tweet-item .tw-meta { font-size: 12px; color: #6B7280; margin-bottom: 4px; }
+.all-tweets .tweet-item .tw-text { font-size: 14px; line-height: 1.6; margin-bottom: 6px; }
+.all-tweets .tweet-item .tw-stats { font-size: 12px; color: #6B7280; }
+.all-tweets .tweet-item .tw-link { font-size: 12px; }
+.all-tweets .tweet-item:nth-child(even) { background: #fafbfc; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+    <h1>X モニタリングレポート（日次）</h1>
+    <div class="date">2026年03月05日 22:28 生成</div>
+</div>
+
+<div class="summary-card">
+    <h2>エグゼクティブサマリー</h2>
+    <div class="stats">
+        <div class="stat-box" style="background:#EBF5FB; color:#1E2761;">
+            <div class="num">1</div>
+            <div class="label">対象人物</div>
+        </div>
+        <div class="stat-box" style="background:#EBF5FB; color:#1E2761;">
+            <div class="num">20</div>
+            <div class="label">総ツイート数</div>
+        </div>
+        <div class="stat-box positive">
+            <div class="num">6</div>
+            <div class="label">ポジティブ</div>
+        </div>
+        <div class="stat-box negative">
+            <div class="num">0</div>
+            <div class="label">ネガティブ</div>
+        </div>
+        <div class="stat-box neutral">
+            <div class="num">14</div>
+            <div class="label">ニュートラル</div>
+        </div>
+    </div>
+</div>
+
+<div class="person-section">
+    <h3>大谷翔平</h3>
+    <span class="person-category">スポーツ選手</span>
+
+    <div class="stats">
+        <div class="stat-box positive">
+            <div class="num">6</div>
+            <div class="label">ポジティブ</div>
+        </div>
+        <div class="stat-box negative">
+            <div class="num">0</div>
+            <div class="label">ネガティブ</div>
+        </div>
+        <div class="stat-box neutral">
+            <div class="num">14</div>
+            <div class="label">ニュートラル</div>
+        </div>
+    </div>
+
+    <div class="summary-text">2026年3月5日に取得された大谷翔平に関するX投稿データ20件は、主にWBC2026への期待とファンの熱い応援で構成されています。ポジティブな感情の投稿が散見され、大谷選手の活躍を願う声や、その卓越した能力を称賛するコメントが多く見られます。一方で、WBC関連のチケット譲渡やグッズ交換、関連書籍の宣伝といった情報共有やプロモーション目的のニュートラルな投稿も一定数含まれています。全体的にネガティブな意見やスキャンダルに関する言及はなく、非常に好意的なトーンが支配的です。多くの投稿で2026年のWBCを意識した内容が見られ、大谷選手が侍ジャパンの中心的存在として捉えられていることが示唆されます。</div>
+    <h4 style="margin-bottom:8px;">カテゴリ別</h4>
+    <ul class="category-list">
+        <li><span>ファンの反応・応援</span><strong>7件</strong></li>
+        <li><span>その他</span><strong>5件</strong></li>
+        <li><span>イベント・出演情報</span><strong>3件</strong></li>
+        <li><span>日常・プライベート</span><strong>3件</strong></li>
+        <li><span>新刊・作品情報</span><strong>1件</strong></li>
+        <li><span>ニュース・報道</span><strong>1件</strong></li>
+    </ul>
+    <h4 style="margin:16px 0 8px;">注目ツイート</h4>
+    <div class="tweet-card">
+        <div class="meta">@baseballmegane - Thu Mar 05 13:27:05 +0000 2026</div>
+        <div class="text">#大谷翔平
+説明不要、世界一の野球選手
+
+プレーはもちろん、言葉や背中でチームを牽引する支柱として、連覇を目指す侍に欠かすことの出来ない大きすぎる存在
+
+まずは打撃で違いを見せ、打率.435を記録した2023大会を上回る活躍を
+
+2026も跳べ大谷、夢の向こう側へ
+#WBC2026
+https://t.co/Hl0PBZzknt</div>
+        <div class="engagement">❤ 1  🔄 0</div>
+        <div class="reason">📌 大谷翔平選手を「世界一の野球選手」と絶賛し、2026年のWBC連覇への熱い期待と応援を表明する、ファンの代表的な声です。</div>
+    </div>
+    <div class="tweet-card">
+        <div class="meta">@lUYn6kveN798493 - Thu Mar 05 13:26:10 +0000 2026</div>
+        <div class="text">大谷翔平のバッティング指導の映像は珍しい！
+すごい理にかなっている。 https://t.co/CRlPyRv5GB</div>
+        <div class="engagement">❤ 1  🔄 0</div>
+        <div class="reason">📌 大谷翔平選手のバッティング指導映像に注目し、その内容が「珍しい」かつ「理にかなっている」と評価することで、具体的なプレースタイルへの高い関心と尊敬を示しています。</div>
+    </div>
+    <div class="tweet-card">
+        <div class="meta">@renrennneko - Thu Mar 05 13:25:28 +0000 2026</div>
+        <div class="text">れんくん
+大きいかた😳
+どなただろう？　
+まさか大谷翔平さんとか？！
+えーいつわかるかな😊
+答え合わせ楽しみにしてるね✨
+ながつぶありがとう♡
+
+#ながせのつぶやき 
+#永瀬廉</div>
+        <div class="engagement">❤ 2  🔄 0</div>
+        <div class="reason">📌 他の有名人の投稿から大谷翔平選手との関連を期待し、驚きと楽しみを表現する、ファンならではのユニークな反応が窺えます。</div>
+    </div>
+    <div class="tweet-card">
+        <div class="meta">@RioSaito516 - Thu Mar 05 13:23:44 +0000 2026</div>
+        <div class="text">難敵攻略のポイントは近藤健介・大谷翔平・鈴木誠也の上位打線…侍ジャパン直前診断(読売新聞オンライン)
+#Yahooニュース
+https://t.co/doxEq84Ew5</div>
+        <div class="engagement">❤ 0  🔄 0</div>
+        <div class="reason">📌 WBCに関するニュース記事を共有し、大谷翔平選手が侍ジャパンの「難敵攻略のポイント」としてメディアに報じられていることを示しています。</div>
+    </div>
+    <div class="tweet-card">
+        <div class="meta">@tkm3510 - Thu Mar 05 13:22:18 +0000 2026</div>
+        <div class="text">侍ジャパンスタメン希望
+１(指)大谷翔平
+２(中)鈴木誠也
+３(三)村上宗隆
+４(一)岡本和真
+５(左)吉田正尚
+６(ニ)牧秀悟
+７(遊)源田壮亮
+８(捕)若月 健矢
+９(左)近藤健介
+
+守備はどう組んでも課題あるし、途中で代えること前提で高火力で爆発してほしい。
+チェコ戦、観に行きます。
+#侍ジャパン</div>
+        <div class="engagement">❤ 0  🔄 0</div>
+        <div class="reason">📌 WBCの侍ジャパンのスタメン希望を具体的に提案し、大谷翔平選手への高い期待と、試合への戦略的な関心を示しています。</div>
+    </div>
+</div>
+    <details class="all-tweets">
+        <summary>📋 全ツイート一覧を表示（20件）</summary>
+        <div class="tweets-list">
+            <div class="tweet-item">
+                <div class="tw-meta">#1 @DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Thu Mar 05 13:28:16 +0000 2026</div>
+                <div class="tw-text">大谷翔平の名前入りWBCボール売ってるの見つけた！ケース付き新品で羨ましすぎ…
+
+2026 WBC 侍ジャパン 大谷翔平 ローリングス レプリカボール☆新品未使用
+https://t.co/PsUukPhlxv</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/DePlOyMeNtFgH1j/status/2029549559471554786" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#2 @___shungiku（春菊）- Thu Mar 05 13:28:11 +0000 2026</div>
+                <div class="tw-text">2026.03.03  📍京セラドーム
+
+SAMURAI JAPAN 🇯🇵⚾️
+#大谷翔平 選手　#ShoheiOhtani 
+#侍ジャパン https://t.co/EQEY1AWRdX</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/___shungiku/status/2029549537241792520" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#3 @39anchan39（あん）- Thu Mar 05 13:27:27 +0000 2026</div>
+                <div class="tw-text">呪術には盛岡が出てくるしヨルシカのMVには新花巻が出てくるのか。そりゃ大谷翔平も産まれますよね(？)</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/39anchan39/status/2029549351216046114" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#4 @tdYF9ll6TK45951（岩田忠男）- Thu Mar 05 13:27:21 +0000 2026</div>
+                <div class="tw-text">大谷翔平選手を予言した歌じゃないかなhttps://t.co/duJRAImmhJ</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/tdYF9ll6TK45951/status/2029549325714616411" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#5 @baseballmegane（やきうメガネ）- Thu Mar 05 13:27:05 +0000 2026</div>
+                <div class="tw-text">#大谷翔平
+説明不要、世界一の野球選手
+
+プレーはもちろん、言葉や背中でチームを牽引する支柱として、連覇を目指す侍に欠かすことの出来ない大きすぎる存在
+
+まずは打撃で違いを見せ、打率.435を記録した2023大会を上回る活躍を
+
+2026も跳べ大谷、夢の向こう側へ
+#WBC2026
+https://t.co/Hl0PBZzknt</div>
+                <div class="tw-stats">❤ 1  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/baseballmegane/status/2029549262074487034" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#6 @TalkSilent（Yukimi JMTA認定音楽療法士）- Thu Mar 05 13:27:04 +0000 2026</div>
+                <div class="tw-text">｢鳥の体調が良くなるまで隔離する方がいいのに、法律が邪魔している家畜伝染病予防法の改正をしてくれるとありがたい。｣#鶏インフルエンザは捏造の疑い
+#WBC大谷翔平</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/TalkSilent/status/2029549255544000949" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#7 @GeMoChi08（🦄大谷翔平🐐）- Thu Mar 05 13:26:50 +0000 2026</div>
+                <div class="tw-text">でも優勝は侍ジャパンだった😎💪
+オッズはただのオッズに過ぎない https://t.co/0HxEcFjFLd</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/GeMoChi08/status/2029549195968053596" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#8 @lUYn6kveN798493（井上尚弥×中谷潤人を東京ドームで見たい）- Thu Mar 05 13:26:10 +0000 2026</div>
+                <div class="tw-text">大谷翔平のバッティング指導の映像は珍しい！
+すごい理にかなっている。 https://t.co/CRlPyRv5GB</div>
+                <div class="tw-stats">❤ 1  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/lUYn6kveN798493/status/2029549028116201547" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#9 @BSStefani（大竹くん好きすぎて滅‼️）- Thu Mar 05 13:26:07 +0000 2026</div>
+                <div class="tw-text">@x
+
+WBC2026 ワールドベースボールクラシック™ 東京プール presented by ディップ
+WBC チケット 譲渡🩵👊♪
+
+譲)
+ 3/7 日本対韓国4枚　SS指定席1塁側
+
+求)
+定価＋手数料
+
+インフルに家族でかかってしまったためお譲り先を探しています😭
+お求めの方dmお願いします🤲🥺
+
+#WBC  #大谷翔平</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/BSStefani/status/2029549016548348317" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#10 @topaz_topaz3（とぱーず）- Thu Mar 05 13:26:00 +0000 2026</div>
+                <div class="tw-text">世界一やさしい
+2026WBCビギナーズガイド (別冊週刊女性)
+
+⏬Amazon
+https://t.co/h3oYadGSjq
+
+WBC 2026 関連本
+▶️https://t.co/gel9hwskSJ
+
+宮城大弥/菊池雄星/山本由伸/髙橋宏斗
+大谷翔平/近藤健介/鈴木誠也/村上宗隆/岡本和真
+牧秀悟/佐藤輝明/坂本誠志郎/吉田正尚
+
+#WBC #侍ジャパン
+【PR】</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/topaz_topaz3/status/2029548986651029837" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#11 @TSLAMARIE（全財産テスラ投資のまりえ）- Thu Mar 05 13:26:00 +0000 2026</div>
+                <div class="tw-text">楽天モバイルは無制限全キャリア“最安”です！
+3GBなら驚愕の月額880円～！
+
+さらに今なら…紹介リンクから申し込みで楽天ポイント14,000㌽🎁
+
+🔻紹介リンク🔗(楽天会員ログイン)
+https://t.co/UsBkboTVwT
+
+au ドコモ ソフトバンク WBC2026 大谷翔平 侍ジャパン ポケモンFRLG 日経平均 米国株 株価 https://t.co/Y4zSMqFwyN</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/TSLAMARIE/status/2029548986625884313" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#12 @renrennneko（むぎ🍚）- Thu Mar 05 13:25:28 +0000 2026</div>
+                <div class="tw-text">れんくん
+大きいかた😳
+どなただろう？　
+まさか大谷翔平さんとか？！
+えーいつわかるかな😊
+答え合わせ楽しみにしてるね✨
+ながつぶありがとう♡
+
+#ながせのつぶやき 
+#永瀬廉</div>
+                <div class="tw-stats">❤ 2  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/renrennneko/status/2029548854241317111" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#13 @habu3note（おぜす）- Thu Mar 05 13:24:54 +0000 2026</div>
+                <div class="tw-text">【WBCグッズ交換】
+
+譲：缶バッジ(伊藤大海)
+
+求：缶バッジ(岡本和馬、大勢、吉田正尚、大谷翔平)あと要相談
+
+3/7東京ドームにて交換希望
+お気軽にDM下さい https://t.co/9D9buCwYeP</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/habu3note/status/2029548711005831487" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#14 @cypress_7377（サンダルウッド@大谷翔平の応援中📢鬼滅の刃/忍たま乱が好きでSwitch2の発売日楽しみなOL✨）- Thu Mar 05 13:24:47 +0000 2026</div>
+                <div class="tw-text">え、マ！？
+
+ずっと欲しかったやまと豚のロースしゃぶ1.5kg
+23:00~23:29に半額で買えるの😍
+
+▶https://t.co/stBUQNqzF7
+
+今回の楽天スーパーセールで侍ジャパン見てる場合じゃなくて速攻でブクマした✨️
+
+春のごちそうしゃぶしゃぶに🥩
+
+#楽天スーパーセール #ad</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/cypress_7377/status/2029548680605495477" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#15 @Yutaknz25（薬剤たま）- Thu Mar 05 13:24:42 +0000 2026</div>
+                <div class="tw-text">とりま明日の出勤着
+白衣の下に入るかな笑
+ #WBC 
+ #大谷翔平 
+ #侍JAPAN https://t.co/kfD8jNgJPX</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/Yutaknz25/status/2029548661362040973" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#16 @7TmMGbKz4M6621（マカロニ★大谷翔平応援中！）- Thu Mar 05 13:24:11 +0000 2026</div>
+                <div class="tw-text">きた🙌
+Amazon販売開始🎉
+
+Nintendo Switch 2
+マリカーセット + microSD
+👉https://t.co/SFL5FWvmcv
+
+microSDセット
+👉https://t.co/leabgdoHIl
+
+抽選・招待制じゃないのでお早めに！
+販売元要確認！！
+
+#NintendoSwitch2 #Switch2 #ad
+03/05 22:24</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/7TmMGbKz4M6621/status/2029548529841221775" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#17 @RioSaito516（y99y27）- Thu Mar 05 13:23:44 +0000 2026</div>
+                <div class="tw-text">難敵攻略のポイントは近藤健介・大谷翔平・鈴木誠也の上位打線…侍ジャパン直前診断(読売新聞オンライン)
+#Yahooニュース
+https://t.co/doxEq84Ew5</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/RioSaito516/status/2029548415525495176" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#18 @TW_KG1524（SF_K.G）- Thu Mar 05 13:23:36 +0000 2026</div>
+                <div class="tw-text">明日初戦を控える #侍ジャパン のことや一日のことをゆるっと配信しています。#大谷翔平 #山本由伸 #吉田正尚 #連覇 #WBC #ラジオ #配信 #イキなりライブ https://t.co/j5wFfySTOL</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/TW_KG1524/status/2029548384626119029" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#19 @ezotional（やまたけ）- Thu Mar 05 13:23:07 +0000 2026</div>
+                <div class="tw-text">大谷翔平スペックで
+最低10時間/日は寝ないとならん
+やまたけスペックに置き換えると
+週休3日くらいでフル睡眠取らないとならんと思うのよ</div>
+                <div class="tw-stats">❤ 1  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/ezotional/status/2029548262756339994" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+            <div class="tweet-item">
+                <div class="tw-meta">#20 @tkm3510（たくみ@ムラ）- Thu Mar 05 13:22:18 +0000 2026</div>
+                <div class="tw-text">侍ジャパンスタメン希望
+１(指)大谷翔平
+２(中)鈴木誠也
+３(三)村上宗隆
+４(一)岡本和真
+５(左)吉田正尚
+６(ニ)牧秀悟
+７(遊)源田壮亮
+８(捕)若月 健矢
+９(左)近藤健介
+
+守備はどう組んでも課題あるし、途中で代えること前提で高火力で爆発してほしい。
+チェコ戦、観に行きます。
+#侍ジャパン</div>
+                <div class="tw-stats">❤ 0  🔄 0  💬 0
+                    <span class="tw-link"> | <a href="https://x.com/tkm3510/status/2029548057306734641" target="_blank" style="color:#4A6FA5;">元のツイートを見る</a></span>
+                </div>
+            </div>
+        </div>
+    </details>
+</div>
+
+<div class="footer">
+    X有名人モニタリングシステム - 2026年03月05日 自動生成
+</div>
+</div>
+</body>
+</html>

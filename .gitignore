@@ -7,7 +7,7 @@ cookies.json
 # === データ・ログ（ローカルのみ） ===
 data/
 logs/
-reports/
+# reports/ は docs/reports/ をGitHub Pagesで公開するため除外しない
 
 # === Python キャッシュ ===
 __pycache__/
