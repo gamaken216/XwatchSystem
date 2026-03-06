@@ -53,7 +53,7 @@ jobs:
 
       # 日次レポート実行（スケジュール または 手動でdaily選択）
       - name: 日次レポート実行
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'daily' && github.event.inputs.test_mode == 'false')
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'daily' && github.event.inputs.test_mode != 'true')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -63,7 +63,7 @@ jobs:
 
       # 週次レポート実行
       - name: 週次レポート実行
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'weekly' && github.event.inputs.test_mode == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.report_type == 'weekly' && github.event.inputs.test_mode != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
