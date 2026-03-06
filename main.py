@@ -12,6 +12,7 @@ import asyncio
 import sys
 import os
 import io
+import json
 import logging
 from datetime import datetime
 
@@ -39,6 +40,62 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def load_config():
+    """環境変数またはconfig.pyから設定を読み込む"""
+
+    # X Cookies
+    x_cookies_env = os.environ.get("X_COOKIES_JSON")
+    if x_cookies_env:
+        X_COOKIES = json.loads(x_cookies_env)
+    else:
+        try:
+            from config import X_COOKIES
+        except ImportError:
+            logger.error("X_COOKIES_JSON 環境変数が設定されていません。")
+            return None
+
+    # Gemini API Key
+    GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+    if not GEMINI_API_KEY:
+        try:
+            from config import GEMINI_API_KEY
+        except ImportError:
+            logger.error("GEMINI_API_KEY 環境変数が設定されていません。")
+            return None
+
+    # Gmail
+    GMAIL_USER = os.environ.get("GMAIL_USER")
+    if not GMAIL_USER:
+        try:
+            from config import GMAIL_USER
+        except ImportError:
+            logger.error("GMAIL_USER 環境変数が設定されていません。")
+            return None
+
+    GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD")
+    if not GMAIL_APP_PASSWORD:
+        try:
+            from config import GMAIL_APP_PASSWORD
+        except ImportError:
+            logger.error("GMAIL_APP_PASSWORD 環境変数が設定されていません。")
+            return None
+
+    # その他設定
+    GEMINI_MODEL = "gemini-2.5-flash"
+    MAX_TWEETS_PER_PERSON = 300
+    SEARCH_INTERVAL_SEC = 5
+
+    return {
+        "X_COOKIES": X_COOKIES,
+        "GEMINI_API_KEY": GEMINI_API_KEY,
+        "GEMINI_MODEL": GEMINI_MODEL,
+        "GMAIL_USER": GMAIL_USER,
+        "GMAIL_APP_PASSWORD": GMAIL_APP_PASSWORD,
+        "MAX_TWEETS_PER_PERSON": MAX_TWEETS_PER_PERSON,
+        "SEARCH_INTERVAL_SEC": SEARCH_INTERVAL_SEC,
+    }
+
+
 def main():
     # 引数チェック
     args = sys.argv[1:]
@@ -52,20 +109,18 @@ def main():
     logger.info("=" * 60)
 
     # 設定読み込み
-    try:
-        from config import (
-            X_COOKIES,
-            GEMINI_API_KEY,
-            GEMINI_MODEL,
-            GMAIL_USER,
-            GMAIL_APP_PASSWORD,
-            MAX_TWEETS_PER_PERSON,
-            SEARCH_INTERVAL_SEC,
-        )
-    except ImportError as e:
-        logger.error(f"config.py の読み込みに失敗: {e}")
-        logger.error("config.py を作成してください。")
+    cfg = load_config()
+    if cfg is None:
+        logger.error("設定の読み込みに失敗しました。終了します。")
         return
+
+    X_COOKIES = cfg["X_COOKIES"]
+    GEMINI_API_KEY = cfg["GEMINI_API_KEY"]
+    GEMINI_MODEL = cfg["GEMINI_MODEL"]
+    GMAIL_USER = cfg["GMAIL_USER"]
+    GMAIL_APP_PASSWORD = cfg["GMAIL_APP_PASSWORD"]
+    MAX_TWEETS_PER_PERSON = cfg["MAX_TWEETS_PER_PERSON"]
+    SEARCH_INTERVAL_SEC = cfg["SEARCH_INTERVAL_SEC"]
 
     from collector import load_targets, collect_all
     from analyzer import analyze_all
