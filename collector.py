@@ -53,6 +53,11 @@ def build_query(target):
 async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
     """指定した対象人物に関するツイートを検索・取得する（複数ページ対応）"""
     client = Client("ja-JP")
+    client.http.headers["User-Agent"] = (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    )
     client.set_cookies(cookies)
 
     query = build_query(target)

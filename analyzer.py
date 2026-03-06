@@ -40,9 +40,10 @@ def analyze_tweets(api_key, model, target, tweets):
     client = genai.Client(api_key=api_key)
     today = datetime.now().strftime("%Y年%m月%d日")
 
-    # ツイートデータをテキスト化
+    # ツイートデータをテキスト化（最大100件に制限してAPIエラーを防ぐ）
+    tweets_for_analysis = tweets[:100]
     tweets_text = ""
-    for i, tw in enumerate(tweets, 1):
+    for i, tw in enumerate(tweets_for_analysis, 1):
         tweets_text += (
             f"[{i}] @{tw['user']} ({tw['created_at']})\n"
             f"{tw['text']}\n"
@@ -51,7 +52,7 @@ def analyze_tweets(api_key, model, target, tweets):
         )
 
     prompt = f"""あなたはSNS分析の専門家です。
-以下は「{target['name']}」に関するX（旧Twitter）の投稿データ（{today}取得分、{len(tweets)}件）です。
+以下は「{target['name']}」に関するX（旧Twitter）の投稿データ（{today}取得分、{len(tweets_for_analysis)}件）です。
 
 以下のJSON形式で分析結果を返してください。JSONのみを返し、他の文字は含めないでください。
 

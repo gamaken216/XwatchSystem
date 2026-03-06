@@ -80,9 +80,16 @@ def load_config():
             logger.error("GMAIL_APP_PASSWORD 環境変数が設定されていません。")
             return None
 
-    # 受信者リスト（Secretsから取得、カンマ区切り）
+    # 受信者リスト（Secretsまたはconfig.pyから取得）
     RECIPIENTS_ENV = os.environ.get("REPORT_RECIPIENTS", "")
-    RECIPIENTS = [r.strip() for r in RECIPIENTS_ENV.split(",") if r.strip()]
+    if RECIPIENTS_ENV:
+        RECIPIENTS = [r.strip() for r in RECIPIENTS_ENV.split(",") if r.strip()]
+    else:
+        try:
+            from config import REPORT_RECIPIENTS
+            RECIPIENTS = [r.strip() for r in REPORT_RECIPIENTS.split(",") if r.strip()]
+        except ImportError:
+            RECIPIENTS = []
 
     # その他設定
     GEMINI_MODEL = "gemini-2.5-flash"
