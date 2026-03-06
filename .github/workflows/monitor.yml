@@ -59,6 +59,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
         run: python main.py
 
       # 週次レポート実行
@@ -69,6 +70,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
         run: python main.py --weekly
 
       # テストモード実行（メール送信なし）
@@ -79,6 +81,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           X_COOKIES_JSON: ${{ secrets.X_COOKIES_JSON }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
         run: |
           if [ "${{ github.event.inputs.report_type }}" = "weekly" ]; then
             python main.py --weekly --test

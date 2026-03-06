@@ -11,9 +11,7 @@
             "x_account": "",
             "exclude_keywords": [],
             "category": "スポーツ選手",
-            "recipients": [
-                "matsmoto.norihito@gmail.com"
-            ],
+            "recipients": [],
             "enabled": true
         }
     ]

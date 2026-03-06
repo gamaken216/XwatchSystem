@@ -80,6 +80,10 @@ def load_config():
             logger.error("GMAIL_APP_PASSWORD 環境変数が設定されていません。")
             return None
 
+    # 受信者リスト（Secretsから取得、カンマ区切り）
+    RECIPIENTS_ENV = os.environ.get("REPORT_RECIPIENTS", "")
+    RECIPIENTS = [r.strip() for r in RECIPIENTS_ENV.split(",") if r.strip()]
+
     # その他設定
     GEMINI_MODEL = "gemini-2.5-flash"
     MAX_TWEETS_PER_PERSON = 300
@@ -91,6 +95,7 @@ def load_config():
         "GEMINI_MODEL": GEMINI_MODEL,
         "GMAIL_USER": GMAIL_USER,
         "GMAIL_APP_PASSWORD": GMAIL_APP_PASSWORD,
+        "RECIPIENTS": RECIPIENTS,
         "MAX_TWEETS_PER_PERSON": MAX_TWEETS_PER_PERSON,
         "SEARCH_INTERVAL_SEC": SEARCH_INTERVAL_SEC,
     }
@@ -119,12 +124,13 @@ def main():
     GEMINI_MODEL = cfg["GEMINI_MODEL"]
     GMAIL_USER = cfg["GMAIL_USER"]
     GMAIL_APP_PASSWORD = cfg["GMAIL_APP_PASSWORD"]
+    RECIPIENTS = cfg["RECIPIENTS"]
     MAX_TWEETS_PER_PERSON = cfg["MAX_TWEETS_PER_PERSON"]
     SEARCH_INTERVAL_SEC = cfg["SEARCH_INTERVAL_SEC"]
 
     from collector import load_targets, collect_all
     from analyzer import analyze_all
-    from reporter import generate_html_report
+    from reporter import generate_web_report, generate_email_html
     from sender import send_report, collect_recipients
 
     # Step 1: 対象人物の読み込み
@@ -155,17 +161,23 @@ def main():
 
     # Step 4: レポート生成・配信
     logger.info("\n[Step 4/4] レポート生成・配信")
-    report_path = generate_html_report(analyzed, report_type)
-    logger.info(f"  レポート: {report_path}")
+
+    # ウェブ用レポート生成（GitHub Pages公開用）
+    web_report_path = generate_web_report(analyzed, report_type)
+    logger.info(f"  ウェブレポート: {web_report_path}")
+
+    # メール用HTML生成
+    email_html = generate_email_html(analyzed, report_type)
 
     if test_mode:
         logger.info("  テストモードのためメール送信をスキップ")
-        logger.info(f"  レポートを確認: {report_path}")
+        logger.info(f"  ウェブレポートを確認: {web_report_path}")
     else:
-        recipients = collect_recipients(analyzed)
+        # Secretsのアドレスを優先、なければtargets.jsonから取得
+        recipients = RECIPIENTS if RECIPIENTS else collect_recipients(analyzed)
         if recipients:
             logger.info(f"  送信先: {len(recipients)}名")
-            send_report(GMAIL_USER, GMAIL_APP_PASSWORD, recipients, report_path, report_type)
+            send_report(GMAIL_USER, GMAIL_APP_PASSWORD, recipients, email_html, report_type)
         else:
             logger.warning("  送信先が設定されていません。")
 
