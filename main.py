@@ -203,10 +203,13 @@ def main():
             subprocess.run(["git", "-C", script_dir, "add", "docs/"], check=True, env=env)
             result = subprocess.run(
                 ["git", "-C", script_dir, "commit", "-m", f"レポート自動更新 {datetime.now().strftime('%Y-%m-%d')}"],
-                env=env, capture_output=True, text=True
+                env=env, capture_output=True, text=True, encoding="utf-8", errors="replace"
             )
             if result.returncode == 0 or "nothing to commit" in result.stdout:
-                subprocess.run(["git", "-C", script_dir, "push", "origin", "master"], check=True, env=env)
+                subprocess.run(
+                    ["git", "-C", script_dir, "push", "origin", "master"],
+                    check=True, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace"
+                )
                 logger.info("✅ GitHub Pagesにウェブレポートを公開しました")
             else:
                 logger.warning(f"⚠️ git commit失敗: {result.stderr}")
