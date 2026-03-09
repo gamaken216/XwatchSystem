@@ -16,26 +16,33 @@ import json
 import logging
 from datetime import datetime
 
-# Windows環境のUTF-8対応
+# Windows環境のUTF-8対応（pythonw.exe はstdoutがNullのためガード必要）
 if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+    if sys.stdout and hasattr(sys.stdout, 'buffer'):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+    if sys.stderr and hasattr(sys.stderr, 'buffer'):
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_DIR = os.path.join(SCRIPT_DIR, "logs")
 
 # ログ設定
 os.makedirs(LOG_DIR, exist_ok=True)
+
+# ログハンドラー（pythonw対応：StreamHandlerはstdoutがある場合のみ追加）
+log_handlers = [
+    logging.FileHandler(
+        os.path.join(LOG_DIR, f"run_{datetime.now():%Y%m%d_%H%M%S}.log"),
+        encoding="utf-8",
+    )
+]
+if sys.stdout:
+    log_handlers.append(logging.StreamHandler(sys.stdout))
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(
-            os.path.join(LOG_DIR, f"run_{datetime.now():%Y%m%d_%H%M%S}.log"),
-            encoding="utf-8",
-        ),
-        logging.StreamHandler(sys.stdout),
-    ],
+    handlers=log_handlers,
 )
 logger = logging.getLogger(__name__)
 
@@ -168,19 +175,14 @@ def main():
 
     # Step 4: レポート生成・配信
     logger.info("\n[Step 4/4] レポート生成・配信")
-
-    # ウェブ用レポート生成（GitHub Pages公開用）
     web_report_path = generate_web_report(analyzed, report_type)
     logger.info(f"  ウェブレポート: {web_report_path}")
-
-    # メール用HTML生成
     email_html = generate_email_html(analyzed, report_type)
 
     if test_mode:
         logger.info("  テストモードのためメール送信をスキップ")
         logger.info(f"  ウェブレポートを確認: {web_report_path}")
     else:
-        # Secretsのアドレスを優先、なければtargets.jsonから取得
         recipients = RECIPIENTS if RECIPIENTS else collect_recipients(analyzed)
         if recipients:
             logger.info(f"  送信先: {len(recipients)}名")
