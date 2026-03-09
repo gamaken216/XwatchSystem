@@ -1,0 +1,3097 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X モニタリングレポート（日次） - 2026-03-09</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#eef4fb; color:#1a2744; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+.header { background:linear-gradient(135deg,#1a6fd4,#0ea5e9); color:white; padding:28px; border-radius:16px; margin-bottom:24px; box-shadow:0 4px 20px rgba(26,111,212,0.25); }
+.header h1 { font-size:20px; margin-bottom:6px; }
+.header .meta { font-size:12px; opacity:0.8; }
+.back { display:inline-block; margin-bottom:16px; color:#1a6fd4; text-decoration:none; font-size:13px; font-weight:600; background:white; padding:6px 14px; border-radius:20px; border:1px solid #c5d8f0; }
+.back:hover { background:#e8f1fd; }
+.card { background:white; border-radius:12px; padding:24px; margin-bottom:20px; box-shadow:0 2px 8px rgba(26,111,212,0.06); border:1px solid #c5d8f0; }
+.card-title { font-size:12px; font-weight:700; color:#1a6fd4; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #0ea5e9; }
+.stats { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.stat { flex:1; min-width:80px; text-align:center; padding:12px; border-radius:8px; }
+.stat .num { font-size:26px; font-weight:700; }
+.stat .lbl { font-size:11px; margin-top:2px; }
+.person-name { font-size:18px; font-weight:700; margin-bottom:4px; }
+.category-badge { display:inline-block; background:#e8f1fd; color:#1a6fd4; font-size:11px; font-weight:600; padding:2px 8px; border-radius:12px; margin-bottom:12px; }
+.summary-text { background:#f0f6ff; padding:14px; border-radius:8px; line-height:1.7; font-size:14px; margin-bottom:16px; }
+.alert-box { background:#fff5f5; border-left:4px solid #E74C3C; padding:12px 16px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:13px; }
+.section-label { font-size:13px; font-weight:700; color:#1a2744; margin:16px 0 10px; }
+.tweet-item { border:1px solid #e5e7eb; border-radius:8px; padding:14px; margin-bottom:10px; background:white; }
+.tweet-item:nth-child(even) { background:#fafbfc; }
+.tweet-meta { font-size:12px; color:#6B7280; margin-bottom:6px; }
+.tweet-text { line-height:1.6; font-size:14px; margin-bottom:8px; }
+.tweet-stats { font-size:12px; color:#6B7280; }
+.tweet-link { color:#1a6fd4; text-decoration:none; }
+.tweet-link:hover { text-decoration:underline; }
+.filter-bar { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; align-items:center; }
+.filter-btn { padding:6px 14px; border-radius:20px; border:1.5px solid #c5d8f0; background:white; color:#5a7499; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background:#1a6fd4; color:white; border-color:#1a6fd4; }
+.count-badge { font-size:11px; background:#e8f1fd; color:#1a6fd4; padding:2px 6px; border-radius:10px; margin-left:4px; }
+.footer { text-align:center; color:#999; font-size:12px; padding:24px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back">← レポート一覧に戻る</a>
+    <div class="header">
+        <h1>X モニタリングレポート（日次）</h1>
+        <div class="meta">2026年03月09日 11:31 生成 ／ 総ツイート 300件</div>
+    </div>
+    <div class="card">
+        <div class="card-title">エグゼクティブサマリー</div>
+        <div class="stats">
+            <div class="stat" style="background:#e8f1fd;color:#1a6fd4;">
+                <div class="num">1</div><div class="lbl">対象人物</div>
+            </div>
+            <div class="stat" style="background:#e8f1fd;color:#1a6fd4;">
+                <div class="num">300</div><div class="lbl">総ツイート数</div>
+            </div>
+            <div class="stat" style="background:#e8f8f5;color:#27AE60;">
+                <div class="num">37</div><div class="lbl">ポジティブ</div>
+            </div>
+            <div class="stat" style="background:#f4f6f7;color:#6B7280;">
+                <div class="num">58</div><div class="lbl">ニュートラル</div>
+            </div>
+            <div class="stat" style="background:#fdedec;color:#E74C3C;">
+                <div class="num">5</div><div class="lbl">ネガティブ</div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">大谷翔平</div>
+        <span class="category-badge">スポーツ選手</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:37%;background:#27AE60;"></div>
+    <div style="width:58%;background:#BDC3C7;"></div>
+    <div style="width:5%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 37件</span>
+    <span>⚪ ニュートラル 58件</span>
+    <span>🔴 ネガティブ 5件</span>
+</div>
+        <div class="summary-text">大谷翔平に関するXの投稿は、彼の日常、WBCでの活躍、そして人間性を称賛するポジティブな内容が圧倒的に多くを占めています。特に、愛犬デコピンがぬいぐるみを破壊したという微笑ましい日常の様子や、WBCでの目覚ましい成績、そしてその振る舞いに関するニュースがファンの間で大きな話題を呼んでいます。一部、WBCにおける他の選手への批判が大谷選手と比較される形で見られますが、大谷選手本人への直接的なネガティブな言及は少なく、全体的に熱狂的な応援ムードが継続しています。関連グッズやイベント情報への関心も高く、彼の経済効果の大きさも示唆されています。</div>
+        <div class="section-label">全ツイート一覧（300件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('ohtani_001','all',this)">すべて <span class="count-badge">300</span></button>
+            <button class="filter-btn" onclick="filterTweets('ohtani_001','positive',this)">🟢 ポジティブ <span class="count-badge">37</span></button>
+            <button class="filter-btn" onclick="filterTweets('ohtani_001','neutral',this)">⚪ ニュートラル <span class="count-badge">58</span></button>
+            <button class="filter-btn" onclick="filterTweets('ohtani_001','negative',this)">🔴 ネガティブ <span class="count-badge">5</span></button>
+        </div>
+        <div id="tweets-ohtani_001">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@bieisae4（まやまや）- Mon Mar 09 02:30:03 +0000 2026</div>
+                <div class="tweet-text">🐾大谷翔平とデコピンの絆が見える写真がドジャースから大量投稿❗️✨「可愛い＆感動」「永久保存版決定」😍その仲良しぶりにほっこり💕 #大谷翔平 #デコピンとの絆</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/bieisae4/status/2030833465550082191" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@15success（サクッと深掘りしてみました）- Mon Mar 09 02:29:56 +0000 2026</div>
+                <div class="tweet-text">大谷翔平と井上尚弥、結局どっちが凄いの？
+忖度抜きで結論を出しました。
+
+大谷は「物理法則をバグらせた異星人」
+井上は「人類が到達したボクシングの最終回答」
+
+https://t.co/GE7NDITcej
+#大谷翔平 #井上尚弥</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/15success/status/2030833436060160144" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@makuri4411（天ぷら＠🐰の名前はファビ）- Mon Mar 09 02:29:49 +0000 2026</div>
+                <div class="tweet-text">こういうのは映してあげないカメラマンの優しさもほしいけどいる場所が鈴木誠也と大谷翔平の近くすぎて無理があるね</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/makuri4411/status/2030833406721089987" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@mahirenren（mhn）- Mon Mar 09 02:29:33 +0000 2026</div>
+                <div class="tweet-text">デコ君も、やっぱり
+鼻から行くタイプ？笑
+ワンコあるあるかな🤣
+ #デコピン
+ #大谷翔平 https://t.co/vE2yc2x2Cp</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/mahirenren/status/2030833338446205375" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@Nx4AhM0G090YQlo（地獄通信）- Mon Mar 09 02:29:21 +0000 2026</div>
+                <div class="tweet-text">それにしても牧秀悟終わってるな。
+60年ぶりの天覧試合WBC二死満塁大谷翔平の打席。この状況下で二塁走者の牽制死。あっ晴れ！！
+現地見に行った人、NetflixをWBCのために大谷の打席見るために契約した人、少なからず時間割いて見てた人。十分に反省してるだろうが、理解に苦しむ。これで日本代表。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Nx4AhM0G090YQlo/status/2030833286218678372" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@nanjstu（なんじぇいスタジアム）- Mon Mar 09 02:29:03 +0000 2026</div>
+                <div class="tweet-text">漫画の台詞を 大谷翔平「」にするとホントに言った感が出る https://t.co/gr8VWr5eJz</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/nanjstu/status/2030833211442683947" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Nemrium_NT（西川ネムリウム 髙島屋日本橋店）- Mon Mar 09 02:28:54 +0000 2026</div>
+                <div class="tweet-text">推し活は睡眠の質を高める？心ときめく時間が心身に与える影響を解説｜眠りのレシピ｜nishikawa（西川）公式サイト 
+#nishikawa #高島屋日本橋店 #ねむりの相談所 
+#大谷翔平 #エアーマットレス
+#河村勇輝 #羽毛ふとん #オーダーまくら 
+https://t.co/ZFS9toi0Hz</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Nemrium_NT/status/2030833174226596101" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@NinjaHachi_（忍者ハチ@渋谷愛8）- Mon Mar 09 02:28:48 +0000 2026</div>
+                <div class="tweet-text">【速報】2026年3月9日／12時00～20分放送📺
+#渋谷愛ビジョンおめあり祭
+
+大切な人へ🌈
+レミオロメン
+千葉雄大
+大谷翔平
+七瀬千花
+八火さん
+古川愛理
+いりす
+岩村華
+白洲あやん
+虹羽みに
+星野勇太
+ふわちゃん
+中居正広
+彩羽真矢
+
+#渋谷愛ビジョン
+#愛メッセージ のアーカイブ動画はコチラでチェック📺</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/NinjaHachi_/status/2030833151048909235" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@konoyonojijitu（大谷翔平）- Mon Mar 09 02:28:40 +0000 2026</div>
+                <div class="tweet-text">2026/3/911:28
+ヒノアラシの進化系のバクフーンの海外リーク見てショック受けたやつって何人いるんだろ
+あれ見てダイパのシンオウ昔ばなしその２思い出す人も多そう
+97ポケモン</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/konoyonojijitu/status/2030833114025504777" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@hgms_6210（しゅぺ）- Mon Mar 09 02:28:34 +0000 2026</div>
+                <div class="tweet-text">おはようございます☀
+金土日はWBCの試合が熱かったですね😊
+大谷翔平、鈴木誠也、吉田正尚の活躍が凄かったですね！
+特に昨日は吉田正尚選手の逆転ホームランはさすがでした😆
+写真と動画は今更ながら先週の強化試合のです笑
+#企業公式が朝の挨拶を言い合う
+#WBC2026 
+#WBC侍ジャパン https://t.co/IrEKchauxN</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hgms_6210/status/2030833091607179428" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@sakaeten（ジュンク堂書店名古屋栄店）- Mon Mar 09 02:28:00 +0000 2026</div>
+                <div class="tweet-text">「#Topps 75周年の記念的商品、「#MLB Series 1 Baseball」のジャパンエディション発売決定！多彩なパラレルやインサートがコレクションを彩ります！サインカード企画には #大谷翔平 や #佐々木朗希 ら豪華スターが集結！ご予約は店頭で。全額前金制・送料無料。規定数で受付終了です。お早めにどうぞ https://t.co/2KP1bxx7Qy</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sakaeten/status/2030832946676961603" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ShoTime1117（Sho-Time）- Mon Mar 09 02:27:00 +0000 2026</div>
+                <div class="tweet-text">大谷翔平
+
+インスタグラムストーリーズ
+
+デコ♥ https://t.co/09qqE68rmB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ShoTime1117/status/2030832695836811544" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@LaCage1301（Flamboyant）- Mon Mar 09 02:26:59 +0000 2026</div>
+                <div class="tweet-text">ワンコあるある😂小太郎は子犬の時、ウインナーのオモチャの鼻を全部かじって取りました😅突起物はかじるよね。
+
+大谷翔平、最新の愛犬デコピンを公開　1位通過決定翌日にまさか…ぬいぐるみ“破壊”か（Full-Count） https://t.co/nyLHCXTnBH</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/LaCage1301/status/2030832690229043705" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@rimikkusupoint1（(株)リミックスポイント）- Mon Mar 09 02:26:48 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は「どこまで視野が広く人格者なのか」　試合後の“行動”は「マジ泣くしかない」(Full-Count)
+
+https://t.co/qLTBP85zYr</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/rimikkusupoint1/status/2030832645211598969" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@Z8yhvezc3etrJ7d（チャ－リ－）- Mon Mar 09 02:26:34 +0000 2026</div>
+                <div class="tweet-text">@okamidori0726 太らなくていいので、睡眠と一日三食をシッカリ取って軽い運動(散歩等)をしていれば健康な身体が維持できると思いますよ！でもお子さんが居ますから中々そのようにはいかないかも知れませんが、親子のスキンシップも必要ですね。大谷翔平くんのように睡眠大事ですよね！🧖🏻‍♀️👧🏻🧔‍♂️🙋😄</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Z8yhvezc3etrJ7d/status/2030832588596945207" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@rYoLHw0GhHOp8MJ（まりえ）- Mon Mar 09 02:26:27 +0000 2026</div>
+                <div class="tweet-text">翔平インスト💙💙💙
+あはは(笑)
+デコ様(笑)
+やらかしてる(笑)
+#大谷翔平
+#デコピン https://t.co/GeN7JKKnEH</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/rYoLHw0GhHOp8MJ/status/2030832556070015336" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@mammy_pa（ま）- Mon Mar 09 02:26:21 +0000 2026</div>
+                <div class="tweet-text">大谷翔平って確かに野球は上手いけどKONAMIのCMに採用されてるからビートマニアがすごい上手な可能性も秘めてる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/mammy_pa/status/2030832533617987979" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@hpcnews_info（株式会社 日用品化粧品新聞社【公式】創刊80年）- Mon Mar 09 02:25:42 +0000 2026</div>
+                <div class="tweet-text">日用品化粧品新聞　2026年3月9日号13面
+
+【#コーセー「#コスメデコルテ」新CM】#大谷翔平 選手の真っ直ぐな視線に注目｜業界ニュース https://t.co/UUg6MnFE3R</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hpcnews_info/status/2030832370077851742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Fullcountc2（Full-Count フルカウント）- Mon Mar 09 02:25:32 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、最新の愛犬デコピンを公開　1位通過決定翌日にまさか…ぬいぐるみ“破壊”か 
+#侍ジャパン #ShoheiOhtani #Shotime #Dodgers #LetsGoDodgers
+https://t.co/0qWYr4M84J</div>
+                <div class="tweet-stats">❤ 2　🔄 1　
+                    <a href="https://x.com/Fullcountc2/status/2030832325823467538" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ShoTime1117（Sho-Time）- Mon Mar 09 02:25:25 +0000 2026</div>
+                <div class="tweet-text">大谷翔平から“深夜のお便り”　試合後に突然メンション…「ラストサムライ」が決意表明（Full-Count） https://t.co/In5h6u4meH https://t.co/1iP0jSjQaF</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ShoTime1117/status/2030832295750574402" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@X90Lq（Oron）- Mon Mar 09 02:25:11 +0000 2026</div>
+                <div class="tweet-text">先輩の大谷翔平さんと鈴木誠也さんが拍手している前で、村上宗隆さんがガムくちゃくちゃ腕組みお見送り…
+
+自分のことで精一杯かも知れんが、打率0.200で貢献度薄😳 こりゃ、バッシングが相当来るかもなァ～😓 https://t.co/CCzufj9NOM</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/X90Lq/status/2030832241098813762" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@marimopanda77（まりも）- Mon Mar 09 02:25:11 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに全く興味がないので、農家の方がすごいと思う
+
+日本の農家さんのレベルは高いと思うんだよね</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/marimopanda77/status/2030832239249170551" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@XaCYBQTtX0yUp1r（千葉誠吾）- Mon Mar 09 02:25:06 +0000 2026</div>
+                <div class="tweet-text">天皇皇后両陛下と愛子さまがWBC日豪戦をご観戦、大谷翔平の中飛に思わずため息をつかれる愛子さまのご様子が可愛すぎると話題に https://t.co/62VUdUb0eB</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/XaCYBQTtX0yUp1r/status/2030832218474795373" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Akapo14283063（感謝）- Mon Mar 09 02:24:48 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています😭
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】定価
+
+お探しの方DMにて対応するのでよろしくお願いします🙇🤲
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #pp</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Akapo14283063/status/2030832144235237463" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@BaseballEnth383（ヤマト@野球狂党）- Mon Mar 09 02:24:33 +0000 2026</div>
+                <div class="tweet-text">もー、大谷の2016侍カード売ってるじゃん！俺も1枚欲しくてたまんねぇよ。
+
+大谷翔平 SAMURAI JAPAN 2016 カード
+https://t.co/RcL7H7l8W8</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/BaseballEnth383/status/2030832080683180539" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Akapo14283063（感謝）- Mon Mar 09 02:24:33 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています。
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】2.8 交渉🙆‍♀️
+
+お探しの方DMにて対応するのでよろしくお願いします。
+良席の為空けたくないです😭😭
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #WBC侍ジャパン！</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Akapo14283063/status/2030832079722742116" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@7TmMGbKz4M6621（マカロニ★大谷翔平応援中！WBC2026⚾）- Mon Mar 09 02:24:30 +0000 2026</div>
+                <div class="tweet-text">わわ⚡
+アマゾン販売開始🎉
+
+Nintendo Switch 2
+マリカーセット + microSD
+👉https://t.co/YwoXODXnFg
+
+microSDセット
+👉https://t.co/bIj4Dd3yrT
+
+抽選・招待制じゃないのでお早めに！
+販売元要確認！！
+
+#NintendoSwitch2 #Switch2 #ad
+03/09 11:24</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/7TmMGbKz4M6621/status/2030832068624896341" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@bullbellboy（ブルベル坊や）- Mon Mar 09 02:24:10 +0000 2026</div>
+                <div class="tweet-text">今や大谷翔平級に話題の吉田正尚さん。
+奥様の出産直前にニンニクマシマシラーメンをキメてから立ち会った超人エピソードも広がって欲しい。(しかも右尺骨骨折明け)</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/bullbellboy/status/2030831982574547113" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@shoheisaveus（shobae 大谷翔平 ¹⁷ Ohtani Shohei ¹⁷ 🐶）- Mon Mar 09 02:24:08 +0000 2026</div>
+                <div class="tweet-text">Barbers aren’t allowed to touch Ohtani’s hair
+
+If you dare try and cut his beautiful hair even at his request! Don’t do it just trim 1mm and tell him it’s perfect https://t.co/YeL8cmhotL</div>
+                <div class="tweet-stats">❤ 9　🔄 1　
+                    <a href="https://x.com/shoheisaveus/status/2030831973707796617" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@4MCIJH0pT336057（コメ1800円戻せ）- Mon Mar 09 02:24:06 +0000 2026</div>
+                <div class="tweet-text">こういうビジネスなんだから、やっぱり大谷翔平は八百長で作られたヒーローなんだろうな。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/4MCIJH0pT336057/status/2030831965864341866" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@Zred3pRYOV1L07X（あんこ）- Mon Mar 09 02:23:48 +0000 2026</div>
+                <div class="tweet-text">これ見て泣いちゃったよ😭
+#大谷翔平
+#小園海斗
+#侍ジャパン</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/Zred3pRYOV1L07X/status/2030831890731880731" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Latif77_（チケットアシスタント）- Mon Mar 09 02:23:03 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています😭
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】定価
+
+お探しの方DMにて対応するのでよろしくお願いします。
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #pp.</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Latif77_/status/2030831702352797788" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tIjKTS0yyZ4985（娯楽垢）- Mon Mar 09 02:22:51 +0000 2026</div>
+                <div class="tweet-text">@johnbronxbx トラウトジャッジ大谷翔平の順かな。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/tIjKTS0yyZ4985/status/2030831650838646835" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@TadMania（ビリヤード🟠大阪🌸･TAD Mania）- Mon Mar 09 02:22:39 +0000 2026</div>
+                <div class="tweet-text">【大谷翔平】試合直後にオーストラリア監督が”大谷のある行動”に放った”まさかの一言”を米メディアの取材に明かし話題に…【海外の反応 MLBメジャ... https://t.co/3ek3g0d7VH @YouTubeより</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/TadMania/status/2030831602373448050" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@shoheisaveus（shobae 大谷翔平 ¹⁷ Ohtani Shohei ¹⁷ 🐶）- Mon Mar 09 02:22:37 +0000 2026</div>
+                <div class="tweet-text">Shohei exposing Decoy online 
+
+Took photo of him and ruined teddy bears 😭 https://t.co/cofEmUjUtb</div>
+                <div class="tweet-stats">❤ 26　🔄 0　
+                    <a href="https://x.com/shoheisaveus/status/2030831593624113194" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@ona__chan（∞ましろ∞キュア⭐︎ダブルレモンｽﾄﾛﾝｸﾞ🍋🍋👺）- Mon Mar 09 02:22:37 +0000 2026</div>
+                <div class="tweet-text">引きこもり界の大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ona__chan/status/2030831593414345065" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@pengin_（ぺんぎん64）- Mon Mar 09 02:22:25 +0000 2026</div>
+                <div class="tweet-text">野球のルールはわかるけど（プレイヤーだったから）、野球観戦には何一つ興味がないので大谷翔平以外のキャラの名前がほぼわからん。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/pengin_/status/2030831540876493178" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@komachi_bipolar（こまち@バイポーラー）- Mon Mar 09 02:22:10 +0000 2026</div>
+                <div class="tweet-text">昨日は、念願だった大谷翔平選手の試合を現地観戦してきました！
+
+チケットを勝ち取ってくれた奥さんには本当に大感謝！！！😭 https://t.co/ZhGkBmuabO</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/komachi_bipolar/status/2030831479383798100" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@f20_ku（ふく）- Mon Mar 09 02:21:36 +0000 2026</div>
+                <div class="tweet-text">ただの外野フライでもフォロースルーの形が美しい( ˙꒳​˙  )
+
+#大谷翔平 #WBC #侍ジャパン #dodgers #lovefighters https://t.co/sZblWZY6lB</div>
+                <div class="tweet-stats">❤ 0　🔄 1　
+                    <a href="https://x.com/f20_ku/status/2030831338044211426" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sumire0053（スミレ＠アニメ・マンガ好き😊WBC⚾大谷翔平選手のホームラン観たい✨）- Mon Mar 09 02:21:29 +0000 2026</div>
+                <div class="tweet-text">マンガ読み始めたら止まらないオタクあるある</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sumire0053/status/2030831306427531729" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@bOOa6yVEhV18Xid（Damdon だむどん）- Mon Mar 09 02:21:11 +0000 2026</div>
+                <div class="tweet-text">チェコ戦は大谷翔平、鈴木誠也、吉田正尚の3人はベンチ外で休ませた方がいいんじゃない？🤔</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/bOOa6yVEhV18Xid/status/2030831231986970818" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@SatoruNadaguchi（灘口 悟）- Mon Mar 09 02:20:50 +0000 2026</div>
+                <div class="tweet-text">アメブロを投稿しました。
+『成功者は“数字”を無意識に使っていた ― 1〜100の数字が持つ意味とは何か Kindle本』
+#徳川家康
+#織田信長
+#イチロー
+#大谷翔平
+#数秘術
+#無料キャンペーン
+#アメブロ
+#数字の意味 https://t.co/2t5b1iFjNk</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/SatoruNadaguchi/status/2030831142518378561" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Brainpapa7（えんため@iPhone 16欲しい！在庫復活で買えた。大谷翔平 山本由伸のドジャース応援！）- Mon Mar 09 02:20:48 +0000 2026</div>
+                <div class="tweet-text">ここまで仕上がったZZ、そうそう無い。
+MG フルアーマーZZ Ver.Ka
+https://t.co/dyKjY4wR7j
+-1-22
+
+情報量、色分け、プロポーション。
+1/100でこの密度は反則級。完成後の存在感が“作品”になる一体。
+
+ガンプラ再販 在庫復活
+#PR 03/09 11:20</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Brainpapa7/status/2030831135715135977" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@WorkoutRest（Workout&Rest）- Mon Mar 09 02:20:12 +0000 2026</div>
+                <div class="tweet-text">"ＷＢＣ生観戦の牧野真莉愛、大谷翔平のバッティング練習に「ギューンと曲がっていく」と驚き　８強進出「マイアミに行かなきゃ！」" - スポーツ報知 #SmartNews  https://t.co/ApXeHbaKOq</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/WorkoutRest/status/2030830986209178087" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@fumitoproad（リアルシティーボーイ　ダボハゼ　リトル上原ふみ　神戸を元気に）- Mon Mar 09 02:20:05 +0000 2026</div>
+                <div class="tweet-text">@sato_zatsugaku エースは由伸やろ。ってのはさておき、今や世界中が憧れるレベルの実績の大谷翔平。人間性も素晴らしい。しってたけどw</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/fumitoproad/status/2030830955620151458" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 09 02:19:43 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: WBC 侍ジャパン 2026大谷翔平レプリカユニフォーム Lサイズ ホーム
+
+販売価格: 12000円
+
+https://t.co/dzkVfuPT4W</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2030830864649912671" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sky_ecad（ecad）- Mon Mar 09 02:19:24 +0000 2026</div>
+                <div class="tweet-text">うっそー!
+
+Sports Graphic Number 「大谷翔平 4つのNumber1」 2025年 1/16号
+が販売中
+
+https://t.co/XPVl3apFMW
+
+［スペシャルインタビュー］
+大谷翔平
+「まだ伸びしろは残っているなと」
+
+#PR #大谷翔平  03/09 11:18時点</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sky_ecad/status/2030830785599606947" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kamiya_agari（ちくわ⤴）- Mon Mar 09 02:18:59 +0000 2026</div>
+                <div class="tweet-text">大谷翔平のおにぎりもう売ってないのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kamiya_agari/status/2030830678443753864" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@SportsHochi（スポーツ報知）- Mon Mar 09 02:18:40 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、ＷＢＣ１位通過決定翌日に愛犬デコピンの最新姿を公開　破壊された２体のぬいぐるみとの“反省ショット”
+#大谷翔平 #ShoheiOhtani
+記事はこちら▼
+https://t.co/kU2sUvwniP</div>
+                <div class="tweet-stats">❤ 4　🔄 0　
+                    <a href="https://x.com/SportsHochi/status/2030830597904482321" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@pipi_san2200（ピピ＠スポーツ観戦とマンガが趣味です🏀⚽🏎世界で活躍する河村勇輝選手・大谷翔平応援！）- Mon Mar 09 02:18:28 +0000 2026</div>
+                <div class="tweet-text">今夜は新しい料理本でレシピを探し中📚明日は何作ろうか考えるの迷っちゃう！</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/pipi_san2200/status/2030830549905145989" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ooootanisanmmm（ちゃんこ鍋）- Mon Mar 09 02:18:17 +0000 2026</div>
+                <div class="tweet-text">デコピンさん猟奇的事件おこしてる
+
+Via 大谷翔平ストーリー https://t.co/icMqWcLox8</div>
+                <div class="tweet-stats">❤ 6　🔄 1　
+                    <a href="https://x.com/ooootanisanmmm/status/2030830500970115576" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@roku998（ロク＠大谷翔平選手応援⚾新型iPhone17欲しい📱）- Mon Mar 09 02:18:13 +0000 2026</div>
+                <div class="tweet-text">晩ご飯作りの前に推しに「お疲れ」って言われる妄想で元気出す</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/roku998/status/2030830486290120711" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@planetstarbacks（マルコメ）- Mon Mar 09 02:17:44 +0000 2026</div>
+                <div class="tweet-text">これ大谷翔平と鈴木誠也がちゃんとした姿勢で拍手もしてるのが対比で余計に村上の非常識さが目立ってる
+しかしここまで教養のない奴だと思わなかった</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/planetstarbacks/status/2030830362281279865" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ayl9ydrr（明日はS高）- Mon Mar 09 02:17:29 +0000 2026</div>
+                <div class="tweet-text">「スゲー弾道」に衝撃　鈴木誠也が“お茶立て”新パフォ披露の特大弾に「やはり神ってる」同級生・大谷翔平も笑顔【侍ジャパン】(CoCoKARAnext)
+https://t.co/X4l5bqDLL1</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ayl9ydrr/status/2030830299538678266" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@l3b5ka（#投資初心者）- Mon Mar 09 02:17:28 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の背後…「世界にバレるぞ」　「 声で分かるw」人物にファン騒然【侍ジャパン】(CoCoKARAnext)
+https://t.co/EK9eIDUbge</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/l3b5ka/status/2030830297831641262" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Sidikq3（増田有華🕊️）- Mon Mar 09 02:17:12 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています。
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】2.8 交渉🙆‍♀️
+
+お探しの方DMにて対応するのでよろしくお願いします。
+良席の為空けたくないです😭😭
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #WBC侍ジャパン！</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Sidikq3/status/2030830231217443101" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@fc7av（Office）- Mon Mar 09 02:17:02 +0000 2026</div>
+                <div class="tweet-text">@exo_ichizoku 日本。ここ数日トップニュースは大谷翔平WBC野球のニュースで大盛り上がりです．</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/fc7av/status/2030830189610152033" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@waremokouko1（木村紅美）- Mon Mar 09 02:16:58 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の出身地の市長　立憲系が当選</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/waremokouko1/status/2030830173009183176" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ye_fugat（専業主婦が株をやると）- Mon Mar 09 02:16:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の登場で「静かだったファン」が一変…移動中の光景に米メディアも注目「まさにスーパースターだ」と海外反響(CoCoKARAnext)
+https://t.co/ZhF2LrJraD</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ye_fugat/status/2030830019854180585" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@roku998（ロク＠大谷翔平選手応援⚾新型iPhone17欲しい📱）- Mon Mar 09 02:16:12 +0000 2026</div>
+                <div class="tweet-text">うわ…これは胸アツ案件⚡️
+
+ポケットモンスター ポケモン30周年記念
+おかえり！ピカチュウ1/1
+
+Amazon〈PR〉
+https://t.co/I5rYte3jn5
+
+“まだモンスターだった”1997年版復刻✨
+
+早く定価に戻って欲しい💦
+
+#ポケモン30周年 #ポケモン</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/roku998/status/2030829979282690351" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@Kamemi_jp（かめみKamemi🥃🍱）- Mon Mar 09 02:16:07 +0000 2026</div>
+                <div class="tweet-text">@ranran8691 大谷翔平さん、素敵ですね☺️</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Kamemi_jp/status/2030829956318859410" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@cosa02012566043（cosa）- Mon Mar 09 02:16:03 +0000 2026</div>
+                <div class="tweet-text">「2番・DH」大谷翔平は3打席無安打…内川聖一氏「ほんの少しの差というところ」　オリックスに1点差負け【侍ジャパン】(CoCoKARAnext)
+https://t.co/1yyUetn03T</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/cosa02012566043/status/2030829941827449301" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@JGBGOLDMAN（JGB）- Mon Mar 09 02:16:00 +0000 2026</div>
+                <div class="tweet-text">WBC 日本代表 決勝ラウンド進出おめでとう
+大谷翔平 鈴木誠也 吉田正尚 
+この3人とその他選手の成績
+　　　3人　　その他
+打率　.464       .197
+打点　　17          8
+出塁率 .615       .355
+長打率 1.179      .213
+OPS     1.794     .568
+村上宗隆　岡本一真 もっと頑張れ
+@WBCBaseball 
+#shohei https://t.co/Z39ZBHws1r</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/JGBGOLDMAN/status/2030829929806663862" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@cypress_7377（サンダルウッド@大谷翔平の応援中📢鬼滅の刃/忍たま乱が好きでSwitch2の発売日楽しみなOL✨）- Mon Mar 09 02:15:57 +0000 2026</div>
+                <div class="tweet-text">明日のプレゼン、成功しますように
+
+この資料、締め切りまであと少し！集中しなきゃ。
+
+最近思うんだけど雨の日も嫌いじゃない。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/cypress_7377/status/2030829916489650331" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@jintaaksk（ジン）- Mon Mar 09 02:15:54 +0000 2026</div>
+                <div class="tweet-text">ヤバッ
+
+Sports Graphic Number
+「SHOHEI OHTANI 2025　大谷翔平 連覇を語る。」 1134・1135号
+
+Amazonで販売中
+👉https://t.co/AJw6QO8kOn
+
+投げて、打った、怒濤のシーズン総決算！
+クレイトン・カーショウの話も
+
+#ad #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jintaaksk/status/2030829902048690609" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Fullcountc2（Full-Count フルカウント）- Mon Mar 09 02:15:49 +0000 2026</div>
+                <div class="tweet-text">侍Jに“安心感”が漂っていなかったか　大谷翔平の第1打席に感じた異変、推察する3つの理由｜解説者の眼 
+#侍ジャパン
+https://t.co/1zVWfLGU3E</div>
+                <div class="tweet-stats">❤ 8　🔄 0　
+                    <a href="https://x.com/Fullcountc2/status/2030829882389811290" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@mh6422（ぐっちー@ iphone 大谷翔平 ちいかわ Number_i SnowMan 😆あんぱん X）- Mon Mar 09 02:15:48 +0000 2026</div>
+                <div class="tweet-text">ローソンとミニストップは近くにありますか？🏪</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/mh6422/status/2030829877574971778" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@rtxythWY9KrMiqs（たぁぼぅ）- Mon Mar 09 02:15:37 +0000 2026</div>
+                <div class="tweet-text">#野球ファン だけど
+自分の応援してるチームからは
+一人しか
+#侍JAPAN に選ばれてないから
+そのために
+#Netflix に入ろうとは思わない。
+
+って言ってる人がいた。
+
+代表チームだから応援する
+じゃないんですね。
+#大谷翔平 出るから見る
+って多いのかな。
+
+＃スポーツ観戦 って
+結局なんなんだろう？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/rtxythWY9KrMiqs/status/2030829829608927678" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@dullesbag_1874（GINZA TANIZAWA 五代目店主）- Mon Mar 09 02:15:36 +0000 2026</div>
+                <div class="tweet-text">@cocopii48 きっと大谷翔平選手が使用している道具も熟練の職人さんたちが支えてると思います。日本一丸となって戦ってますね。</div>
+                <div class="tweet-stats">❤ 5　🔄 1　
+                    <a href="https://x.com/dullesbag_1874/status/2030829826232434966" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@dementor_1212（ヘル・リスワン）- Mon Mar 09 02:15:27 +0000 2026</div>
+                <div class="tweet-text">@chan_calimero 日本の侍、大谷翔平。ランキング2位だったにもかかわらず、彼の技術と正確さは比類のないものでした。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/dementor_1212/status/2030829788982878591" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hochi_baseball（スポーツ報知 プロ野球取材班）- Mon Mar 09 02:15:24 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、ＷＢＣ１位通過決定翌日に愛犬デコピンの最新姿を公開　破壊された２体のぬいぐるみとの“反省ショット”
+#大谷翔平 #ShoheiOhtani
+https://t.co/q01II9QBQf</div>
+                <div class="tweet-stats">❤ 4　🔄 1　
+                    <a href="https://x.com/hochi_baseball/status/2030829775435059446" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Lalettre_CaT（大橋とおる）- Mon Mar 09 02:15:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平選手がCM出演中のファミマ「新生、おむすびJAPAN。」もう食べましたか？
+
+今日まで2個買うと合計金額から45円引きに😁
+明日からは、おむすび1個とファミチキの組み合わせで100円引き✨
+
+どちらも冷凍食品を除くおむすび全品が対象です
+https://t.co/2RkZuocXNB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Lalettre_CaT/status/2030829718535328249" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@za010405861（🐶🐱 マロン 🐱🐶）- Mon Mar 09 02:14:50 +0000 2026</div>
+                <div class="tweet-text">大谷翔平選手，鈴木誠也選手が
+人気のある理由が分かります。
+キチンとした礼儀を知っている
+日本の鏡，サムライ！！！
+天皇陛下のご退席に腕組みしてとは‥
+村上宗隆選手は日本の恥
+観てて恥ずかしいですね</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/za010405861/status/2030829634267525504" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@tigerschannel72（阪神タイガースチャンネル）- Mon Mar 09 02:14:42 +0000 2026</div>
+                <div class="tweet-text">0:14の大谷翔平さん、これマジでやばいだろ・・・
+
+https://t.co/It0eBOkgDY</div>
+                <div class="tweet-stats">❤ 7　🔄 0　
+                    <a href="https://x.com/tigerschannel72/status/2030829600729956472" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Sidikq3（増田有華🕊️）- Mon Mar 09 02:14:25 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています😭
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】定価
+
+お探しの方DMにて対応するのでよろしくお願いします🙇🤲
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #pp</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Sidikq3/status/2030829530328207644" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@shoujihayashi（決戦は日曜日！）- Mon Mar 09 02:13:56 +0000 2026</div>
+                <div class="tweet-text">#大谷翔平　WBC通算打撃成績(10試合)
+46打席32打数15安打　AVG.469 
+3本塁打14打点13得点29塁打14四球1盗塁
+出塁率.630　長打率.906　OPS1.537
+@WBCBaseball
+#WorldBaseballClassic
+#侍JAPAN
+https://t.co/nOaZ1VxyQ7</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shoujihayashi/status/2030829408492339613" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@bay6k26（ふく）- Mon Mar 09 02:13:44 +0000 2026</div>
+                <div class="tweet-text">この日はノーヒットだったけれどもバッティング練習では看板越え照明近辺弾とかもあってやっぱり凄いなぁと🫠
+
+#大谷翔平 #WBC #侍ジャパン #Dodgers #lovefighters https://t.co/SKK1sbpKoP</div>
+                <div class="tweet-stats">❤ 3　🔄 1　
+                    <a href="https://x.com/bay6k26/status/2030829357779095680" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@SportsHochi（スポーツ報知）- Mon Mar 09 02:13:34 +0000 2026</div>
+                <div class="tweet-text">「どうですか？って言われても…」…大谷翔平「活躍」を「どうですか？」と質問され「サン！シャイン」松井稼頭央氏が苦笑「異次元です」
+https://t.co/uta6Nn02l6</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/SportsHochi/status/2030829317156974867" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@OnesimusMutuma（서연🦋）- Mon Mar 09 02:13:08 +0000 2026</div>
+                <div class="tweet-text">WBCチケット
+お譲り先探しています😭
+
+【譲】3/9  
+3/10 チェコvs日本 SS席2枚1塁側
+
+【求】定価
+
+お探しの方DMにて対応するのでよろしくお願いします。
+#WBCチケット #WBC #侍ジャパン #大谷翔平 #WBC譲 #pp.</div>
+                <div class="tweet-stats">❤ 0　🔄 1　
+                    <a href="https://x.com/OnesimusMutuma/status/2030829206645739652" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@mizo_kei（kei mizo）- Mon Mar 09 02:12:50 +0000 2026</div>
+                <div class="tweet-text">@30R9gmaMUy3guDJ こういう気遣いのできる人なのよね、翔平さんは…😊
+しかもさり気なくサラッと💕
+#大谷翔平　＃多くの人に愛される理由</div>
+                <div class="tweet-stats">❤ 1　🔄 1　
+                    <a href="https://x.com/mizo_kei/status/2030829129369813036" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@x7010x（🇯🇵京都・長島直人(えりあマックス)）- Mon Mar 09 02:12:31 +0000 2026</div>
+                <div class="tweet-text">おはようございます #おは戦 ジャパン #オリックス・バファローズ 山本由伸 #宮城 #宮城大弥 #佐々木朗希 #大谷翔平 #大谷ホームラン #Dodgers #X #M #日本 #JAPAN #DJ #阪神 #巨人 #冬 #明日 #明日 #雪合戦 #アナと雪の女王 #ラブジェネレーション #幸せの結末 #RISERCONCERTD2 #paobc #INDvPAK 吉田</div>
+                <div class="tweet-stats">❤ 0　🔄 1　
+                    <a href="https://x.com/x7010x/status/2030829049959100680" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@HoTaiken91349（投資法や体験談）- Mon Mar 09 02:12:27 +0000 2026</div>
+                <div class="tweet-text">侍J大谷翔平は何番を打つべきか　捕手併用制で9番固定できず…鍵は「天才」の復調か(Full-Count)
+https://t.co/XnteJzrLbU</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/HoTaiken91349/status/2030829035312603219" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 09 02:12:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: スケータージョン MLB 東京シリーズ ドジャース 大谷　翔平　キーホルダー
+
+販売価格: 1999円
+
+https://t.co/zffkZnKsCP</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2030829030778515852" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@x7010x（🇯🇵京都・長島直人(えりあマックス)）- Mon Mar 09 02:12:17 +0000 2026</div>
+                <div class="tweet-text">おはようございます #おは戦 ジャパン #オリックス・バファローズ 山本由伸 #宮城 #宮城大弥 #佐々木朗希 #大谷翔平 #大谷ホームラン #Dodgers #X #M #日本 #JAPAN #DJ #阪神 #巨人 #冬 #明日 #明日 #雪合戦 #アナと雪の女王 #ラブジェネレーション #幸せの結末 #RISERCONCERTD2 #paobc #INDvPAK 吉田</div>
+                <div class="tweet-stats">❤ 0　🔄 1　
+                    <a href="https://x.com/x7010x/status/2030828993252110563" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@baseballpost_jp（ベースボールポスト｜最新の野球ニュース）- Mon Mar 09 02:12:11 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、デコピンの最新姿を公開　破壊されたぬいぐるみを前に“反省”
+#大谷翔平 #shoheiohtani #ベースボールポスト
+記事はこちら▼
+https://t.co/tyHRoGo45s</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/baseballpost_jp/status/2030828967792455879" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@x7010x（🇯🇵京都・長島直人(えりあマックス)）- Mon Mar 09 02:12:09 +0000 2026</div>
+                <div class="tweet-text">おはようございます #おは戦 ジャパン #オリックス・バファローズ 山本由伸 #宮城 #宮城大弥 #佐々木朗希 #大谷翔平 #大谷ホームラン #Dodgers #X #M #日本 #JAPAN #DJ #阪神 #巨人 #冬 #明日 #明日 #雪合戦 #アナと雪の女王 #ラブジェネレーション #幸せの結末 #RISERCONCERTD2 #paobc #INDvPAK 吉田</div>
+                <div class="tweet-stats">❤ 1　🔄 1　
+                    <a href="https://x.com/x7010x/status/2030828958212866350" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@1234567takayuki（ミスターたかゆき（プリキュア・兎苺むめ・おじさん芸人大好き😍💓💓😍））- Mon Mar 09 02:12:05 +0000 2026</div>
+                <div class="tweet-text">@d97498206 
+大谷翔平&amp;MLB情報速報さん、はじめまして。たかゆきと申します。
+フォローありがとうございます。
+フォロバをしました。今後も宜しくお願いします😊</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/1234567takayuki/status/2030828943826354472" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@formatsusaka（急行 松阪行）- Mon Mar 09 02:12:04 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、デコピンの最新姿を公開　破壊されたぬいぐるみを前に“反省”（スポーツ報知）
+#Yahooニュース
+https://t.co/rNZeKjKEuh</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/formatsusaka/status/2030828938822578687" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@x7010x（🇯🇵京都・長島直人(えりあマックス)）- Mon Mar 09 02:12:00 +0000 2026</div>
+                <div class="tweet-text">おはようございます #おは戦 ジャパン #オリックス・バファローズ 山本由伸 #宮城 #宮城大弥 #佐々木朗希 #大谷翔平 #大谷ホームラン #Dodgers #X #M #日本 #JAPAN #DJ #阪神 #巨人 #冬 #明日 #明日 #雪合戦 #アナと雪の女王 #ラブジェネレーション #幸せの結末 #RISERCONCERTD2 #paobc #INDvPAK 吉田</div>
+                <div class="tweet-stats">❤ 0　🔄 1　
+                    <a href="https://x.com/x7010x/status/2030828920103489928" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@sCLxOBxQf26mGrd（S🤓S）- Mon Mar 09 02:11:41 +0000 2026</div>
+                <div class="tweet-text">@yu_1_linda99 メジャーリーグ、ドジャースでのチームを支えるスタッフとしての活躍、大谷翔平君の通訳並びに支援する姿に感動してます。今後共に活躍に期待してます。
+頑張って下さい。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sCLxOBxQf26mGrd/status/2030828839786717424" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@SurajUpadh35531（Suraj Upadhyay）- Mon Mar 09 02:11:29 +0000 2026</div>
+                <div class="tweet-text">@30R9gmaMUy3guDJ 「自分が主役なのに、出てない選手を主役にするのが大谷翔平。ほんと出来すぎた主人公。」</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/SurajUpadh35531/status/2030828789958353119" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@N1ogfaykG（🧡津島　豊秋🗾）- Mon Mar 09 02:11:28 +0000 2026</div>
+                <div class="tweet-text">@urbats8 私はもう大谷翔平さんが31歳なのにビックリしてます。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/N1ogfaykG/status/2030828789283127534" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ABDULMNEM8（عبد المنعم الفقيه）- Mon Mar 09 02:11:24 +0000 2026</div>
+                <div class="tweet-text">侍ジャパンの試合はいつ見ても熱い！世界レベルのプレーに本当にワクワクする。日本代表、頑張れ！⚾🔥
+#WBC #侍ジャパン #野球 #大谷翔平 #日本代表 #スポーツ #トレンド #話題 🇯🇵
+
+#WBC侍ジャパン</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/ABDULMNEM8/status/2030828772442988799" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kksn2k2k（赫神藩）- Mon Mar 09 02:11:22 +0000 2026</div>
+                <div class="tweet-text">僕は息ができないよ
+助けて、助けてくれ
+#大谷翔平 https://t.co/xMcpxMThUS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kksn2k2k/status/2030828760765956195" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sugi_moira（Moira「21世紀はグローバル市民の時代」）- Mon Mar 09 02:11:14 +0000 2026</div>
+                <div class="tweet-text">WBC天覧試合で日本中が涙 愛子さまが髪をバッサリ切られた感動の理由とボブ姿初披露の裏側　#愛子さま #天皇陛下 #大谷翔平 https://t.co/hdrdO9vLw6 @YouTubeより</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sugi_moira/status/2030828727895204154" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@c4tEflr3QX3BCBs（ナベヒデ@N-ONE）- Mon Mar 02 02:21:26 +0000 2026</div>
+                <div class="tweet-text">@seven_0110jp 大谷翔平選手以外誰やら分からん言う人いそうです。
+
+話が逸れますが、広島では「カープからは鈴木誠也選手と小園海斗選手が選ばれてます！」と報じてますがオカシイのでは？
+鈴木選手に失礼ちゃう😟❓</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/c4tEflr3QX3BCBs/status/2028294582140797395" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@wintergreen117（ふゆみのいいなイイナ｜Kindleセール）- Mon Mar 02 02:30:25 +0000 2026</div>
+                <div class="tweet-text">＼ついに来た⚾📖／
+大谷翔平 絵本デビュー🎉
+
+デコピンのとくべつないちにち
+📅 2/20発売
+
+👉https://t.co/lUc3S6RxD5
+始球式前のハラハラ展開。
+
+✔️ほっこりできる物語
+✔️売上の一部を寄付
+
+これは絶対チェックするやつ💓
+
+PR 大谷選手 #大谷翔平</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/wintergreen117/status/2028296839590805797" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@8605TOKILINE（朱鷺Max）- Mon Mar 02 02:30:18 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さんに
+人権はないのだろうか
+あとこんだけ店に押しかけるのは迷惑だろ</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/8605TOKILINE/status/2028296811543470435" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@syotatenanyanen（タヌ）- Mon Mar 02 02:29:53 +0000 2026</div>
+                <div class="tweet-text">すぐ購入できたのはいいけどほんと大谷くんグッズだらけ😫
+大谷しかないやん。の声どれだけ聞こえたか💦大谷グッズは3年前にこの量用意しときなよ
+森下翔太と大谷翔平の翔の漢字同じやから、森下くんと思って手に取り「大谷やん！」と言ってる人何人か見た
+初選出の若月曽谷グッズ全く見ず</div>
+                <div class="tweet-stats">❤ 1　🔄 0　
+                    <a href="https://x.com/syotatenanyanen/status/2028296707910566106" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:28:46 +0000 2026</div>
+                <div class="tweet-text">大谷翔平　ＭＬＢネットワークが今季の大胆予想　ＭＶＰとサイ・ヤング賞同時受賞｜東スポWEB https://t.co/X53NBEk4vu</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/tospo_prores/status/2028296425801707804" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@junji_nakano06（なかの じゅんじ）- Mon Mar 02 02:28:10 +0000 2026</div>
+                <div class="tweet-text">大谷翔平、侍ジャパン“決起集会”を報告→まさかの文字に「イタズラ感あって好きw」「流石です」（ねとらぼ） https://t.co/jLTCuPHGQY</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junji_nakano06/status/2028296275750498771" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:27:38 +0000 2026</div>
+                <div class="tweet-text">大谷のWBCユニT、Lサイズあるじゃん！着たら絶対カッコいいのに〜羨ましすぎるわ😭
+
+大谷翔平 WBC 日本代表 Tシャツ
+https://t.co/kin6EPS52m</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028296138693243049" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hazime_u（内山 大 | Uchiyama Hazime）- Mon Mar 02 02:27:34 +0000 2026</div>
+                <div class="tweet-text">コナンともメジャーとも異なる画風でも仄かに作家性は残っている
+モデルの大谷翔平を最大限に活かしながらも我も僅かに出てしまう
+流石
+
+ともかく、さらば首都圏
+次はいつになることやら https://t.co/JIDUTzl1Ey</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hazime_u/status/2028296125753803062" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@amaTeaseFit42（魅@フィットネスボイス）- Mon Mar 02 02:26:57 +0000 2026</div>
+                <div class="tweet-text">大谷の16番キーホルダー可愛すぎてヤバい…僕も欲しいじゃんかよ～！えへへ
+
+新品タグ付き WBC new era ニューエラ キーホルダー 大谷翔平16
+https://t.co/8RYVO5rjJu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/amaTeaseFit42/status/2028295968483848698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:26:53 +0000 2026</div>
+                <div class="tweet-text">大谷のルーキーカード見つけた…日ハム時代とかもうレアすぎて震えるわ😭
+
+大谷翔平 ベースボールヒーローズ コナミ 2014
+https://t.co/ZncIvuRmAS</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028295951639527805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@sportslike214（スポーツ速報）- Mon Mar 02 02:26:42 +0000 2026</div>
+                <div class="tweet-text">【PR】
+📘“記録”じゃ語れない、“感動”の一年📘
+『SLUGGER増刊 大谷翔平2025総集編』
+
+▼Amazon▼
+https://t.co/LfqpVOqfsF　
+
+翔平のすべてを刻む永久保存版。
+野球を超えた、ひとり男の物語⚾
+
+オオタニサン ドジャース MLB</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/sportslike214/status/2028295906261340281" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@Janith803444278（野球選手グッズ情報！）- Mon Mar 02 02:26:26 +0000 2026</div>
+                <div class="tweet-text">【メルカリに出品されている商品を紹介！】PR
+
+商品名: 大谷翔平 ロサンゼルス・エンゼルス Tシャツ
+
+販売価格: 2200円
+
+https://t.co/459woqcILT</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Janith803444278/status/2028295839656124466" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaiko7772（イヨ＠２匹目）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">@al_baseball_726 １６両以上とは凄いですね！
+大谷翔平の年収がすごいのか</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaiko7772/status/2028295821683458376" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hare542（🕊Yuri）- Mon Mar 02 02:26:22 +0000 2026</div>
+                <div class="tweet-text">大谷翔平は好きな選手ではあるが、今正直ゆうて一挙手一投足のお知らせいらんし
+世界情勢や、この国のことの方が知りたいです　どこしつこく取材しどんねんもっとメディアはしつこく取材して国民にお知らせできることあるやろ</div>
+                <div class="tweet-stats">❤ 2　🔄 0　
+                    <a href="https://x.com/hare542/status/2028295820311965889" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shonanmanabiya（フルハシ ヤストシ（湘南読書教室））- Mon Mar 02 02:24:26 +0000 2026</div>
+                <div class="tweet-text">米国で実戦を重ねていた村上宗隆が合流し、フリー打撃では5階席への推定140メートル弾2発を含む8本の柵越え！/
+
+村上宗隆、大谷翔平バットで5階弾　2日出場へ！！侍ジャパン合流即猛デモ　吉田正尚、大谷、近藤健介の前でドヤッ衝撃フリー打撃（サンケイスポーツ） https://t.co/74KPjGtnPu</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shonanmanabiya/status/2028295336272539816" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@So_yutaka_deep（蒼）- Mon Mar 02 02:23:53 +0000 2026</div>
+                <div class="tweet-text">NPBファン、世間一般では野球選手の顔と名前なんて大谷翔平以外まるで知られていないという事実に全然気づいてないよな</div>
+                <div class="tweet-stats">❤ 17　🔄 1　
+                    <a href="https://x.com/So_yutaka_deep/status/2028295196690317535" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaU6ALbEDP1070（ジョージ）- Mon Mar 02 02:22:41 +0000 2026</div>
+                <div class="tweet-text">大谷翔平の最近の映像見ると、マスコミとかファンとか露骨にうざがってる</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaU6ALbEDP1070/status/2028294895182737805" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@yakitommy（とみぃ(noob)）- Mon Mar 02 02:22:33 +0000 2026</div>
+                <div class="tweet-text">大谷翔平さん髪伸びたよね…？</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yakitommy/status/2028294861259194530" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DePlOyMeNtFgH1j（りな / 大谷翔平選手ファン）- Mon Mar 02 02:22:00 +0000 2026</div>
+                <div class="tweet-text">え大谷のオーセンティック2着セット新品って…欲しいんだけど金ないわー！誰か買ってくれない？😭
+
+新品 日本代表オーセンティックユニフォーム 2着セット、大谷翔平、サイズO
+https://t.co/0H02Qmuy8B</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DePlOyMeNtFgH1j/status/2028294721060446647" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xiKxGOs7E57j（ゆいのトリックフォト）- Mon Mar 02 02:21:52 +0000 2026</div>
+                <div class="tweet-text">え大谷の花巻東時代の直筆サインって…同級生からってマジ羨ましすぎるんだけど😭
+
+【花巻東高校】大谷翔平 直筆サイン サイン色紙 日本ハム ドジャース
+https://t.co/TSQhxy5ORG</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xiKxGOs7E57j/status/2028294689615441968" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tospo_prores（東スポ）- Mon Mar 02 02:21:34 +0000 2026</div>
+                <div class="tweet-text">【#侍ジャパン】大谷翔平に次ぐ警戒度！　宿敵・韓国＆台湾メディアが挙げた野手の〝ダークホース〟｜東スポWEB https://t.co/iXJqafCTBV</div>
+                <div class="tweet-stats">❤ 5　🔄 2　
+                    <a href="https://x.com/tospo_prores/status/2028294612918669742" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">X有名人モニタリングシステム - 自動生成</div>
+</div>
+
+<script>
+function filterTweets(tid, sentiment, btn) {
+    const container = document.getElementById('tweets-' + tid);
+    const items = container.querySelectorAll('.tweet-item');
+    items.forEach(item => {
+        item.style.display = (sentiment === 'all' || item.dataset.sentiment === sentiment) ? '' : 'none';
+    });
+    btn.closest('.filter-bar').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+</script>
+</body>
+</html>
