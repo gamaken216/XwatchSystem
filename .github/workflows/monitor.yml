@@ -49,7 +49,9 @@ jobs:
 
       # 依存ライブラリのインストール
       - name: 依存ライブラリのインストール
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
 
       # 日次レポート実行（スケジュール または 手動でdaily選択）
       - name: 日次レポート実行
