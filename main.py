@@ -202,6 +202,16 @@ def main():
             env = os.environ.copy()
             env["GIT_ASKPASS"] = "echo"
             env["GIT_TERMINAL_PROMPT"] = "0"
+
+            # GitHub Actions環境ではGITHUB_TOKENで認証
+            github_token = os.environ.get("GITHUB_TOKEN")
+            if github_token:
+                subprocess.run(
+                    ["git", "-C", script_dir, "remote", "set-url", "origin",
+                     f"https://x-access-token:{github_token}@github.com/gamaken216/XwatchSystem.git"],
+                    check=True, env=env, capture_output=True
+                )
+
             subprocess.run(["git", "-C", script_dir, "add", "docs/"], check=True, env=env)
             result = subprocess.run(
                 ["git", "-C", script_dir, "commit", "-m", f"レポート自動更新 {datetime.now().strftime('%Y-%m-%d')}"],
