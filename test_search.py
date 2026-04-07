@@ -1,24 +1,40 @@
 import asyncio
 import json
-from twikit import Client
+from playwright.async_api import async_playwright
+
 
 async def test():
-    with open('../x_summary2/settings.json', encoding='utf-8') as f:
+    with open('../x-summary2/settings.json', encoding='utf-8') as f:
         s = json.load(f)
-    client = Client('ja-JP')
-    client.set_cookies(s['x_cookies'])
-    print("アカウントのツイートを直接取得...")
-    try:
-        # ユーザーを取得
-        user = await client.get_user_by_screen_name('Shohei_Ohtani17')
-        print(f"ユーザー取得: {user.name}")
-        tweets = await user.get_tweets('Tweets', count=5)
+    cookies = s['x_cookies']
+
+    print("Playwright で検索テスト...")
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+            locale="ja-JP",
+        )
+        cookie_list = []
+        for name in ("auth_token", "ct0", "twid"):
+            value = cookies.get(name, "")
+            if value:
+                cookie_list.append({"name": name, "value": value, "domain": ".x.com", "path": "/", "secure": True, "httpOnly": True})
+        await context.add_cookies(cookie_list)
+
+        page = await context.new_page()
+        await page.goto("https://x.com/Shohei_Ohtani17", wait_until="domcontentloaded", timeout=30000)
+        await page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
+
+        tweets = await page.query_selector_all('article[data-testid="tweet"]')
         count = 0
-        for t in tweets:
-            print(f"[{count+1}] {t.text[:60]}")
+        for article in tweets[:5]:
+            text_el = await article.query_selector('[data-testid="tweetText"]')
+            text = await text_el.inner_text() if text_el else "(no text)"
             count += 1
+            print(f"[{count}] {text[:60]}")
+
         print(f"\n合計 {count} 件取得")
-    except Exception as e:
-        print(f"エラー: {e}")
+        await browser.close()
 
 asyncio.run(test())

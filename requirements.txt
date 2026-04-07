@@ -1,2 +1,2 @@
-twikit>=2.3.3
+playwright
 google-genai
