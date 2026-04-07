@@ -6,13 +6,11 @@ twikitを使ってキーワード検索でツイートを取得する。
 import asyncio
 import json
 import os
-import time
 from datetime import datetime, timedelta
 from twikit import Client
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "data")
-
 
 
 def load_targets():
@@ -93,18 +91,28 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
 
 
 def remove_duplicates(tweets, history_file):
-    """過去に取得済みのツイートを除外する"""
+    """
+    同日内の重複実行時のみツイートを除外する。
+    historyファイルに「今日の日付」が記録されていれば引き続き使用し、
+    日付が変わっていれば（=翌日の実行）リセットして全件新規扱いにする。
+    """
+    today = datetime.now().strftime("%Y-%m-%d")
     seen_ids = set()
+
     if os.path.exists(history_file):
         with open(history_file, "r", encoding="utf-8") as f:
-            seen_ids = set(json.load(f))
+            data = json.load(f)
+        # 今日のデータがあれば引き継ぐ、古ければリセット
+        if data.get("date") == today:
+            seen_ids = set(data.get("ids", []))
+        # 日付が違う場合はseen_idsは空のまま（全件新規扱い）
 
     new_tweets = [t for t in tweets if t["id"] not in seen_ids]
 
-    # 履歴を更新
+    # 履歴を更新（今日の日付とIDを保存）
     seen_ids.update(t["id"] for t in new_tweets)
     with open(history_file, "w", encoding="utf-8") as f:
-        json.dump(list(seen_ids), f)
+        json.dump({"date": today, "ids": list(seen_ids)}, f)
 
     return new_tweets
 
