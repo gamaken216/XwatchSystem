@@ -431,15 +431,12 @@
 
   <!-- targets.json 読み込みバナー -->
   <div id="load-banner" style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
-    <div style="font-size:13px;color:#92400e;">
-      📂 <strong>起動時は必ずここから読み込んでください</strong>　—　リフレッシュすると編集内容がリセットされます
+    <div id="load-banner-msg" style="font-size:13px;color:#92400e;">
+      📂 <strong>targets.json を選択してください</strong>　—　一度選ぶと保存も同じファイルに直接上書きされます
     </div>
-    <label style="cursor:pointer;margin:0;">
-      <input type="file" id="json-file-input" accept=".json" style="display:none;" onchange="loadFromFile(event)">
-      <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fd4,#0ea5e9);color:white;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;">
-        📂 targets.json を開く
-      </span>
-    </label>
+    <button onclick="openFile()" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fd4,#0ea5e9);color:white;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;border:none;">
+      📂 targets.json を開く
+    </button>
   </div>
 
   <div class="tabs">
@@ -669,26 +666,44 @@
     }
   ];
 
-  function loadFromFile(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        const data = JSON.parse(e.target.result);
-        if (!data.targets || !Array.isArray(data.targets)) throw new Error('targets配列が見つかりません');
-        targets = data.targets;
-        renderList(); renderJSON();
-        document.getElementById('load-banner').style.background = '#f0fdf9';
-        document.getElementById('load-banner').style.borderColor = '#99f6e4';
-        document.getElementById('load-banner').querySelector('div').innerHTML =
-          `✅ <strong>${file.name}</strong> を読み込みました（${targets.length}件）`;
-        showToast(`✅ ${targets.length}件のターゲットを読み込みました`);
-      } catch(err) {
-        showToast('⚠️ 読み込み失敗: ' + err.message);
-      }
-    };
-    reader.readAsText(file, 'utf-8');
+  let fileHandle = null; // 開いたファイルのハンドルを保持
+
+  async function openFile() {
+    try {
+      [fileHandle] = await window.showOpenFilePicker({
+        types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+      });
+      const file = await fileHandle.getFile();
+      const text = await file.text();
+      const data = JSON.parse(text);
+      if (!data.targets || !Array.isArray(data.targets)) throw new Error('targets配列が見つかりません');
+      targets = data.targets;
+      renderList(); renderJSON();
+      // バナーを成功表示に切り替え
+      const banner = document.getElementById('load-banner');
+      banner.style.background = '#f0fdf9';
+      banner.style.borderColor = '#99f6e4';
+      document.getElementById('load-banner-msg').innerHTML =
+        `✅ <strong>${file.name}</strong> を読み込みました（${targets.length}件）　保存ボタンで直接上書きできます`;
+      showToast(`✅ ${targets.length}件のターゲットを読み込みました`);
+    } catch(e) {
+      if (e.name !== 'AbortError') showToast('⚠️ 読み込み失敗: ' + e.message);
+    }
+  }
+
+  async function saveToFile() {
+    if (!fileHandle) {
+      showToast('⚠️ まず「targets.json を開く」でファイルを選んでください');
+      return;
+    }
+    try {
+      const writable = await fileHandle.createWritable();
+      await writable.write(JSON.stringify({ targets }, null, 4));
+      await writable.close();
+      showToast('💾 targets.json を上書き保存しました。GitHub Desktop でプッシュしてください');
+    } catch(e) {
+      showToast('⚠️ 保存失敗: ' + e.message);
+    }
   }
 
   let currentFreq = 'daily';
