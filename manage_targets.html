@@ -875,15 +875,21 @@ jobs:
 `;
   }
 
-  function saveYML() {
+  async function saveYML() {
     const yml = generateYML();
-    const blob = new Blob([yml], { type: 'text/yaml' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'monitor.yml';
-    a.click();
-    URL.revokeObjectURL(a.href);
-    showToast('💾 monitor.yml を保存しました。.github/workflows/ に上書きしてGitHub Desktopでプッシュしてください');
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'monitor.yml',
+        startIn: 'documents',
+        types: [{ description: 'YAML', accept: { 'text/yaml': ['.yml'] } }]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(yml);
+      await writable.close();
+      showToast('💾 monitor.yml を保存しました。.github/workflows/ に上書きしてGitHub Desktopでプッシュしてください');
+    } catch (e) {
+      if (e.name !== 'AbortError') showToast('⚠️ 保存に失敗しました: ' + e.message);
+    }
   }
 
   function copyYML() {
@@ -979,15 +985,21 @@ jobs:
 
   function renderJSON() { document.getElementById('json-output').textContent = JSON.stringify({ targets }, null, 4); }
 
-  function saveToFile() {
+  async function saveToFile() {
     const json = JSON.stringify({ targets }, null, 4);
-    const blob = new Blob([json], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'targets.json';
-    a.click();
-    URL.revokeObjectURL(a.href);
-    showToast('💾 targets.json を保存しました。GitHub Desktop でプッシュしてください');
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'targets.json',
+        startIn: 'documents',
+        types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      showToast('💾 targets.json を保存しました。GitHub Desktop でプッシュしてください');
+    } catch (e) {
+      if (e.name !== 'AbortError') showToast('⚠️ 保存に失敗しました: ' + e.message);
+    }
   }
 
   function copyJSON() {
