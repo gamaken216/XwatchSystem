@@ -24,19 +24,16 @@ def load_targets():
 
 def build_query(target):
     """対象人物の設定から検索クエリを構築する"""
-    parts = []
+    search_parts = []
     if target.get("keywords"):
         kw_query = " OR ".join(f'"{kw}"' for kw in target["keywords"])
-        parts.append(f"({kw_query})")
+        search_parts.append(f"({kw_query})")
     if target.get("x_account"):
         account = target["x_account"].lstrip("@")
-        parts.append(f"@{account}")
+        search_parts.append(f"@{account}")
+    query = " OR ".join(search_parts)
     for ex in target.get("exclude_keywords", []):
-        parts.append(f'-"{ex}"')
-    query = " OR ".join(parts[:2])
-    excludes = " ".join(parts[2:])
-    if excludes:
-        query = f"{query} {excludes}"
+        query += f' -"{ex}"'
     return query
 
 
@@ -124,6 +121,7 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
                 '[data-testid="empty_state_header_text"], '
                 '[data-testid="emptyState"]',
                 timeout=30000,
+                state="attached",
             )
             # 検索結果なしの場合は正常終了
             if tweet_or_empty:
