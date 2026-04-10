@@ -145,7 +145,7 @@ def main():
     from collector import load_targets, collect_all
     from analyzer import analyze_all
     from reporter import generate_web_report, generate_email_html
-    from sender import send_report, collect_recipients
+    from sender import send_all_reports, collect_recipients
 
     # Step 1: 対象人物の読み込み
     logger.info("\n[Step 1/4] 対象人物の読み込み")
@@ -183,12 +183,10 @@ def main():
         logger.info("  テストモードのためメール送信をスキップ")
         logger.info(f"  ウェブレポートを確認: {web_report_path}")
     else:
-        recipients = RECIPIENTS if RECIPIENTS else collect_recipients(analyzed)
-        if recipients:
-            logger.info(f"  送信先: {len(recipients)}名")
-            send_report(GMAIL_USER, GMAIL_APP_PASSWORD, recipients, email_html, report_type)
-        else:
-            logger.warning("  送信先が設定されていません。")
+        send_all_reports(
+            GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
+            analyzed, report_type, generate_email_html
+        )
 
     logger.info("\n" + "=" * 60)
     logger.info("処理完了")

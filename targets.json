@@ -11,6 +11,7 @@
             "x_account": "@Shohei_Ohtani17",
             "exclude_keywords": [],
             "category": "スポーツ選手",
+            "client": "default",
             "recipients": [],
             "enabled": true
         }

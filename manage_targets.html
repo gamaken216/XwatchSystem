@@ -456,16 +456,21 @@
       <div class="form-grid">
         <div>
           <label>名前 *</label>
-          <input id="f-name" type="text" placeholder="例: 大谷翔平">
+          <input id="f-name" type="text" placeholder="例: 大谷翔平" oninput="autoFillKeywords()">
         </div>
         <div>
           <label>カテゴリ</label>
           <input id="f-category" type="text" placeholder="例: スポーツ選手">
         </div>
+        <div>
+          <label>クライアントID <span style="color:var(--text2);font-weight:400;">（まとめ送信用）</span></label>
+          <input id="f-client" type="text" placeholder="例: ascom">
+          <div class="hint">同じIDを持つターゲットは1通のメールにまとめられます</div>
+        </div>
         <div class="form-full">
           <label>検索キーワード * <span style="color:var(--text2);font-weight:400;">（カンマ区切り）</span></label>
-          <input id="f-keywords" type="text" placeholder="例: 大谷翔平, Otani Shohei, オオタニショウヘイ">
-          <div class="hint">複数のキーワードをカンマで区切って入力してください</div>
+          <input id="f-keywords" type="text" placeholder="例: 大谷翔平, Otani Shohei, オオタニショウヘイ" oninput="keywordsManuallyEdited=true">
+          <div class="hint">名前と同じでよければ自動入力されます。複数ある場合はカンマで追記してください</div>
         </div>
         <div>
           <label>XアカウントID <span style="color:var(--text2);font-weight:400;">（任意）</span></label>
@@ -610,6 +615,7 @@
     <div class="form-grid">
       <div><label>名前 *</label><input id="e-name" type="text"></div>
       <div><label>カテゴリ</label><input id="e-category" type="text"></div>
+      <div><label>クライアントID <span style="color:var(--text2);font-weight:400;">（まとめ送信用）</span></label><input id="e-client" type="text" placeholder="例: ascom"></div>
       <div class="form-full"><label>検索キーワード（カンマ区切り）</label><input id="e-keywords" type="text"></div>
       <div><label>XアカウントID</label><input id="e-x-account" type="text"></div>
       <div><label>除外キーワード（カンマ区切り）</label><input id="e-exclude" type="text"></div>
@@ -637,12 +643,20 @@
       x_account: "",
       exclude_keywords: [],
       category: "スポーツ選手",
+      client: "default",
       recipients: ["matsmoto.norihito@gmail.com"],
       enabled: true
     }
   ];
 
   let currentFreq = 'daily';
+  let keywordsManuallyEdited = false;
+
+  function autoFillKeywords() {
+    if (keywordsManuallyEdited) return; // 手動編集済みなら上書きしない
+    const name = document.getElementById('f-name').value;
+    document.getElementById('f-keywords').value = name;
+  }
 
   // 時間セレクトを生成
   function buildHourOptions(selectId, defaultHour) {
@@ -835,6 +849,7 @@ jobs:
       x_account: document.getElementById('f-x-account').value.trim(),
       exclude_keywords: parseCSV(document.getElementById('f-exclude').value),
       category: document.getElementById('f-category').value.trim(),
+      client: document.getElementById('f-client').value.trim() || 'default',
       recipients: parseCSV(document.getElementById('f-recipients').value),
       enabled: document.getElementById('f-enabled').classList.contains('on')
     });
@@ -843,7 +858,8 @@ jobs:
   }
 
   function clearForm() {
-    ['f-name','f-category','f-keywords','f-x-account','f-exclude','f-recipients'].forEach(id => document.getElementById(id).value = '');
+    ['f-name','f-category','f-client','f-keywords','f-x-account','f-exclude','f-recipients'].forEach(id => document.getElementById(id).value = '');
+    keywordsManuallyEdited = false;
     const t = document.getElementById('f-enabled');
     if (!t.classList.contains('on')) t.classList.add('on');
   }
@@ -860,7 +876,7 @@ jobs:
         <div class="target-status"></div>
         <div class="target-info">
           <div class="target-name">${t.category ? `<span class="target-category">${t.category}</span>` : ''}${t.name}</div>
-          <div class="target-meta">キーワード: ${t.keywords.join(', ')}${t.recipients.length > 0 ? '<br>送信先: ' + t.recipients.join(', ') : ''}</div>
+          <div class="target-meta">キーワード: ${t.keywords.join(', ')}${t.client && t.client !== 'default' ? '<br>クライアント: <strong>' + t.client + '</strong>' : ''}${t.recipients.length > 0 ? '<br>送信先: ' + t.recipients.join(', ') : ''}</div>
         </div>
         <div class="target-actions">
           <button class="btn btn-secondary btn-sm" onclick="openEdit(${i})">編集</button>
@@ -880,6 +896,7 @@ jobs:
     document.getElementById('edit-index').value = i;
     document.getElementById('e-name').value = t.name;
     document.getElementById('e-category').value = t.category || '';
+    document.getElementById('e-client').value = t.client || 'default';
     document.getElementById('e-keywords').value = t.keywords.join(', ');
     document.getElementById('e-x-account').value = t.x_account || '';
     document.getElementById('e-exclude').value = t.exclude_keywords.join(', ');
@@ -899,6 +916,7 @@ jobs:
       x_account: document.getElementById('e-x-account').value.trim(),
       exclude_keywords: parseCSV(document.getElementById('e-exclude').value),
       category: document.getElementById('e-category').value.trim(),
+      client: document.getElementById('e-client').value.trim() || 'default',
       recipients: parseCSV(document.getElementById('e-recipients').value),
       enabled: document.getElementById('e-enabled').classList.contains('on')
     };
