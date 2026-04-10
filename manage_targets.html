@@ -597,12 +597,13 @@
         スケジュールを選択すると、設定内容が表示されます
       </div>
 
-      <div class="info-box blue">
-        <strong>使い方：</strong> 設定を変えたら「YMLを生成してコピー」→ GitHubの <code>.github/workflows/monitor.yml</code> を開く → 鉛筆アイコンで編集 → 全選択して貼り付け → 「Commit changes」で保存
+      <div class="info-box green">
+        <strong>使い方：</strong>「💾 YMLを保存」を押すと <code>monitor.yml</code> がダウンロードされます。それを <code>.github/workflows/</code> フォルダに上書きして、GitHub Desktop でコミット＆プッシュしてください。
       </div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" onclick="copyYML()">📋 YMLを生成してコピー</button>
+        <button class="btn btn-success" onclick="saveYML()">💾 YMLを保存</button>
+        <button class="btn btn-secondary" onclick="copyYML()">📋 コピー</button>
       </div>
     </div>
   </div>
@@ -872,6 +873,17 @@ jobs:
           path: logs/
           retention-days: 7
 `;
+  }
+
+  function saveYML() {
+    const yml = generateYML();
+    const blob = new Blob([yml], { type: 'text/yaml' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'monitor.yml';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('💾 monitor.yml を保存しました。.github/workflows/ に上書きしてGitHub Desktopでプッシュしてください');
   }
 
   function copyYML() {
