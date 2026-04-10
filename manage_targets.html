@@ -429,6 +429,19 @@
     </div>
   </header>
 
+  <!-- targets.json 読み込みバナー -->
+  <div id="load-banner" style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <div style="font-size:13px;color:#92400e;">
+      📂 <strong>起動時は必ずここから読み込んでください</strong>　—　リフレッシュすると編集内容がリセットされます
+    </div>
+    <label style="cursor:pointer;margin:0;">
+      <input type="file" id="json-file-input" accept=".json" style="display:none;" onchange="loadFromFile(event)">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1a6fd4,#0ea5e9);color:white;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;">
+        📂 targets.json を開く
+      </span>
+    </label>
+  </div>
+
   <div class="tabs">
     <button class="tab active" onclick="switchTab('list')">📋 監視対象一覧</button>
     <button class="tab" onclick="switchTab('add')">➕ 新規追加</button>
@@ -648,6 +661,28 @@
       enabled: true
     }
   ];
+
+  function loadFromFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (!data.targets || !Array.isArray(data.targets)) throw new Error('targets配列が見つかりません');
+        targets = data.targets;
+        renderList(); renderJSON();
+        document.getElementById('load-banner').style.background = '#f0fdf9';
+        document.getElementById('load-banner').style.borderColor = '#99f6e4';
+        document.getElementById('load-banner').querySelector('div').innerHTML =
+          `✅ <strong>${file.name}</strong> を読み込みました（${targets.length}件）`;
+        showToast(`✅ ${targets.length}件のターゲットを読み込みました`);
+      } catch(err) {
+        showToast('⚠️ 読み込み失敗: ' + err.message);
+      }
+    };
+    reader.readAsText(file, 'utf-8');
+  }
 
   let currentFreq = 'daily';
   let keywordsManuallyEdited = false;
