@@ -1,18 +1,314 @@
 {
     "targets": [
         {
-            "id": "ohtani_001",
-            "name": "大谷翔平",
+            "id": "アスコム_001",
+            "name": "アスコム",
             "keywords": [
-                "大谷翔平",
-                "Otani shohei",
-                "おおたに　しょうへい"
+                "アスコム",
+                "Ascom"
             ],
-            "x_account": "@Shohei_Ohtani17",
+            "x_account": "",
+            "exclude_keywords": [
+                "人材"
+            ],
+            "category": "出版",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "科学的に証明された本当のラジオ体操_128",
+            "name": "科学的に証明された本当のラジオ体操",
+            "keywords": [
+                "科学的に証明された本当のラジオ体操",
+                "本当のラジオ体操"
+            ],
+            "x_account": "",
             "exclude_keywords": [],
-            "category": "スポーツ選手",
-            "client": "default",
-            "recipients": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "鼻炎のリセット法_951",
+            "name": "鼻炎のリセット法",
+            "keywords": [
+                "鼻炎のリセット法"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
+            "keywords": [
+                "ボスマネジメント"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "「伝える」が「伝わる」に変わるひみつ_255",
+            "name": "「伝える」が「伝わる」に変わるひみつ",
+            "keywords": [
+                "「伝える」が「伝わる」に変わるひみつ"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "aiアウトプットの全技法_567",
+            "name": "AIアウトプットの全技法",
+            "keywords": [
+                "AIアウトプットの全技法"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "妖怪学校激ムズ！まちがいさがし_855",
+            "name": "妖怪学校激ムズ！まちがいさがし",
+            "keywords": [
+                "妖怪学校激ムズ！まちがいさがし",
+                "妖怪学校まちがいさがし"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "お金はこれで増やせます_712",
+            "name": "お金はこれで増やせます",
+            "keywords": [
+                "お金はこれで増やせます"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "13歳からの戦争学_039",
+            "name": "13歳からの戦争学",
+            "keywords": [
+                "13歳からの戦争学"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "科学的に証明された自律神経を整える習慣_288",
+            "name": "科学的に証明された自律神経を整える習慣",
+            "keywords": [
+                "科学的に証明された自律神経を整える習慣"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "ごめんなさい、もうこれ以上頑張れません_399",
+            "name": "ごめんなさい、もうこれ以上頑張れません",
+            "keywords": [
+                "ごめんなさい、もうこれ以上頑張れません"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "部下の心を動かすリーダーがやっていること_488",
+            "name": "部下の心を動かすリーダーがやっていること",
+            "keywords": [
+                "部下の心を動かすリーダーがやっていること"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "時間をムダにしない人の習慣_967",
+            "name": "時間をムダにしない人の習慣",
+            "keywords": [
+                "時間をムダにしない人の習慣"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "老いることの驚きと幸せ_224",
+            "name": "老いることの驚きと幸せ",
+            "keywords": [
+                "老いることの驚きと幸せ"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "すべての答えは個客の中にある_015",
+            "name": "すべての答えは個客の中にある",
+            "keywords": [
+                "すべての答えは個客の中にある"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "栄養まるっとおにぎり_327",
+            "name": "栄養まるっとおにぎり",
+            "keywords": [
+                "栄養まるっとおにぎり"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "やせるしくみ化_400",
+            "name": "やせるしくみ化",
+            "keywords": [
+                "やせるしくみ化"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "rui-kawakami@ascom-inc.jp",
+                "pr_all@ascom-inc.jp",
+                "soumu@ascom-inc.jp"
+            ],
             "enabled": true
         }
     ]
