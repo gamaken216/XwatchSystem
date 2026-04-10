@@ -459,6 +459,9 @@
       <div id="target-list" class="target-list">
         <div class="empty"><div class="empty-icon">🔍</div>まだ監視対象がいません<br>「新規追加」タブから追加してください</div>
       </div>
+      <div class="btn-row" style="margin-top:16px;">
+        <button class="btn btn-success" onclick="saveToFile()">💾 ファイルに保存</button>
+      </div>
     </div>
   </div>
 
@@ -609,10 +612,13 @@
     <div class="card">
       <div class="card-header">
         <span class="card-title">targets.json</span>
-        <button class="btn btn-primary btn-sm" onclick="copyJSON()">📋 コピー</button>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-success btn-sm" onclick="saveToFile()">💾 ファイルに保存</button>
+          <button class="btn btn-primary btn-sm" onclick="copyJSON()">📋 コピー</button>
+        </div>
       </div>
-      <div class="info-box blue">
-        <strong>使い方：</strong> 上の「コピー」ボタンでコピー → GitHubの <code>targets.json</code> を開く → 鉛筆アイコンで編集 → 全選択して貼り付け → 「Commit changes」で保存
+      <div class="info-box green">
+        <strong>使い方：</strong>「ファイルに保存」を押すと <code>targets.json</code> に直接上書き保存されます。あとは GitHub Desktop でコミット＆プッシュするだけです。
       </div>
       <div id="json-output" class="json-output"></div>
     </div>
@@ -960,6 +966,17 @@ jobs:
   }
 
   function renderJSON() { document.getElementById('json-output').textContent = JSON.stringify({ targets }, null, 4); }
+
+  function saveToFile() {
+    const json = JSON.stringify({ targets }, null, 4);
+    const blob = new Blob([json], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'targets.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('💾 targets.json を保存しました。GitHub Desktop でプッシュしてください');
+  }
 
   function copyJSON() {
     navigator.clipboard.writeText(JSON.stringify({ targets }, null, 4)).then(() => {
