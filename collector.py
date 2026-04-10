@@ -117,7 +117,22 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
         page = await context.new_page()
         try:
             await page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
-            await page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
+
+            # ツイートが表示されるか、検索結果なしの表示が出るかを待つ
+            tweet_or_empty = await page.wait_for_selector(
+                'article[data-testid="tweet"], '
+                '[data-testid="empty_state_header_text"], '
+                '[data-testid="emptyState"]',
+                timeout=30000,
+            )
+            # 検索結果なしの場合は正常終了
+            if tweet_or_empty:
+                tag = await tweet_or_empty.get_attribute("data-testid")
+                if tag in ("empty_state_header_text", "emptyState"):
+                    print("  検索結果なし（0件）")
+                    await browser.close()
+                    return []
+
             await page.wait_for_timeout(2000)
 
             no_new_count = 0  # 新規ツイートが増えない回数
