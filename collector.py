@@ -202,8 +202,14 @@ async def collect_all(cookies, targets, max_tweets=100, interval_sec=5):
             "total_found": len(tweets), "new_count": len(new_tweets),
         }
         if i < len(targets) - 1:
-            print(f"  {interval_sec}秒待機中...")
-            await asyncio.sleep(interval_sec)
+            # レート制限対策: 5件ごとに長めの待機を入れる
+            if (i + 1) % 5 == 0:
+                wait = interval_sec * 4
+                print(f"  レート制限対策: {wait}秒待機中...")
+            else:
+                wait = interval_sec
+                print(f"  {wait}秒待機中...")
+            await asyncio.sleep(wait)
     return results
 
 

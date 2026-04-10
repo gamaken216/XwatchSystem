@@ -4,6 +4,7 @@ AI分析モジュール
 Google Gemini APIを使ってツイートの感情分析・カテゴリ分類・要約を行う。
 """
 import json
+import time
 from datetime import datetime
 
 
@@ -98,31 +99,39 @@ def analyze_tweets(api_key, model, target, tweets):
 {tweets_text}
 """
 
-    try:
-        response = client.models.generate_content(
-            model=model,
-            contents=prompt,
-        )
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(
+                model=model,
+                contents=prompt,
+            )
 
-        # JSON部分を抽出してパース
-        text = response.text.strip()
-        if text.startswith("```"):
-            text = text.split("\n", 1)[1]
-            text = text.rsplit("```", 1)[0]
+            # JSON部分を抽出してパース
+            text = response.text.strip()
+            if text.startswith("```"):
+                text = text.split("\n", 1)[1]
+                text = text.rsplit("```", 1)[0]
 
-        result = json.loads(text)
-        return result
+            result = json.loads(text)
+            return result
 
-    except Exception as e:
-        print(f"  AI分析エラー: {e}")
-        return {
-            "summary": f"分析中にエラーが発生しました: {str(e)}",
-            "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
-            "categories": {},
-            "top_tweets": [],
-            "alert": None,
-            "tweet_details": [],
-        }
+        except Exception as e:
+            is_retryable = "503" in str(e) or "429" in str(e) or "UNAVAILABLE" in str(e)
+            if is_retryable and attempt < max_retries - 1:
+                wait_sec = 15 * (attempt + 1)
+                print(f"  API一時エラー（リトライ {attempt+1}/{max_retries}、{wait_sec}秒後）: {e}")
+                time.sleep(wait_sec)
+                continue
+            print(f"  AI分析エラー: {e}")
+            return {
+                "summary": f"分析中にエラーが発生しました: {str(e)}",
+                "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
+                "categories": {},
+                "top_tweets": [],
+                "alert": None,
+                "tweet_details": [],
+            }
 
 
 def analyze_all(api_key, model, collected_data):
