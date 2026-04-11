@@ -99,7 +99,7 @@ def analyze_tweets(api_key, model, target, tweets):
 {tweets_text}
 """
 
-    max_retries = 3
+    max_retries = 6
     for attempt in range(max_retries):
         try:
             response = client.models.generate_content(
@@ -119,7 +119,7 @@ def analyze_tweets(api_key, model, target, tweets):
         except Exception as e:
             is_retryable = "503" in str(e) or "429" in str(e) or "UNAVAILABLE" in str(e)
             if is_retryable and attempt < max_retries - 1:
-                wait_sec = 15 * (attempt + 1)
+                wait_sec = min(30 * (2 ** attempt), 600)
                 print(f"  API一時エラー（リトライ {attempt+1}/{max_retries}、{wait_sec}秒後）: {e}")
                 time.sleep(wait_sec)
                 continue
