@@ -210,6 +210,10 @@ def main():
                     check=True, env=env, capture_output=True
                 )
 
+            # git ユーザー情報を設定（GitHub Actions環境で必要）
+            subprocess.run(["git", "-C", script_dir, "config", "user.email", "action@github.com"], env=env, capture_output=True)
+            subprocess.run(["git", "-C", script_dir, "config", "user.name", "GitHub Actions"], env=env, capture_output=True)
+
             subprocess.run(["git", "-C", script_dir, "add", "docs/"], check=True, env=env)
             result = subprocess.run(
                 ["git", "-C", script_dir, "commit", "-m", f"レポート自動更新 {datetime.now().strftime('%Y-%m-%d')}"],
