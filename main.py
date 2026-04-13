@@ -100,8 +100,8 @@ def load_config():
 
     # その他設定
     GEMINI_MODEL = "gemini-2.5-flash"
-    MAX_TWEETS_PER_PERSON = 300
-    SEARCH_INTERVAL_SEC = 5
+    MAX_TWEETS_PER_PERSON = 100
+    SEARCH_INTERVAL_SEC = 15
 
     return {
         "X_COOKIES": X_COOKIES,

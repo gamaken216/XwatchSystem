@@ -7,11 +7,25 @@ import asyncio
 import json
 import os
 import re
+import time
 import urllib.parse
 from datetime import datetime, timedelta
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "data")
+DEBUG_DIR = os.path.join(SCRIPT_DIR, "logs", "debug")
+
+# レート制限・エラー画面の検出用
+LOGIN_URL_PATTERNS = ("/login", "/i/flow/login", "/account/access")
+ERROR_TEXT_PATTERNS = (
+    "Something went wrong",
+    "Try reloading",
+    "問題が発生しました",
+    "再読み込み",
+    "再試行",
+    "Rate limit",
+    "レート制限",
+)
 
 
 def load_targets():
@@ -62,6 +76,76 @@ async def _create_browser_context(playwright, cookies):
     return browser, context
 
 
+async def _dump_debug(page, target_id, reason):
+    """失敗時のページ状態をスクショ+HTMLで保存する（GitHub Actionsのartifactで確認用）"""
+    try:
+        os.makedirs(DEBUG_DIR, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+        safe_id = re.sub(r"[^A-Za-z0-9_-]", "_", str(target_id))
+        prefix = os.path.join(DEBUG_DIR, f"{ts}_{safe_id}_{reason}")
+        try:
+            await page.screenshot(path=prefix + ".png", full_page=True)
+        except Exception as e:
+            print(f"  スクリーンショット失敗: {e}")
+        try:
+            html = await page.content()
+            with open(prefix + ".html", "w", encoding="utf-8") as f:
+                f.write(html)
+        except Exception as e:
+            print(f"  HTMLダンプ失敗: {e}")
+        print(f"  デバッグ情報を保存: {prefix}.(png|html)")
+    except Exception as e:
+        print(f"  デバッグ情報の保存に失敗: {e}")
+
+
+async def _classify_page(page):
+    """現在のページ状態を分類する
+
+    Returns:
+        "tweets"  : ツイートが表示されている
+        "empty"   : 検索結果なし
+        "login"   : ログインページ（Cookie失効など）
+        "error"   : "Something went wrong" 等のエラー画面（レート制限の可能性）
+        "unknown" : まだ判別不能（読み込み中）
+    """
+    try:
+        url = page.url or ""
+    except Exception:
+        url = ""
+    for p in LOGIN_URL_PATTERNS:
+        if p in url:
+            return "login"
+
+    if await page.query_selector('article[data-testid="tweet"]'):
+        return "tweets"
+    if await page.query_selector(
+        '[data-testid="empty_state_header_text"], [data-testid="emptyState"]'
+    ):
+        return "empty"
+
+    try:
+        body_text = await page.inner_text("body", timeout=1000)
+    except Exception:
+        body_text = ""
+    for t in ERROR_TEXT_PATTERNS:
+        if t in body_text:
+            return "error"
+    return "unknown"
+
+
+async def _wait_for_result_state(page, timeout_ms=30000, poll_ms=500):
+    """tweets / empty / login / error のいずれかになるまで待機する"""
+    deadline = time.monotonic() + timeout_ms / 1000
+    last_state = "unknown"
+    while time.monotonic() < deadline:
+        state = await _classify_page(page)
+        last_state = state
+        if state != "unknown":
+            return state
+        await page.wait_for_timeout(poll_ms)
+    return last_state
+
+
 async def _extract_tweets_from_page(page):
     """ページ上の全ツイート要素からデータを抽出する"""
     tweet_elements = await page.query_selector_all('article[data-testid="tweet"]')
@@ -98,7 +182,13 @@ async def _extract_tweets_from_page(page):
 
 
 async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
-    """指定した対象人物に関するツイートを検索・取得する"""
+    """指定した対象人物に関するツイートを検索・取得する
+
+    Returns:
+        (tweets, state)
+            tweets: list[dict]  取得したツイート
+            state : "tweets" | "empty" | "login" | "error" | "timeout" | "exception"
+    """
     from playwright.async_api import async_playwright
 
     query = build_query(target)
@@ -106,8 +196,8 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
     encoded_query = urllib.parse.quote(query)
     search_url = f"https://x.com/search?q={encoded_query}&src=typed_query&f=live"
 
-    # IDをキーにした辞書で蓄積（仮想スクロールで消えても失わない）
     all_tweets = {}
+    final_state = "exception"
 
     async with async_playwright() as p:
         browser, context = await _create_browser_context(p, cookies)
@@ -115,29 +205,38 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
         try:
             await page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
 
-            # ツイートが表示されるか、検索結果なしの表示が出るかを待つ
-            tweet_or_empty = await page.wait_for_selector(
-                'article[data-testid="tweet"], '
-                '[data-testid="empty_state_header_text"], '
-                '[data-testid="emptyState"]',
-                timeout=30000,
-                state="attached",
-            )
-            # 検索結果なしの場合は正常終了
-            if tweet_or_empty:
-                tag = await tweet_or_empty.get_attribute("data-testid")
-                if tag in ("empty_state_header_text", "emptyState"):
-                    print("  検索結果なし（0件）")
-                    await browser.close()
-                    return []
+            state = await _wait_for_result_state(page, timeout_ms=30000)
+            final_state = state
+
+            if state == "empty":
+                print("  検索結果なし（0件）")
+                await browser.close()
+                return [], "empty"
+
+            if state == "login":
+                print("  ログインページにリダイレクトされました（Cookie失効の可能性）")
+                await _dump_debug(page, target.get("id", "unknown"), "login")
+                await browser.close()
+                return [], "login"
+
+            if state == "error":
+                print("  エラー画面を検出（レート制限の可能性）")
+                await _dump_debug(page, target.get("id", "unknown"), "error")
+                await browser.close()
+                return [], "error"
+
+            if state != "tweets":
+                print(f"  タイムアウト（30秒）: ツイートもエラー画面も検出できず")
+                await _dump_debug(page, target.get("id", "unknown"), "timeout")
+                await browser.close()
+                return [], "timeout"
 
             await page.wait_for_timeout(2000)
 
-            no_new_count = 0  # 新規ツイートが増えない回数
-            max_scrolls = 50  # 最大50回スクロール
+            no_new_count = 0
+            max_scrolls = 50
 
             for _ in range(max_scrolls):
-                # 現在表示されているツイートを取得して蓄積
                 visible = await _extract_tweets_from_page(page)
                 prev_count = len(all_tweets)
                 for tw in visible:
@@ -147,26 +246,34 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
                 if len(all_tweets) >= max_tweets:
                     break
 
-                # 新規が増えなかった回数をカウント
                 if len(all_tweets) == prev_count:
                     no_new_count += 1
                     if no_new_count >= 3:
-                        break  # 3回連続で増えなければ終了
+                        break
                 else:
                     no_new_count = 0
 
-                # スクロールして次のツイートを読み込む
                 await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                 await page.wait_for_timeout(2500)
 
+            final_state = "tweets"
+
         except Exception as e:
             print(f"  エラー: {e}")
+            try:
+                await _dump_debug(page, target.get("id", "unknown"), "exception")
+            except Exception:
+                pass
+            final_state = "exception"
         finally:
-            await browser.close()
+            try:
+                await browser.close()
+            except Exception:
+                pass
 
     result = list(all_tweets.values())
     print(f"  スクロール収集: {len(result)}件")
-    return result[:max_tweets]
+    return result[:max_tweets], final_state
 
 
 def remove_duplicates(tweets, history_file):
@@ -186,25 +293,53 @@ def remove_duplicates(tweets, history_file):
 
 
 async def collect_all(cookies, targets, max_tweets=100, interval_sec=5):
-    """全対象人物のツイートを収集する"""
+    """全対象人物のツイートを収集する
+
+    連続失敗時は指数バックオフで待機を延ばし、3回連続で失敗したら中断する。
+    """
     os.makedirs(DATA_DIR, exist_ok=True)
     results = {}
+    consecutive_failures = 0
+    MAX_CONSECUTIVE_FAILURES = 3
+
     for i, target in enumerate(targets):
         name = target["name"]
         print(f"\n[{i+1}/{len(targets)}] {name} のツイートを収集中...")
-        tweets = await search_tweets(cookies, target, max_tweets, interval_sec)
-        print(f"  → {len(tweets)}件取得")
+
+        tweets, state = await search_tweets(cookies, target, max_tweets, interval_sec)
+        print(f"  → {len(tweets)}件取得 (state={state})")
+
         history_file = os.path.join(DATA_DIR, f"history_{target['id']}.json")
         new_tweets = remove_duplicates(tweets, history_file)
         print(f"  → {len(new_tweets)}件が新規")
         results[target["id"]] = {
             "target": target, "tweets": new_tweets,
             "total_found": len(tweets), "new_count": len(new_tweets),
+            "state": state,
         }
+
+        is_failure = state in ("error", "timeout", "login", "exception")
+        if state == "login":
+            print("  Cookie失効の可能性が高いため、以降の収集を中止します")
+            break
+
+        if is_failure:
+            consecutive_failures += 1
+            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+                print(
+                    f"  連続{MAX_CONSECUTIVE_FAILURES}回失敗したため、以降の収集を中止します"
+                )
+                break
+        else:
+            consecutive_failures = 0
+
         if i < len(targets) - 1:
-            # レート制限対策: 5件ごとに長めの待機を入れる
-            if (i + 1) % 5 == 0:
-                wait = interval_sec * 4
+            if is_failure:
+                # 指数バックオフ: 60s, 90s, 120s (最大)
+                wait = min(60 + 30 * (consecutive_failures - 1), 120)
+                print(f"  失敗検出によるバックオフ: {wait}秒待機中...")
+            elif (i + 1) % 5 == 0:
+                wait = interval_sec * 10
                 print(f"  レート制限対策: {wait}秒待機中...")
             else:
                 wait = interval_sec
