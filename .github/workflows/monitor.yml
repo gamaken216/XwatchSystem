@@ -15,7 +15,7 @@ on:
           - daily
           - weekly
       test_mode:
-        description: 'テストモード（メール送信しない）'
+        description: 'テストモード（AI分析スキップ、メールは送信）'
         required: false
         default: false
         type: boolean

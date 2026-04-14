@@ -171,26 +171,35 @@ def main():
 
     # Step 3: AI分析
     if test_mode:
-        logger.info("\n[Step 3/4] AI分析（テストモードのためスキップ）")
-        logger.info(f"  ツイート収集は正常完了。AI分析・メール送信をスキップします。")
-        logger.info("\n" + "=" * 60)
-        logger.info("テスト完了")
-        logger.info("=" * 60)
-        return
-
-    logger.info("\n[Step 3/4] AI分析")
-    analyzed = analyze_all(GEMINI_API_KEY, GEMINI_MODEL, collected)
+        logger.info("\n[Step 3/4] AI分析（テストモードのためスキップ — API枠を節約）")
+        analyzed = {}
+        for tid, data in collected.items():
+            analyzed[tid] = {
+                "target": data["target"],
+                "tweets": data["tweets"],
+                "analysis": {
+                    "summary": "テストモードのためAI分析をスキップしました。",
+                    "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
+                    "categories": {},
+                    "top_tweets": [],
+                    "alert": None,
+                    "tweet_details": [],
+                },
+            }
+    else:
+        logger.info("\n[Step 3/4] AI分析")
+        analyzed = analyze_all(GEMINI_API_KEY, GEMINI_MODEL, collected)
 
     # Step 4: レポート生成・配信
     logger.info("\n[Step 4/4] レポート生成・配信")
     web_report_path = generate_web_report(analyzed, report_type)
     logger.info(f"  ウェブレポート: {web_report_path}")
     email_html = generate_email_html(analyzed, report_type)
-    else:
-        send_all_reports(
-            GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
-            analyzed, report_type, generate_email_html
-        )
+
+    send_all_reports(
+        GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
+        analyzed, report_type, generate_email_html
+    )
 
     logger.info("\n" + "=" * 60)
     logger.info("処理完了")
