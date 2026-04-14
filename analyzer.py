@@ -8,6 +8,11 @@ import time
 from datetime import datetime
 
 
+class QuotaExhaustedError(Exception):
+    """無料枠のAPI上限に達した場合の例外"""
+    pass
+
+
 def analyze_tweets(api_key, model, target, tweets):
     """
     対象人物のツイート群をGemini AIで分析する。
@@ -117,7 +122,13 @@ def analyze_tweets(api_key, model, target, tweets):
             return result
 
         except Exception as e:
-            is_retryable = "503" in str(e) or "429" in str(e) or "UNAVAILABLE" in str(e)
+            error_str = str(e)
+            # 無料枠の日次クォータ超過はリトライしても回復しない
+            is_free_tier_exhausted = "FreeTier" in error_str or "free_tier" in error_str
+            if is_free_tier_exhausted:
+                print(f"  ⚠ 無料枠のAPI上限に到達しました。残りの分析をスキップします。")
+                raise QuotaExhaustedError(error_str)
+            is_retryable = "503" in error_str or "429" in error_str or "UNAVAILABLE" in error_str
             if is_retryable and attempt < max_retries - 1:
                 wait_sec = min(30 * (2 ** attempt), 600)
                 print(f"  API一時エラー（リトライ {attempt+1}/{max_retries}、{wait_sec}秒後）: {e}")
@@ -137,13 +148,49 @@ def analyze_tweets(api_key, model, target, tweets):
 def analyze_all(api_key, model, collected_data):
     """全対象人物の分析を実行する"""
     results = {}
+    skipped = []
 
     for tid, data in collected_data.items():
         target = data["target"]
         tweets = data["tweets"]
         print(f"\n  {target['name']} を分析中... ({len(tweets)}件)")
 
-        analysis = analyze_tweets(api_key, model, target, tweets)
+        try:
+            analysis = analyze_tweets(api_key, model, target, tweets)
+        except QuotaExhaustedError:
+            # 残りの対象をスキップリストに追加
+            skipped.append(target['name'])
+            for remaining_tid, remaining_data in collected_data.items():
+                if remaining_tid not in results and remaining_tid != tid:
+                    skipped.append(remaining_data["target"]["name"])
+                    results[remaining_tid] = {
+                        "target": remaining_data["target"],
+                        "tweets": remaining_data["tweets"],
+                        "analysis": {
+                            "summary": "API無料枠の上限により分析をスキップしました。",
+                            "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
+                            "categories": {},
+                            "top_tweets": [],
+                            "alert": None,
+                            "tweet_details": [],
+                        },
+                    }
+            # 現在の対象も追加
+            results[tid] = {
+                "target": target,
+                "tweets": tweets,
+                "analysis": {
+                    "summary": "API無料枠の上限により分析をスキップしました。",
+                    "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
+                    "categories": {},
+                    "top_tweets": [],
+                    "alert": None,
+                    "tweet_details": [],
+                },
+            }
+            print(f"  ⚠ API無料枠の上限のため、以下の分析をスキップしました: {', '.join(skipped)}")
+            break
+
         results[tid] = {
             "target": target,
             "tweets": tweets,
