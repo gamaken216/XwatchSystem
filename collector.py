@@ -29,11 +29,13 @@ ERROR_TEXT_PATTERNS = (
 
 
 def load_targets():
-    """targets.json から対象人物リストを読み込む"""
+    """targets.json から対象人物リストと設定を読み込む"""
     path = os.path.join(SCRIPT_DIR, "targets.json")
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    return [t for t in data["targets"] if t.get("enabled", True)]
+    targets = [t for t in data["targets"] if t.get("enabled", True)]
+    days_back = data.get("days_back", 14)
+    return targets, days_back
 
 
 def build_query(target, days_back=14):
@@ -194,7 +196,8 @@ async def search_tweets(cookies, target, max_tweets=100, interval_sec=5):
     """
     from playwright.async_api import async_playwright
 
-    query = build_query(target)
+    days_back = target.get("_days_back", 14)
+    query = build_query(target, days_back=days_back)
     print(f"  検索クエリ: {query}")
     encoded_query = urllib.parse.quote(query)
     search_url = f"https://x.com/search?q={encoded_query}&src=typed_query&f=live"
@@ -295,7 +298,7 @@ def remove_duplicates(tweets, history_file):
     return new_tweets
 
 
-async def collect_all(cookies, targets, max_tweets=100, interval_sec=5):
+async def collect_all(cookies, targets, max_tweets=100, interval_sec=5, days_back=14):
     """全対象人物のツイートを収集する
 
     連続失敗時は指数バックオフで待機を延ばし、3回連続で失敗したら中断する。
@@ -309,6 +312,7 @@ async def collect_all(cookies, targets, max_tweets=100, interval_sec=5):
         name = target["name"]
         print(f"\n[{i+1}/{len(targets)}] {name} のツイートを収集中...")
 
+        target["_days_back"] = days_back
         tweets, state = await search_tweets(cookies, target, max_tweets, interval_sec)
         print(f"  → {len(tweets)}件取得 (state={state})")
 
@@ -354,12 +358,12 @@ async def collect_all(cookies, targets, max_tweets=100, interval_sec=5):
 # テスト用
 if __name__ == "__main__":
     from config import X_COOKIES, MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC
-    targets = load_targets()
-    print(f"対象人物: {len(targets)}名")
+    targets, days_back = load_targets()
+    print(f"対象人物: {len(targets)}名 / 検索期間: 過去{days_back}日間")
     for t in targets:
-        print(f"  - {t['name']}: {build_query(t)}")
+        print(f"  - {t['name']}: {build_query(t, days_back)}")
     results = asyncio.run(
-        collect_all(X_COOKIES, targets, MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC)
+        collect_all(X_COOKIES, targets, MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC, days_back)
     )
     for tid, data in results.items():
         print(f"\n{data['target']['name']}: {data['new_count']}件の新規ツイート")

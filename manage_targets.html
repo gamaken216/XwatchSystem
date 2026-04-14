@@ -528,6 +528,26 @@
       </div>
     </div>
 
+    <!-- 検索期間設定 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🔍 検索期間設定</span>
+      </div>
+      <div class="form-grid">
+        <div>
+          <label>ツイート検索期間（日数）</label>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <input id="days-back" type="number" min="1" max="90" value="14" style="width:100px;" onchange="updateDaysBackPreview()">
+            <span style="font-size:13px;color:var(--text2);">日前から現在まで</span>
+          </div>
+          <div class="hint">検索対象とするツイートの期間を指定します（デフォルト: 14日）</div>
+        </div>
+      </div>
+      <div class="info-box blue" id="days-back-preview" style="margin-top:12px;">
+        過去 <strong>14日間</strong> のツイートを検索します
+      </div>
+    </div>
+
     <!-- スケジュール設定 -->
     <div class="card">
       <div class="card-header">
@@ -666,6 +686,10 @@
       const data = JSON.parse(text);
       if (!data.targets || !Array.isArray(data.targets)) throw new Error('targets配列が見つかりません');
       targets = data.targets;
+      // 検索期間を読み込み
+      const daysBack = data.days_back || 14;
+      document.getElementById('days-back').value = daysBack;
+      updateDaysBackPreview();
       renderList(); renderJSON();
       // バナーを成功表示に切り替え
       const banner = document.getElementById('load-banner');
@@ -679,6 +703,13 @@
     }
   }
 
+  function getDaysBack() { return parseInt(document.getElementById('days-back').value) || 14; }
+
+  function updateDaysBackPreview() {
+    const days = getDaysBack();
+    document.getElementById('days-back-preview').innerHTML = `過去 <strong>${days}日間</strong> のツイートを検索します`;
+  }
+
   async function saveToFile() {
     if (!fileHandle) {
       showToast('⚠️ まず「targets.json を開く」でファイルを選んでください');
@@ -686,7 +717,7 @@
     }
     try {
       const writable = await fileHandle.createWritable();
-      await writable.write(JSON.stringify({ targets }, null, 4));
+      await writable.write(JSON.stringify({ days_back: getDaysBack(), targets }, null, 4));
       await writable.close();
       showToast('💾 targets.json を上書き保存しました。GitHub Desktop でプッシュしてください');
     } catch(e) {
@@ -986,10 +1017,10 @@ jobs:
     showToast('✓ 更新しました');
   }
 
-  function renderJSON() { document.getElementById('json-output').textContent = JSON.stringify({ targets }, null, 4); }
+  function renderJSON() { document.getElementById('json-output').textContent = JSON.stringify({ days_back: getDaysBack(), targets }, null, 4); }
 
   async function saveToFile() {
-    const json = JSON.stringify({ targets }, null, 4);
+    const json = JSON.stringify({ days_back: getDaysBack(), targets }, null, 4);
     try {
       const handle = await window.showSaveFilePicker({
         suggestedName: 'targets.json',
@@ -1006,7 +1037,7 @@ jobs:
   }
 
   function copyJSON() {
-    navigator.clipboard.writeText(JSON.stringify({ targets }, null, 4)).then(() => {
+    navigator.clipboard.writeText(JSON.stringify({ days_back: getDaysBack(), targets }, null, 4)).then(() => {
       showToast('📋 コピーしました！GitHubに貼り付けてください');
     });
   }

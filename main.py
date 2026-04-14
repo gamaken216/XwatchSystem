@@ -149,18 +149,19 @@ def main():
 
     # Step 1: 対象人物の読み込み
     logger.info("\n[Step 1/4] 対象人物の読み込み")
-    targets = load_targets()
+    targets, days_back = load_targets()
     if not targets:
         logger.warning("有効な対象人物がいません。targets.json を確認してください。")
         return
     logger.info(f"  対象人物: {len(targets)}名")
+    logger.info(f"  検索期間: 過去{days_back}日間")
     for t in targets:
         logger.info(f"    - {t['name']} ({t.get('category', 'N/A')})")
 
     # Step 2: ツイート収集
     logger.info("\n[Step 2/4] ツイート収集")
     collected = asyncio.run(
-        collect_all(X_COOKIES, targets, MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC)
+        collect_all(X_COOKIES, targets, MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC, days_back)
     )
     total = sum(d["new_count"] for d in collected.values())
     logger.info(f"  合計: {total}件の新規ツイート")
