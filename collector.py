@@ -36,8 +36,8 @@ def load_targets():
     return [t for t in data["targets"] if t.get("enabled", True)]
 
 
-def build_query(target):
-    """対象人物の設定から検索クエリを構築する"""
+def build_query(target, days_back=14):
+    """対象人物の設定から検索クエリを構築する（過去days_back日間に制限）"""
     search_parts = []
     if target.get("keywords"):
         kw_query = " OR ".join(f'"{kw}"' for kw in target["keywords"])
@@ -48,6 +48,9 @@ def build_query(target):
     query = " OR ".join(search_parts)
     for ex in target.get("exclude_keywords", []):
         query += f' -"{ex}"'
+    # 過去2週間に制限
+    since_date = (datetime.now() - timedelta(days=days_back)).strftime("%Y-%m-%d")
+    query += f" since:{since_date}"
     return query
 
 
