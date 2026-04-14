@@ -170,6 +170,14 @@ def main():
         return
 
     # Step 3: AI分析
+    if test_mode:
+        logger.info("\n[Step 3/4] AI分析（テストモードのためスキップ）")
+        logger.info(f"  ツイート収集は正常完了。AI分析・メール送信をスキップします。")
+        logger.info("\n" + "=" * 60)
+        logger.info("テスト完了")
+        logger.info("=" * 60)
+        return
+
     logger.info("\n[Step 3/4] AI分析")
     analyzed = analyze_all(GEMINI_API_KEY, GEMINI_MODEL, collected)
 
@@ -178,10 +186,6 @@ def main():
     web_report_path = generate_web_report(analyzed, report_type)
     logger.info(f"  ウェブレポート: {web_report_path}")
     email_html = generate_email_html(analyzed, report_type)
-
-    if test_mode:
-        logger.info("  テストモードのためメール送信をスキップ")
-        logger.info(f"  ウェブレポートを確認: {web_report_path}")
     else:
         send_all_reports(
             GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
