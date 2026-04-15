@@ -309,6 +309,39 @@
                 "soumu@ascom-inc.jp"
             ],
             "enabled": true
+        },
+        {
+            "id": "target_738d89d7",
+            "name": "",
+            "keywords": [],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "",
+            "client": "default",
+            "recipients": [],
+            "enabled": false
+        },
+        {
+            "id": "target_5dc5f8f3",
+            "name": "",
+            "keywords": [],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "",
+            "client": "default",
+            "recipients": [],
+            "enabled": false
+        },
+        {
+            "id": "target_31b05d8d",
+            "name": "",
+            "keywords": [],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "",
+            "client": "default",
+            "recipients": [],
+            "enabled": false
         }
     ]
 }

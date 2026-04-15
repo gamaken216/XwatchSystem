@@ -87,16 +87,29 @@ def load_config():
             logger.error("GMAIL_APP_PASSWORD 環境変数が設定されていません。")
             return None
 
-    # 受信者リスト（Secretsまたはconfig.pyから取得）
+    # 受信者リスト（環境変数 → settings.json → config.py の優先順）
     RECIPIENTS_ENV = os.environ.get("REPORT_RECIPIENTS", "")
     if RECIPIENTS_ENV:
         RECIPIENTS = [r.strip() for r in RECIPIENTS_ENV.split(",") if r.strip()]
     else:
-        try:
-            from config import REPORT_RECIPIENTS
-            RECIPIENTS = [r.strip() for r in REPORT_RECIPIENTS.split(",") if r.strip()]
-        except ImportError:
-            RECIPIENTS = []
+        # settings.json の report_recipients を読む
+        settings_file = os.path.join(SCRIPT_DIR, "settings.json")
+        settings_recipients = ""
+        if os.path.exists(settings_file):
+            try:
+                with open(settings_file, "r", encoding="utf-8") as f:
+                    settings_data = json.load(f)
+                settings_recipients = settings_data.get("report_recipients", "")
+            except Exception:
+                pass
+        if settings_recipients:
+            RECIPIENTS = [r.strip() for r in settings_recipients.split(",") if r.strip()]
+        else:
+            try:
+                from config import REPORT_RECIPIENTS
+                RECIPIENTS = [r.strip() for r in REPORT_RECIPIENTS.split(",") if r.strip()]
+            except ImportError:
+                RECIPIENTS = []
 
     # その他設定
     GEMINI_MODEL = "gemini-2.5-flash"
