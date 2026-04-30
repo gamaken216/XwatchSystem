@@ -165,38 +165,6 @@
             "enabled": true
         },
         {
-            "id": "ごめんなさい、もうこれ以上頑張れません_399",
-            "name": "ごめんなさい、もうこれ以上頑張れません",
-            "keywords": [
-                "ごめんなさい、もうこれ以上頑張れません"
-            ],
-            "x_account": "",
-            "exclude_keywords": [],
-            "category": "書籍",
-            "client": "ascom",
-            "recipients": [
-                "matsmoto.norihito@gmail.com",
-                "pr_all@ascom-inc.jp"
-            ],
-            "enabled": true
-        },
-        {
-            "id": "部下の心を動かすリーダーがやっていること_488",
-            "name": "部下の心を動かすリーダーがやっていること",
-            "keywords": [
-                "部下の心を動かすリーダーがやっていること"
-            ],
-            "x_account": "",
-            "exclude_keywords": [],
-            "category": "書籍",
-            "client": "ascom",
-            "recipients": [
-                "matsmoto.norihito@gmail.com",
-                "pr_all@ascom-inc.jp"
-            ],
-            "enabled": true
-        },
-        {
             "id": "時間をムダにしない人の習慣_967",
             "name": "時間をムダにしない人の習慣",
             "keywords": [
@@ -277,37 +245,53 @@
             "enabled": true
         },
         {
-            "id": "target_738d89d7",
-            "name": "",
-            "keywords": [],
+            "id": "target_53431490",
+            "name": "豆苗 完全攻略本",
+            "keywords": [
+                "豆苗 完全攻略本",
+                "豆苗完全攻略本"
+            ],
             "x_account": "",
             "exclude_keywords": [],
-            "category": "",
-            "client": "default",
-            "recipients": [],
-            "enabled": false
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         },
         {
-            "id": "target_5dc5f8f3",
-            "name": "",
-            "keywords": [],
+            "id": "target_d3968fa1",
+            "name": "英語は中学英語だけで話せます",
+            "keywords": [
+                "英語は中学英語だけで話せます"
+            ],
             "x_account": "",
             "exclude_keywords": [],
-            "category": "",
-            "client": "default",
-            "recipients": [],
-            "enabled": false
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         },
         {
-            "id": "target_31b05d8d",
-            "name": "",
-            "keywords": [],
+            "id": "target_51fc0253",
+            "name": "70歳からのLINEの使いこなし術",
+            "keywords": [
+                "70歳からのLINEの使いこなし術"
+            ],
             "x_account": "",
             "exclude_keywords": [],
-            "category": "",
-            "client": "default",
-            "recipients": [],
-            "enabled": false
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         }
     ]
 }
