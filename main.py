@@ -112,7 +112,7 @@ def load_config():
                 RECIPIENTS = []
 
     # その他設定
-    GEMINI_MODEL = "gemini-2.5-flash"
+    GEMINI_MODEL = "gemini-2.0-flash-lite"
     MAX_TWEETS_PER_PERSON = 100
     SEARCH_INTERVAL_SEC = 15
 
