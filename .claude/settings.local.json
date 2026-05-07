@@ -1,8 +1,16 @@
 {
+  "autoMemoryEnabled": true,
   "permissions": {
     "allow": [
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(python -c \"import json; data=json.load\\(open\\('targets.json','r',encoding='utf-8'\\)\\); print\\(f'対象数: {len\\(data[\\\\\"targets\\\\\"]\\)}名'\\)\")",
+      "Bash(python main.py)",
+      "Bash(python -c \"from config import GEMINI_API_KEY; from google import genai; client = genai.Client\\(api_key=GEMINI_API_KEY\\); response = client.models.generate_content\\(model='gemini-2.0-flash', contents='Hello, reply with just OK'\\); print\\(response.text\\)\")",
+      "Bash(python main.py --test)",
+      "PowerShell(pip install *)",
+      "Bash(git checkout *)",
+      "Skill(update-config)"
     ]
   }
 }

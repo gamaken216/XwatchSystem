@@ -112,7 +112,7 @@ def load_config():
                 RECIPIENTS = []
 
     # その他設定
-    GEMINI_MODEL = "gemini-2.0-flash"
+    GEMINI_MODEL = "gemini-2.5-flash"
     MAX_TWEETS_PER_PERSON = 100
     SEARCH_INTERVAL_SEC = 15
 
@@ -183,22 +183,9 @@ def main():
         logger.info("  新規ツイートが0件のため、レポートをスキップします。")
         return
 
-    # Step 3: AI分析（無効化 — ツイート収集のみのレポートに変更）
-    logger.info("\n[Step 3/4] AI分析（スキップ — 収集レポートモード）")
-    analyzed = {}
-    for tid, data in collected.items():
-        analyzed[tid] = {
-            "target": data["target"],
-            "tweets": data["tweets"],
-            "analysis": {
-                "summary": "",
-                "sentiment": {"positive": 0, "negative": 0, "neutral": 0},
-                "categories": {},
-                "top_tweets": [],
-                "alert": None,
-                "tweet_details": [],
-            },
-        }
+    # Step 3: AI分析
+    logger.info("\n[Step 3/4] AI分析")
+    analyzed = analyze_all(GEMINI_API_KEY, GEMINI_MODEL, collected)
 
     # Step 4: レポート生成・配信
     logger.info("\n[Step 4/4] レポート生成・配信")
