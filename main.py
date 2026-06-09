@@ -158,7 +158,7 @@ def main():
     from collector import load_targets, collect_all
     from analyzer import analyze_all
     from reporter import generate_web_report, generate_email_html
-    from sender import send_all_reports, collect_recipients
+    from sender import send_all_reports, collect_recipients, send_alert
 
     # Step 1: 対象人物の読み込み
     logger.info("\n[Step 1/4] 対象人物の読み込み")
@@ -180,7 +180,33 @@ def main():
     logger.info(f"  合計: {total}件の新規ツイート")
 
     if total == 0:
-        logger.info("  新規ツイートが0件のため、レポートをスキップします。")
+        # state を集計して「収集失敗による0件」か「単に新規がない0件」かを切り分ける
+        states = [d.get("state", "unknown") for d in collected.values()]
+        failure_states = ("login", "error", "timeout", "exception")
+        failed = [s for s in states if s in failure_states]
+
+        if failed:
+            # 収集が壊れている → 管理者に異常アラートを送る（静かに止まるのを防ぐ）
+            if "login" in failed:
+                reason = "Cookie失効の可能性（ログイン画面にリダイレクト）"
+            elif failed.count("error") >= failed.count("timeout"):
+                reason = "レート制限/エラー画面を検出"
+            else:
+                reason = "収集タイムアウト"
+
+            detail_lines = ["対象ごとの収集結果:"]
+            for d in collected.values():
+                detail_lines.append(
+                    f"  - {d['target']['name']}: state={d.get('state', 'unknown')} / "
+                    f"取得{d.get('total_found', 0)}件"
+                )
+            detail = "\n".join(detail_lines)
+
+            logger.error(f"  収集失敗を検出（{reason}）。アラートメールを送信します。")
+            if not test_mode:
+                send_alert(GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS, reason, detail)
+        else:
+            logger.info("  新規ツイートが0件（収集は正常・新規投稿なし）のため、レポートをスキップします。")
         return
 
     # Step 3: AI分析

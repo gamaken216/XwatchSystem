@@ -130,6 +130,52 @@ def send_all_reports(gmail_user, gmail_password, global_recipients,
                 print(f"    ✗ 送信失敗 ({recipient}): {e}")
 
 
+def send_alert(gmail_user, gmail_password, recipients, reason, detail=""):
+    """監視が機能していないことを管理者に知らせるアラートメールを送る。
+
+    Cookie失効・レート制限・タイムアウト等で全対象が0件になり、
+    通常レポートが送られないケースを「見える化」するために使う。
+
+    Args:
+        gmail_user: Gmailアドレス
+        gmail_password: アプリパスワード
+        recipients: 送信先リスト
+        reason: 件名・本文に出す要因の短い説明（例: "Cookie失効の可能性"）
+        detail: 本文に追記する詳細（対象ごとのstate一覧など）
+    """
+    today = datetime.now().strftime("%Y年%m月%d日 %H:%M")
+    subject = f"【X モニタリング 異常】{reason} - {today}"
+    body = (
+        f"X有名人モニタリングシステムが正常に動作していない可能性があります。\n\n"
+        f"検出時刻: {today}\n"
+        f"要因: {reason}\n\n"
+        f"{detail}\n\n"
+        f"--- 対処の目安 ---\n"
+        f"・「Cookie失効」の場合: ブラウザでxにログインし直し、auth_token / ct0 / twid を再取得して\n"
+        f"  GitHubの X_COOKIES_JSON シークレットを更新してください。\n"
+        f"・「レート制限/タイムアウト」の場合: 一時的なことが多いので翌日まで様子見でも構いません。\n"
+        f"・詳細はGitHub Actionsの最新ランのArtifacts(logs)内 logs/debug/ のスクショで確認できます。\n"
+    )
+
+    if not recipients:
+        print("  ⚠ アラート送信先が空のため、アラートメールを送れません。")
+        return
+
+    for recipient in recipients:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = gmail_user
+        msg["To"] = recipient
+        msg.attach(MIMEText(body, "plain", "utf-8"))
+        try:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+                server.login(gmail_user, gmail_password)
+                server.send_message(msg)
+            print(f"  ✓ アラート送信完了: {recipient}")
+        except Exception as e:
+            print(f"  ✗ アラート送信失敗 ({recipient}): {e}")
+
+
 def collect_recipients(analyzed_data):
     """後方互換用: 全ターゲットの recipients を統合して返す"""
     all_recipients = set()
