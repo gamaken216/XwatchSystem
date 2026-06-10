@@ -112,7 +112,9 @@ def load_config():
                 RECIPIENTS = []
 
     # その他設定
-    GEMINI_MODEL = "gemini-2.5-flash"
+    # gemini-2.5-flash は無料枠の日次上限が小さくすぐ枯渇するため、
+    # 無料枠RPDの大きい 2.0-flash-lite を使う（過去に正常運用していた設定）
+    GEMINI_MODEL = "gemini-2.0-flash-lite"
     MAX_TWEETS_PER_PERSON = 100
     SEARCH_INTERVAL_SEC = 15
 

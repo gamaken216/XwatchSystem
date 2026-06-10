@@ -123,18 +123,21 @@ def analyze_tweets(api_key, model, target, tweets):
 
         except Exception as e:
             error_str = str(e)
-            # 429/503/レート制限は一時エラーとしてリトライ（FreeTier表記含む）
+            # 日次の無料枠超過はリトライしても当日中は回復しない。
+            # 35分も無駄にリトライしてworkflowタイムアウトで落ちるのを防ぐため、
+            # 一時的なレート制限より先に判定して即スキップ（部分レポート送信）する。
+            is_free_tier_exhausted = "FreeTier" in error_str or "free_tier" in error_str
+            if is_free_tier_exhausted:
+                print(f"  ⚠ 無料枠のAPI上限に到達しました。残りの分析をスキップします。")
+                raise QuotaExhaustedError(error_str)
+            # 503/分あたりレート制限など一時エラーはリトライ（RESOURCE_EXHAUSTEDは
+            # 上のFreeTier判定を通過した＝分単位の制限とみなしリトライ対象に含める）
             is_retryable = "503" in error_str or "429" in error_str or "UNAVAILABLE" in error_str or "RESOURCE_EXHAUSTED" in error_str
             if is_retryable and attempt < max_retries - 1:
                 wait_sec = min(60 * (2 ** attempt), 600)
                 print(f"  API一時エラー（リトライ {attempt+1}/{max_retries}、{wait_sec}秒後）: {e}")
                 time.sleep(wait_sec)
                 continue
-            # リトライ不可またはリトライ上限到達で、日次クォータ超過の場合
-            is_free_tier_exhausted = "FreeTier" in error_str or "free_tier" in error_str
-            if is_free_tier_exhausted:
-                print(f"  ⚠ 無料枠のAPI上限に到達しました。残りの分析をスキップします。")
-                raise QuotaExhaustedError(error_str)
             print(f"  AI分析エラー: {e}")
             return {
                 "summary": f"分析中にエラーが発生しました: {str(e)}",
