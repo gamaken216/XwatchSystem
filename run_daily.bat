@@ -1,3 +1,3 @@
 @echo off
-cd /d "C:\Users\mats\Dropbox\GAI\有名人のX投稿監視システム"
+cd /d "%~dp0"
 python main.py
