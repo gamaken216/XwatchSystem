@@ -292,6 +292,22 @@
                 "pr_all@ascom-inc.jp"
             ],
             "enabled": true
+        },
+        {
+            "id": "target_20588194",
+            "name": "質問の魔力",
+            "keywords": [
+                "質問の魔力"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "matsmoto.norihito@gmail.com",
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         }
     ]
 }
