@@ -196,11 +196,10 @@
             "enabled": true
         },
         {
-            "id": "栄養まるっとおにぎり_327",
-            "name": "鎌田式長生き常備菜",
+            "id": "target_d3968fa1",
+            "name": "Your Money　／　ユアマネー",
             "keywords": [
-                "鎌田式長生き常備菜",
-                "長生き常備菜"
+                "Your Money　／　ユアマネー"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -213,10 +212,11 @@
             "enabled": true
         },
         {
-            "id": "target_d3968fa1",
-            "name": "Your Money　／　ユアマネー",
+            "id": "栄養まるっとおにぎり_327",
+            "name": "鎌田式長生き常備菜",
             "keywords": [
-                "Your Money　／　ユアマネー"
+                "鎌田式長生き常備菜",
+                "長生き常備菜"
             ],
             "x_account": "",
             "exclude_keywords": [],
