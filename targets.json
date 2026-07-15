@@ -68,10 +68,10 @@
             "enabled": true
         },
         {
-            "id": "ボスマネジメント_343",
-            "name": "ボスマネジメント",
+            "id": "aiアウトプットの全技法_567",
+            "name": "AIアウトプットの全技法",
             "keywords": [
-                "ボスマネジメント"
+                "AIアウトプットの全技法"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -84,10 +84,10 @@
             "enabled": true
         },
         {
-            "id": "aiアウトプットの全技法_567",
-            "name": "AIアウトプットの全技法",
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
             "keywords": [
-                "AIアウトプットの全技法"
+                "ボスマネジメント"
             ],
             "x_account": "",
             "exclude_keywords": [],
