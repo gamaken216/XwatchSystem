@@ -180,22 +180,6 @@
             "enabled": true
         },
         {
-            "id": "やせるしくみ化_400",
-            "name": "やせるしくみ化",
-            "keywords": [
-                "やせるしくみ化"
-            ],
-            "x_account": "",
-            "exclude_keywords": [],
-            "category": "書籍",
-            "client": "ascom",
-            "recipients": [
-                "matsmoto.norihito@gmail.com",
-                "pr_all@ascom-inc.jp"
-            ],
-            "enabled": true
-        },
-        {
             "id": "老いることの驚きと幸せ_224",
             "name": "老いることの驚きと幸せ",
             "keywords": [
