@@ -261,10 +261,10 @@
             "enabled": true
         },
         {
-            "id": "ボスマネジメント_343",
-            "name": "ボスマネジメント",
+            "id": "target_51fc0253",
+            "name": "もし人生にいきづまったら",
             "keywords": [
-                "ボスマネジメント"
+                "もし人生にいきづまったら"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -277,10 +277,10 @@
             "enabled": true
         },
         {
-            "id": "target_51fc0253",
-            "name": "もし人生にいきづまったら",
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
             "keywords": [
-                "もし人生にいきづまったら"
+                "ボスマネジメント"
             ],
             "x_account": "",
             "exclude_keywords": [],
