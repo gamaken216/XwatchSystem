@@ -229,10 +229,10 @@
             "enabled": true
         },
         {
-            "id": "ボスマネジメント_343",
-            "name": "ボスマネジメント",
+            "id": "target_53431490",
+            "name": "行動の仕組み化",
             "keywords": [
-                "ボスマネジメント"
+                "行動の仕組み化"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -245,10 +245,10 @@
             "enabled": true
         },
         {
-            "id": "target_53431490",
-            "name": "行動の仕組み化",
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
             "keywords": [
-                "行動の仕組み化"
+                "ボスマネジメント"
             ],
             "x_account": "",
             "exclude_keywords": [],
