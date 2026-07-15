@@ -148,10 +148,10 @@
             "enabled": true
         },
         {
-            "id": "時間をムダにしない人の習慣_967",
-            "name": "時間をムダにしない人の習慣",
+            "id": "target_d3968fa1",
+            "name": "Your Money　／　ユアマネー",
             "keywords": [
-                "時間をムダにしない人の習慣"
+                "Your Money　／　ユアマネー"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -164,10 +164,10 @@
             "enabled": true
         },
         {
-            "id": "target_d3968fa1",
-            "name": "Your Money　／　ユアマネー",
+            "id": "時間をムダにしない人の習慣_967",
+            "name": "時間をムダにしない人の習慣",
             "keywords": [
-                "Your Money　／　ユアマネー"
+                "時間をムダにしない人の習慣"
             ],
             "x_account": "",
             "exclude_keywords": [],
