@@ -180,10 +180,10 @@
             "enabled": true
         },
         {
-            "id": "老いることの驚きと幸せ_224",
-            "name": "老いることの驚きと幸せ",
+            "id": "target_d3968fa1",
+            "name": "Your Money　／　ユアマネー",
             "keywords": [
-                "老いることの驚きと幸せ"
+                "Your Money　／　ユアマネー"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -196,10 +196,10 @@
             "enabled": true
         },
         {
-            "id": "target_d3968fa1",
-            "name": "Your Money　／　ユアマネー",
+            "id": "老いることの驚きと幸せ_224",
+            "name": "老いることの驚きと幸せ",
             "keywords": [
-                "Your Money　／　ユアマネー"
+                "老いることの驚きと幸せ"
             ],
             "x_account": "",
             "exclude_keywords": [],
