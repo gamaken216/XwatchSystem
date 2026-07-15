@@ -277,10 +277,10 @@
             "enabled": true
         },
         {
-            "id": "ボスマネジメント_343",
-            "name": "ボスマネジメント",
+            "id": "target_20588194",
+            "name": "質問の魔力",
             "keywords": [
-                "ボスマネジメント"
+                "質問の魔力"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -293,10 +293,10 @@
             "enabled": true
         },
         {
-            "id": "target_20588194",
-            "name": "質問の魔力",
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
             "keywords": [
-                "質問の魔力"
+                "ボスマネジメント"
             ],
             "x_account": "",
             "exclude_keywords": [],
