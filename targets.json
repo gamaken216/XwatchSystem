@@ -245,10 +245,10 @@
             "enabled": true
         },
         {
-            "id": "target_53431490",
-            "name": "行動の仕組み化",
+            "id": "target_51fc0253",
+            "name": "もし人生にいきづまったら",
             "keywords": [
-                "行動の仕組み化"
+                "もし人生にいきづまったら"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -261,10 +261,10 @@
             "enabled": true
         },
         {
-            "id": "target_51fc0253",
-            "name": "もし人生にいきづまったら",
+            "id": "target_53431490",
+            "name": "行動の仕組み化",
             "keywords": [
-                "もし人生にいきづまったら"
+                "行動の仕組み化"
             ],
             "x_account": "",
             "exclude_keywords": [],
