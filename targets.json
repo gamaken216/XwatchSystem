@@ -164,10 +164,10 @@
             "enabled": true
         },
         {
-            "id": "やせるしくみ化_400",
-            "name": "やせるしくみ化",
+            "id": "target_d3968fa1",
+            "name": "Your Money　／　ユアマネー",
             "keywords": [
-                "やせるしくみ化"
+                "Your Money　／　ユアマネー"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -180,10 +180,10 @@
             "enabled": true
         },
         {
-            "id": "target_d3968fa1",
-            "name": "Your Money　／　ユアマネー",
+            "id": "やせるしくみ化_400",
+            "name": "やせるしくみ化",
             "keywords": [
-                "Your Money　／　ユアマネー"
+                "やせるしくみ化"
             ],
             "x_account": "",
             "exclude_keywords": [],
