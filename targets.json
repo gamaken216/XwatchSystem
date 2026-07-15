@@ -261,10 +261,10 @@
             "enabled": true
         },
         {
-            "id": "target_53431490",
-            "name": "行動の仕組み化",
+            "id": "target_20588194",
+            "name": "質問の魔力",
             "keywords": [
-                "行動の仕組み化"
+                "質問の魔力"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -277,10 +277,10 @@
             "enabled": true
         },
         {
-            "id": "target_20588194",
-            "name": "質問の魔力",
+            "id": "target_53431490",
+            "name": "行動の仕組み化",
             "keywords": [
-                "質問の魔力"
+                "行動の仕組み化"
             ],
             "x_account": "",
             "exclude_keywords": [],
