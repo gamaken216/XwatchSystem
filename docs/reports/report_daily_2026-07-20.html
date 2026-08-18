@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X モニタリングレポート（日次） - 2026-07-20</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#eef4fb; color:#1a2744; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+.header { background:linear-gradient(135deg,#1a6fd4,#0ea5e9); color:white; padding:28px; border-radius:16px; margin-bottom:24px; box-shadow:0 4px 20px rgba(26,111,212,0.25); }
+.header h1 { font-size:20px; margin-bottom:6px; }
+.header .meta { font-size:12px; opacity:0.8; }
+.back { display:inline-block; margin-bottom:16px; color:#1a6fd4; text-decoration:none; font-size:13px; font-weight:600; background:white; padding:6px 14px; border-radius:20px; border:1px solid #c5d8f0; }
+.back:hover { background:#e8f1fd; }
+.card { background:white; border-radius:12px; padding:24px; margin-bottom:20px; box-shadow:0 2px 8px rgba(26,111,212,0.06); border:1px solid #c5d8f0; }
+.card-title { font-size:12px; font-weight:700; color:#1a6fd4; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #0ea5e9; }
+.stats { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.stat { flex:1; min-width:80px; text-align:center; padding:12px; border-radius:8px; }
+.stat .num { font-size:26px; font-weight:700; }
+.stat .lbl { font-size:11px; margin-top:2px; }
+.person-name { font-size:18px; font-weight:700; margin-bottom:4px; }
+.category-badge { display:inline-block; background:#e8f1fd; color:#1a6fd4; font-size:11px; font-weight:600; padding:2px 8px; border-radius:12px; margin-bottom:12px; }
+.summary-text { background:#f0f6ff; padding:14px; border-radius:8px; line-height:1.7; font-size:14px; margin-bottom:16px; }
+.alert-box { background:#fff5f5; border-left:4px solid #E74C3C; padding:12px 16px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:13px; }
+.section-label { font-size:13px; font-weight:700; color:#1a2744; margin:16px 0 10px; }
+.tweet-item { border:1px solid #e5e7eb; border-radius:8px; padding:14px; margin-bottom:10px; background:white; }
+.tweet-item:nth-child(even) { background:#fafbfc; }
+.tweet-meta { font-size:12px; color:#6B7280; margin-bottom:6px; }
+.tweet-text { line-height:1.6; font-size:14px; margin-bottom:8px; }
+.tweet-stats { font-size:12px; color:#6B7280; }
+.tweet-link { color:#1a6fd4; text-decoration:none; }
+.tweet-link:hover { text-decoration:underline; }
+.filter-bar { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; align-items:center; }
+.filter-btn { padding:6px 14px; border-radius:20px; border:1.5px solid #c5d8f0; background:white; color:#5a7499; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background:#1a6fd4; color:white; border-color:#1a6fd4; }
+.count-badge { font-size:11px; background:#e8f1fd; color:#1a6fd4; padding:2px 6px; border-radius:10px; margin-left:4px; }
+.footer { text-align:center; color:#999; font-size:12px; padding:24px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back">← レポート一覧に戻る</a>
+    <div class="header">
+        <h1>X モニタリングレポート（日次）</h1>
+        <div class="meta">2026年07月20日 23:13 生成 ／ 総ツイート 116件</div>
+    </div>
+    <div class="card">
+        <div class="card-title">エグゼクティブサマリー</div>
+        <div class="stats">
+            <div class="stat" style="background:#e8f1fd;color:#1a6fd4;">
+                <div class="num">18</div><div class="lbl">対象人物</div>
+            </div>
+            <div class="stat" style="background:#e8f1fd;color:#1a6fd4;">
+                <div class="num">116</div><div class="lbl">総ツイート数</div>
+            </div>
+            <div class="stat" style="background:#e8f8f5;color:#27AE60;">
+                <div class="num">71</div><div class="lbl">ポジティブ</div>
+            </div>
+            <div class="stat" style="background:#f4f6f7;color:#6B7280;">
+                <div class="num">19</div><div class="lbl">ニュートラル</div>
+            </div>
+            <div class="stat" style="background:#fdedec;color:#E74C3C;">
+                <div class="num">3</div><div class="lbl">ネガティブ</div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">アスコム</div>
+        <span class="category-badge">出版</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:85%;background:#27AE60;"></div>
+    <div style="width:15%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 24件</span>
+    <span>⚪ ニュートラル 4件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">アスコムに関する28件のツイートは、新刊・作品情報が中心で、特に自己啓発や健康に関する書籍が多く紹介されています。献本された書籍に関する感想や、書籍内容からの引用が多く見られ、読書体験を共有するポジティブな投稿が目立ちます。木村至信氏の書籍や、AI、健康関連の話題も複数言及されています。</div>
+        <div class="section-label">全ツイート一覧（28件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('アスコム_001','all',this)">すべて <span class="count-badge">28</span></button>
+            <button class="filter-btn" onclick="filterTweets('アスコム_001','positive',this)">🟢 ポジティブ <span class="count-badge">24</span></button>
+            <button class="filter-btn" onclick="filterTweets('アスコム_001','neutral',this)">⚪ ニュートラル <span class="count-badge">4</span></button>
+            <button class="filter-btn" onclick="filterTweets('アスコム_001','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-アスコム_001">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-20T22:32:03.000Z</div>
+                <div class="tweet-text">「人生を変えるのに、特別な才能も、劇的な出会いも必要ありません。たった一つ、自分にかける『言葉（質問）』を変える。それだけでいいのです」
+
+「何をすればいいんだろう」と考えることが増えていた
+でも本当に必要だったのは
+
+自分への問いを変えることだった
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2079333541108982088" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-20T22:29:36.000Z</div>
+                <div class="tweet-text">おはようございます
+
+アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+『質問の魔力』
+
+「答え」を探しているうちは、なかなか変われない
+人生を変える人は、答えではなく「質問」を変えている
+
+「どうして自分ばかり？」ではなく「この出来事から何を得られる？」
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2079332927830413667" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kbc_wakou（くまざわ書店和光店）- 2026-07-20T05:20:49.000Z</div>
+                <div class="tweet-text">オススメ
+『足の名医がついにたどりついた
+　　こむら返りと手足のつりリセット法』
+　　#北城雅照　　#アスコム
+
+こむら返りの正体は
+「筋肉のセンサーの誤作動」だった！
+ 
+#こむら返り
+#リセット</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kbc_wakou/status/2079074023510778294" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@zuka20210101（ずーか）- 2026-07-19T21:00:01.000Z</div>
+                <div class="tweet-text">忙しすぎた時期、頭の中から「他のやり方」が消えていました。
+
+平日だけでは終わらず、土日もなにかしら出社していて、
+目の前の業務をこなすだけで精一杯でした。
+
+その状態でミスが起きて怒られても、どうしようもない。
+選択肢がないことが、いちばんつらかったです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/zuka20210101/status/2078947992313491876" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaigara1020（すーさん(Kai)｜木村至信BANDさんと繋がる音楽と健康生活）- 2026-07-19T07:37:58.000Z</div>
+                <div class="tweet-text">木村至信（きむらしのぶ）さんとは
+⇩⇩⇩
+①FMヨコハマ、番組パーソナリティ
+②CDメジャーデビュー
+③木村至信BANDボーカル＆キーボード
+④医学博士
+⑤耳鼻咽喉科医
+⑥ホリプロ所属 女医タレント
+⑦10年間 フィリピン医療ボランティア活動参加
+⑧17万部突破 著書「耳鳴りと難聴のリセット法」著者</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaigara1020/status/2078746151793361222" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-15T22:30:46.000Z</div>
+                <div class="tweet-text">おはようございます
+
+アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+『ポケット版「スネ夫」という生きかた』
+
+ホメることは相手のためだけではなく観察力や思考力も磨いてくれる
+
+スネ夫をこんな視点で読み解くとは思わなかった
+
+嫌なやつが「人生の参謀」に見えてくる
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2077521279780106343" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaigara1020（すーさん(Kai)｜木村至信BANDさんと繋がる音楽と健康生活）- 2026-07-15T07:56:03.000Z</div>
+                <div class="tweet-text">木村至信（きむらしのぶ）さんとは
+⇩⇩⇩
+①FMヨコハマ、番組パーソナリティ
+②CDメジャーデビュー
+③木村至信BANDボーカル＆キーボード
+④医学博士
+⑤耳鼻咽喉科医
+⑥ホリプロ所属 女医タレント
+⑦10年間 フィリピン医療ボランティア活動参加
+⑧17万部突破 著書「耳鳴りと難聴のリセット法」著者</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaigara1020/status/2077301153113772451" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kaigara1020（すーさん(Kai)｜木村至信BANDさんと繋がる音楽と健康生活）- 2026-07-15T07:55:27.000Z</div>
+                <div class="tweet-text">Yahooニュースに、木村至信さんの記事掲載
+
+今すぐ取り入れやすい【耳鼻咽喉科の医師推奨】鼻炎をケアする「食材」(ヨガジャーナルオンライン)
+#Yahooニュース
+
+https://
+news.yahoo.co.jp/articles/9bfa2
+6103cbdbb676d8ef15a0295a68f77d361ea?source=sns&dv=sp&mid=other&date=20260715&ctg=lif&bt=tw_up
+…
+
+#アスコム
+
+@AscomBooks
+ 
+#鼻炎
+#木村至信
+
+@kimushino
+ 
+#木村至信BAND
+
+@Kimushino_BAND
+ 
+
+続く</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kaigara1020/status/2077301002043269601" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-15T04:03:00.000Z</div>
+                <div class="tweet-text">#アスコム新刊情報 
+
+『Your Money』
+『行動の仕組み化』
+『笑って大往生できる人 できない人』
+『ありのままでラクに生きる練習』
+『不整脈・動悸・心房細動　自力でできるリセット法』
+
+
+@ak_tch
+ 
+@yamane_hiroshi</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2077242501594013773" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@read_books_dai（ダイ/読書）- 2026-07-15T03:15:59.000Z</div>
+                <div class="tweet-text">なんで私の話は伝わらないんだろう…。
+誰もが一度は悩んだことがあると思います。
+
+「伝える」➡︎「伝わる」へ。
+「解像度」
+「視点のすり合わせ」
+「ゴール設定」
+3つのテーマから紐解く一冊です。
+
+人と人は完全にはわかりあえない。
+その前提で工夫するという考え方が、
+すごく刺さった。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/read_books_dai/status/2077230669156303227" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@moe_eva（萌猫堂@変な古本屋）- 2026-07-15T02:50:15.000Z</div>
+                <div class="tweet-text">▼『ローマの休日』を観るだけで英語の基本が身につくDVDブック 映画観るだけマスターシリーズ 藤田英時／著 アスコム 音変化の7つのルール</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/moe_eva/status/2077224193368973594" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@business_rev55（ビジネス本新刊）- 2026-07-14T02:11:03.000Z</div>
+                <div class="tweet-text">【売れてます！】
+「最短で最大の成果を上げる AIアウトプットの全技法」
+著者：上岡 正明(著)
+出版社：アスコム
+発売日：2026年04月13日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/business_rev55/status/2076851943256080603" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-13T22:33:59.000Z</div>
+                <div class="tweet-text">「過去を捨てるな。今を磨け！」
+
+新しい資格も、新しい肩書もいらない！
+
+30年間積み上げてきた経験は
+あなたにしかない「本気の業」になる！
+
+人生をやり直す本ではない！
+
+積み重ねてきた自分を信じ直す本だった
+
+出版社アスコム様より献本いただきました
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2076797312924524809" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-13T22:32:05.000Z</div>
+                <div class="tweet-text">おはようございます
+
+アスコム｜出版社 公式
+@AscomBooks
+
+献本いただきました
+
+『もし人生にいきづまったら　人生をシフトして、やりたいことを実現する12の法則』
+
+主人公が人生に行きづまり、最初にやったことは転職ではなった
+名刺を破った
+このシーンの意味を知ったとき、鳥肌が立った
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2076796834421625334" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kunioist（阿久津 邦夫|読書・本好き）- 2026-07-12T09:07:15.000Z</div>
+                <div class="tweet-text">野澤友宏さん
+
+もし人生にいきづまったら
+
+先日、アスコム様に献本して頂きました。
+
+年齢に関係なくやり直していいはずです。
+また行き詰まるからこそ、深みが出るとも思っています。
+
+#読書 #読書記録 #読書レビュー #読書垢とつながりたい #book #Bookish #bookstagram #BooksToRead #books</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kunioist/status/2076231904169480553" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@yukinojo7（増田由紀・スマホ活用アドバイザー／70歳からのスマホの使いこなし術）- 2026-07-12T07:38:27.000Z</div>
+                <div class="tweet-text">めちゃ優しいなあ
+確かに、わからないところが
+「ここ」って言ってもらった方が
+教えてあげやすいですね
+ナイスアイデアだと思いました
+#70歳からのLINE
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yukinojo7/status/2076209556770939063" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@HALmonia3（HL）- 2026-07-12T03:01:29.000Z</div>
+                <div class="tweet-text">これを思い出した↓
+
+"命の存在が全く感じられない宇宙空間の漆黒の闇の中、地球だけが圧倒的な存在感を放ち、「ここに命がある」「生きている」と訴えているようでした"
+
+『どう生きるかつらかったときの話をしよう』野口聡一（アスコム）p29</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/HALmonia3/status/2076139856812728523" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@CANDYvCANDY（木村祥子）- 2026-07-11T23:15:00.000Z</div>
+                <div class="tweet-text">今日は、
+この２冊を読みたいと思います。
+
+アスコム様からご恵贈いただきましたー！
+
+人生をシフトする物語と、 
+未来をひらく質問の力。
+この2冊、一緒に読むと、
+どんな気づきになるのか…楽しみです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/CANDYvCANDY/status/2076082859799187631" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@lixing0506（すっすー｜サラリーマンのスキマ読書術）- 2026-07-11T21:06:04.000Z</div>
+                <div class="tweet-text">今週仕入れてきた仲間たち
+①澤円さんの「思考をアップデートする全技術」
+アスコム出版/2026年6月8日発売
+→頑張っていてもなかなか成果が見えてこない。
+自分の思考の報告を変えるヒントにならないかと
+想い購入しました。
+
+②本郷和人さんの「インテリジェンス関ケ原」
+文芸新書/2026年6月20日発売</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/lixing0506/status/2076050412587892883" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kunioist（阿久津 邦夫|読書・本好き）- 2026-07-11T07:39:05.000Z</div>
+                <div class="tweet-text">河田真誠さん
+
+質問の魔力
+
+アスコム様から献本して頂きました。
+
+質問ができるということは、ある程度自分の中で明確になっている状況だと考えます。
+
+分からない時は質問もできない。
+何が分からないか分からない。
+
+質問と相談の組み合わせで展開していくと、開けてくるのかもしれません。
+
+#読書</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kunioist/status/2075847331015221378" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@Kino_Maebashi（紀伊國屋書店 前橋店）- 2026-07-10T05:42:05.000Z</div>
+                <div class="tweet-text">【ビジネス書・PC書】　G59フェア台
+夏季限定！
+前橋店ビジネス書・PC書担当おすすめの
+AI書籍、集めました！
+生活を便利にするAI
+しかし課題も見えてきました
+AIの現在を俯瞰するフェアです
+ぜひお手に取ってお確かめください！
+
+#Gemini #ChatGPT #Copilot
+#アスコム　#SBクリエイティブ</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/Kino_Maebashi/status/2075455497445285953" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@pierrot_lab（仮乃ピエロ｜読書で日々を高める）- 2026-07-09T08:57:00.000Z</div>
+                <div class="tweet-text">『高速読書』（上岡正明/アスコム）  #読了
+
+個々の技術レベルではみんな自然とやってるんじゃないかな。
+
+本の種類を選ぶ方法論です。
+読みやすい実用書に特化した読み方ですね。
+
+実用書はゆっくり読んでも意味はないというのは大いに賛同できます。
+高速で読むことを心がける契機にはなりました。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/pierrot_lab/status/2075142161369075858" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@AsahiyaSinkosi（旭屋書店新越谷店）- 2026-07-07T06:33:29.000Z</div>
+                <div class="tweet-text">6月25日読売新聞で紹介されました!!!
+『 #幸せな孤独　「幸福学博士」が教える「孤独」を幸せに変える方法』
+「独りでも幸せな人」「周囲に人がいっぱいいるのに不幸な人」２つの違いは、何でしょうか？
+
+#前野隆司
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AsahiyaSinkosi/status/2074381270881386922" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@yukinojo7（増田由紀・スマホ活用アドバイザー／70歳からのスマホの使いこなし術）- 2026-07-07T01:03:03.000Z</div>
+                <div class="tweet-text">来たのを見る
+多分、それが一番素直な使い方ではあります
+でも文字だけじゃない
+写真も声も
+動画もスタンプも
+位置情報もギフトも
+リンクも連絡先も
+ホントにいろいろ送れるの
+でも人が一番送りたいのは
+キモチだよね
+その「キモチ」を送る手段が
+いっぱいあるんです
+LINEには
+＼(^o^)／</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yukinojo7/status/2074298112877941159" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@smoothfoxxx（smooth＠書評系ブロガー）- 2026-07-06T23:02:00.000Z</div>
+                <div class="tweet-text">ブログ投稿しました！
+
+【全20冊】未読本・気になる本（2026年07月07日）
+
+https://
+smoothfoxxx.livedoor.biz/archives/52422
+708.html
+…
+
+#SBクリエイティブ #かんき出版 #東洋経済 #彩図社 #アスコム #ビジネス社 #幻冬舎 #ダイヤモンド社 #宝島社 #JMAM #朝日新聞出版 #実務教育出版 #日経BP #フォレスト出版 #PHP研究所 #KADOKAWA</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/smoothfoxxx/status/2074267649262166139" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@KPT_book（コミ@読書垢）- 2026-07-06T13:13:14.000Z</div>
+                <div class="tweet-text">今日読み終わった本
+
+【書籍名】
+　にゃんこと整える。
+
+【著者】
+　小林弘幸
+
+#読了
+#読書好きな人と繋がりたい
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KPT_book/status/2074119482495426763" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@riei_books（理瑛読書0→半年で50冊｜本紹介継続中！）- 2026-07-06T10:43:15.000Z</div>
+                <div class="tweet-text">＼毎日ラクして、おいしく長生き！／
+筋肉、脳、血管、腸、骨
+5つの力が毎日高まる！
+
+【鎌田式 長生き常備菜】
+
+著者：鎌田 實
+出版社：アスコム
+
+＊＊＊
+
+著者の鎌田先生は医師。
+
+脳卒中の死亡率が全国ワーストクラスだった長野県で減塩運動をスタートさせ、</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/riei_books/status/2074081739048374284" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shigakusatsuten（ジュンク堂書店　滋賀草津店）- 2026-07-06T00:02:09.000Z</div>
+                <div class="tweet-text">週間ベスト6/28〜7/4【実用】
+1位『ミャクミャクシール帳BOOK』
+宝島社
+2位『こむら返りと手足のつりリセット法』北城雅照　アスコム
+3位『体力低下を食い止める30秒習慣』
+吉原潔　アスコム
+4位『鎌田式長生き常備菜』
+鎌田實　アスコム
+5位『新型RAV4のすべて』
+三栄</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shigakusatsuten/status/2073920401600913822" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">科学的に証明された本当のラジオ体操</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:100%;background:#27AE60;"></div>
+    <div style="width:0%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 1件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">「科学的に証明された本当のラジオ体操」という新刊に関する投稿がありました。この投稿は、ラジオ体操の第一と第二の違いを解説し、夏休みの風物詩であるラジオ体操の意外な知識を深めることができる一冊であることを紹介しています。未来屋書店古川店からの情報発信であり、実用担当のおすすめ本として紹介されています。</div>
+        <div class="section-label">全ツイート一覧（1件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('科学的に証明された本当のラジオ体操_128','all',this)">すべて <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された本当のラジオ体操_128','positive',this)">🟢 ポジティブ <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された本当のラジオ体操_128','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された本当のラジオ体操_128','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-科学的に証明された本当のラジオ体操_128">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@ms_hurukawa7838（未来屋書店　古川店）- 2026-07-16T05:00:14.000Z</div>
+                <div class="tweet-text">【古川店便り】
+
+実用担当おススメ本②
+『#じつはすごい！科学的に証明された本当のラジオ体操 たった３分で４００の筋肉が動く』
+著　#鈴木大輔
+
+夏休みの風物詩、ラジオ体操！意外と知らない「第一・第二」の違いとは？
+そんな疑問をすっきり解決してくれる1冊です！
+
+#未来屋書店古川店</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/ms_hurukawa7838/status/2077619294997807390" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">思考をアップデートする全技術</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:90%;background:#27AE60;"></div>
+    <div style="width:10%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 9件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">『思考をアップデートする全技術』に関するX（旧Twitter）の投稿は、新刊情報や著者出演情報が中心となっています。発売日や出演番組告知が多く見られ、読書意欲を刺激する内容となっています。一部、自身の経験と絡めて本書の内容に触れる投稿もあり、読者層の関心事がうかがえます。</div>
+        <div class="section-label">全ツイート一覧（10件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('鼻炎のリセット法_951','all',this)">すべて <span class="count-badge">10</span></button>
+            <button class="filter-btn" onclick="filterTweets('鼻炎のリセット法_951','positive',this)">🟢 ポジティブ <span class="count-badge">9</span></button>
+            <button class="filter-btn" onclick="filterTweets('鼻炎のリセット法_951','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('鼻炎のリセット法_951','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-鼻炎のリセット法_951">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@mscafetokushima（未来屋書店 徳島店）- 2026-07-20T06:00:10.000Z</div>
+                <div class="tweet-text">話題のビジネス書　その②
+『思考をアップデートする全技術』
+
+〜すべては視点を変えるだけ。〜</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/mscafetokushima/status/2079083928883757485" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@zuka20210101（ずーか）- 2026-07-19T21:00:01.000Z</div>
+                <div class="tweet-text">忙しすぎた時期、頭の中から「他のやり方」が消えていました。
+
+平日だけでは終わらず、土日もなにかしら出社していて、
+目の前の業務をこなすだけで精一杯でした。
+
+その状態でミスが起きて怒られても、どうしようもない。
+選択肢がないことが、いちばんつらかったです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/zuka20210101/status/2078947992313491876" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@akkimanradio（あっきー｜読書で思考をととのえる）- 2026-07-15T02:13:36.000Z</div>
+                <div class="tweet-text">アウトプットするものがない。
+
+アウトプットの大切さはわかる。でも、「自分には発信することがない」と嘆く人へ著者のアドバイスをシェアしたい。
+
+『思考をアップデートする全技術』で紹介されていた、自分だけのコンテンツをアウトプットできる、とっておきのコツは、</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/akkimanradio/status/2077214970748809367" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@lixing0506（すっすー｜サラリーマンのスキマ読書術）- 2026-07-11T21:06:04.000Z</div>
+                <div class="tweet-text">今週仕入れてきた仲間たち
+①澤円さんの「思考をアップデートする全技術」
+アスコム出版/2026年6月8日発売
+→頑張っていてもなかなか成果が見えてこない。
+自分の思考の報告を変えるヒントにならないかと
+想い購入しました。
+
+②本郷和人さんの「インテリジェンス関ケ原」
+文芸新書/2026年6月20日発売</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/lixing0506/status/2076050412587892883" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@NonShimoWeb（しものん｜40代の継続家）- 2026-07-11T09:34:49.000Z</div>
+                <div class="tweet-text">PR
+言語化は「ありきたりの言葉」でうまくいく
+
+https://
+amzn.to/4aIRTCm
+
+自分のことを書いてみる
+
+https://
+amzn.to/4pgsPbP
+
+思考をアップデートする全技術
+
+https://
+amzn.to/4aPdklb
+
+「最高の自分」の引き出し方
+
+https://
+amzn.to/4fqWKKZ</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/NonShimoWeb/status/2075876454114664559" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@MAIKINGaPLACE（みりんのいえ【子ども×保育×本】好きを力に）- 2026-07-08T11:39:27.000Z</div>
+                <div class="tweet-text">【タイトル】思考をアップデートする全技術
+【　著者　】澤円
+【  出版社 】アスコム〈
+@AscomBooks
+〉
+
+本書はツナグ図書館を通してアスコム様よりご恵贈いただきました。
+素敵な出会いをありがとうございます
+
+
+https://
+ascom-inc.jp/books/detail/9
+78-4-7762-1448-9.html
+…</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/MAIKINGaPLACE/status/2074820658526347579" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@MAIKINGaPLACE（みりんのいえ【子ども×保育×本】好きを力に）- 2026-07-08T11:34:35.000Z</div>
+                <div class="tweet-text">あなたというハードに
+
+『思考』ソフトウェアは
+バージョンいくつを搭載していますか？？
+
+◇◇◇◇◇◇
+
+【タイトル】思考をアップデートする全技術
+【　著者　】澤円
+【  出版社 】アスコム
+
+◇◇◇◇◇◇
+
+思考の固まり。
+これ、意外に気が付かないかもしれません。
+
+パソコンの設定みたいに、</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/MAIKINGaPLACE/status/2074819431889518721" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-06T07:00:05.000Z</div>
+                <div class="tweet-text">J-WAVE「STEP ONE」
+
+『思考をアップデートする全技術』
+著者・澤 円さんが出演しました！
+
+サッシャさん、ノイハウス萌菜さん
+ありがとうございました！
+
+こちらからお聴きいただけます
+STEP ONE(PART2) | J-WAVE | 2026/07/06/月  10:00-13:00 
+https://
+radiko.jp/share/?sid=FMJ
+&t=20260706101007
+…
+
+#stepone813 #jwave</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2074025575061328291" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-06T01:16:04.000Z</div>
+                <div class="tweet-text">J-WAVE「STEP ONE」
+
+『思考をアップデートする全技術』
+著者・澤 円さんが出演中です
+
+#stepone813 #jwave 
+@stepone813
+ 
+@madoka510</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2073939002160529431" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-06T01:03:52.000Z</div>
+                <div class="tweet-text">J-WAVE「STEP ONE」
+
+このあと10:10~
+『思考をアップデートする全技術』
+著者・澤 円さんが出演します
+
+思考をアップデートするテクニックについてお話しします
+
+ぜひお聴きください
+
+#stepone813 #jwave 
+@stepone813</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2073935929853813245" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">ありのままでラクに生きる練習</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:0%;background:#27AE60;"></div>
+    <div style="width:100%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 0件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">取得したツイートは、アスコムの新刊情報として「ありのままでラクに生きる練習」を含む複数の書籍が紹介されています。現時点では、このツイート単体では「ありのままでラクに生きる練習」に対する具体的な反応や評価は確認できません。他の新刊情報と共にリストアップされている状態です。</div>
+        <div class="section-label">全ツイート一覧（1件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('「伝える」が「伝わる」に変わるひみつ_255','all',this)">すべて <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('「伝える」が「伝わる」に変わるひみつ_255','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('「伝える」が「伝わる」に変わるひみつ_255','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('「伝える」が「伝わる」に変わるひみつ_255','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-「伝える」が「伝わる」に変わるひみつ_255">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-15T04:03:00.000Z</div>
+                <div class="tweet-text">#アスコム新刊情報 
+
+『Your Money』
+『行動の仕組み化』
+『笑って大往生できる人 できない人』
+『ありのままでラクに生きる練習』
+『不整脈・動悸・心房細動　自力でできるリセット法』
+
+
+@ak_tch
+ 
+@yamane_hiroshi</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2077242501594013773" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">AIアウトプットの全技法</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:86%;background:#27AE60;"></div>
+    <div style="width:1%;background:#BDC3C7;"></div>
+    <div style="width:13%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 13件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 2件</span>
+</div>
+        <div class="summary-text">「AIアウトプットの全技法」に関する投稿は、主に書籍の販売促進と、それに対する関心を示す内容で構成されています。Amazonでのセール情報や、仕事でAIを活用したいという意欲が伺えます。一部、売り切れを残念がる声も見られました。</div>
+        <div class="section-label">全ツイート一覧（15件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('aiアウトプットの全技法_567','all',this)">すべて <span class="count-badge">15</span></button>
+            <button class="filter-btn" onclick="filterTweets('aiアウトプットの全技法_567','positive',this)">🟢 ポジティブ <span class="count-badge">13</span></button>
+            <button class="filter-btn" onclick="filterTweets('aiアウトプットの全技法_567','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('aiアウトプットの全技法_567','negative',this)">🔴 ネガティブ <span class="count-badge">2</span></button>
+        </div>
+        <div id="tweets-aiアウトプットの全技法_567">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-20T21:46:48.000Z</div>
+                <div class="tweet-text">Amazon今ならセール実施中!
+
+納得のレビュー多数!!
+
+最短で最大の成果を上げる AIアウトプットの全技法
+
+-
+
+評価 ★★★★☆
+レビュー 77件
+
+▼在庫がなくなる前に！
+
+https://
+amazon.co.jp/dp/477621458X?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+
+-
+
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2079322154810916913" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@celskb（cellskobuk）- 2026-07-20T13:25:48.000Z</div>
+                <div class="tweet-text">
+
+最短で最大の成果を上げる AIアウトプットの全技法
+上岡 正明 著
+
+
+https://
+90ch.net/shop/book/4776
+21458X?src=x
+…
+2026/07/20 22:25</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/celskb/status/2079196076469547061" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@HayashiTetsuBoo（林哲@書籍妄想家）- 2026-07-19T11:26:53.000Z</div>
+                <div class="tweet-text">AIアウトプットの技法本。仕事でAI使ってるけどまだ全然。技法60個って気になっちゃう。
+
+ベストセラー1位 最短で最大の成果を上げる AIアウトプットの全技法【新</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/HayashiTetsuBoo/status/2078803762211360774" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@digitalpcgame（digital_pcgame）- 2026-07-19T03:30:37.000Z</div>
+                <div class="tweet-text">最短で最大の成果を上げる AIアウトプットの全技法
+
+
+https://
+90ch.net/shop/book/4776
+21458X?src=x
+…
+2026/07/19 12:30</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/digitalpcgame/status/2078683902777127071" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-18T21:41:43.000Z</div>
+                <div class="tweet-text">Amazon今ならセール実施中!
+
+納得のレビュー多数!!
+
+最短で最大の成果を上げる AIアウトプットの全技法
+
+-
+
+評価 ★★★★☆
+レビュー 76件
+
+▼在庫がなくなる前に！
+
+https://
+amazon.co.jp/dp/477621458X?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+
+-
+
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2078596101574406194" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@HayashiTetsuBoo（林哲@書籍妄想家）- 2026-07-18T09:26:24.000Z</div>
+                <div class="tweet-text">AIアウトプットの技法本。売り切れか。仕事で使えそうだったのに残念。
+
+ベストセラー1位 最短で最大の成果を上げる AIアウトプットの全技法【新</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/HayashiTetsuBoo/status/2078411051457245401" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-15T03:43:29.000Z</div>
+                <div class="tweet-text">Amazon今だけセール実施中!
+
+人気アイテム期間限定セール!
+
+最短で最大の成果を上げる AIアウトプットの全技法
+--
+評価 ★★★★☆
+レビュー 74件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/477621458X?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2077237591808823660" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@affily220202（今日のアラフィフさん）- 2026-07-15T01:07:45.000Z</div>
+                <div class="tweet-text">[広告]
+最短で最大の成果を上げる AIアウトプットの全技法
+2026年7月15日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/affily220202/status/2077198398449459272" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-14T13:11:24.000Z</div>
+                <div class="tweet-text">Amazon今ならセール実施中!
+
+納得のレビュー多数!!
+
+最短で最大の成果を上げる AIアウトプットの全技法
+
+-
+
+評価 ★★★★☆
+レビュー 72件
+
+▼在庫がなくなる前に！
+
+https://
+amazon.co.jp/dp/477621458X?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+
+-
+
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2077018122960462259" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@xidrolusti（xidrolusti）- 2026-07-14T13:10:16.000Z</div>
+                <div class="tweet-text">
+
+最短で最大の成果を上げる AIアウトプットの全技法
+上岡 正明 著
+
+
+https://
+90ch.net/shop/book/4776
+21458X?src=x
+…
+2026/07/14 22:09</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xidrolusti/status/2077017837257056431" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@business_rev55（ビジネス本新刊）- 2026-07-14T02:11:03.000Z</div>
+                <div class="tweet-text">【売れてます！】
+「最短で最大の成果を上げる AIアウトプットの全技法」
+著者：上岡 正明(著)
+出版社：アスコム
+発売日：2026年04月13日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/business_rev55/status/2076851943256080603" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-13T13:54:34.000Z</div>
+                <div class="tweet-text">【Amazon】プライムデーSALE実施中！
+7/13(月)23:59まで
+
+最短で最大の成果を上げる AIアウトプットの全技法
+--
+評価 ★★★★☆
+レビュー 72件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/477621458X?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2076666600976228693" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@business_rev55（ビジネス本新刊）- 2026-07-13T12:11:04.000Z</div>
+                <div class="tweet-text">【売れてます！】
+「最短で最大の成果を上げる AIアウトプットの全技法」
+著者：上岡 正明(著)
+出版社：アスコム
+発売日：2026年04月13日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/business_rev55/status/2076640553538896128" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@HayashiTetsuBoo（林哲@書籍妄想家）- 2026-07-13T09:20:13.000Z</div>
+                <div class="tweet-text">AIアウトプットの本。売り切れだけどタイトル気になる。
+
+最短で最大の成果を上げる AIアウトプットの全技法</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/HayashiTetsuBoo/status/2076597558156448050" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@junku_takatsuki（ジュンク堂書店 松坂屋高槻店：本と本、人と人とが出会う場所）- 2026-07-13T05:19:20.000Z</div>
+                <div class="tweet-text">今週の売上ランキング【ビジネス書】
+①『どっちもある名言集』ペズル　ライツ社
+②『科学的に証明された すごい習慣大百科』堀田秀吾　ＳＢクリエイティブ
+③『「会社四季報」業界地図 2026年版』東洋経済新報社
+④『AIアウトプットの全技法』上岡正明　アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/junku_takatsuki/status/2076536936995639740" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">投資がうまくいく人の当たり前</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:100%;background:#27AE60;"></div>
+    <div style="width:0%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 1件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">提供された1件のツイートは、「日々の積み重ねが将来の自分への複利になる」という考え方を「投資がうまくいく人の当たり前」として示しています。これは、長期的な視点と継続的な努力が重要であることを示唆しています。ポジティブなメッセージが発信されており、将来への投資という観点から、自己成長や資産形成における習慣の重要性を強調する内容です。</div>
+        <div class="section-label">全ツイート一覧（1件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('妖怪学校激ムズ！まちがいさがし_855','all',this)">すべて <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('妖怪学校激ムズ！まちがいさがし_855','positive',this)">🟢 ポジティブ <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('妖怪学校激ムズ！まちがいさがし_855','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('妖怪学校激ムズ！まちがいさがし_855','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-妖怪学校激ムズ！まちがいさがし_855">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@d7_4he（シエナ︎︎︎︎）- 2026-07-09T08:33:13.000Z</div>
+                <div class="tweet-text">ホワイトニングの時間まで
+日々の積み重ねが将来の自分への複利に
+なると思って
+
+#投資がうまくいく人の当たり前</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/d7_4he/status/2075136178798702833" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">「のび太」が教えてくれたこと</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:50%;background:#27AE60;"></div>
+    <div style="width:50%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 1件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">本投稿データは、2件のX（旧Twitter）投稿で構成されています。1件は出版社からの献本報告で、『ポケット版「のび太」が教えてくれたこと』を含む複数の書籍が紹介されています。もう1件は、書籍『のび太が教えてくれたこと』に対する感想で、苦手克服よりも得意を伸ばすという視点への共感が示されています。全体として、書籍に関する情報提供と、それに対する個人的な感想という内容に留まっています。</div>
+        <div class="section-label">全ツイート一覧（2件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('お金はこれで増やせます_712','all',this)">すべて <span class="count-badge">2</span></button>
+            <button class="filter-btn" onclick="filterTweets('お金はこれで増やせます_712','positive',this)">🟢 ポジティブ <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('お金はこれで増やせます_712','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('お金はこれで増やせます_712','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-お金はこれで増やせます_712">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-09T12:14:36.000Z</div>
+                <div class="tweet-text">アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+ありがとうございます
+
+『質問の魔力』
+『もし人生にいきづまったら』
+『小さな会社の「人材育成」はなぜやりきれないのか』
+『ポケット版「のび太」が教えてくれたこと』
+『ポケット版「スネ夫」という生きかた』
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2075191891742830698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@okeydon（桶井道|おけいどん@投資家×著書7冊）- 2026-07-06T03:17:51.000Z</div>
+                <div class="tweet-text">『のび太が教えてくれたこと』、これはいい題材ですね。苦手を克服するより、得意を伸ばしたいです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/okeydon/status/2073969650124329471" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">笑って大往生できる人できない人</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:0%;background:#27AE60;"></div>
+    <div style="width:100%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 0件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">本投稿は、アスコムが発売する新刊書籍5冊を紹介するツイートである。『笑って大往生できる人 できない人』もその中に含まれており、新刊情報として告知されている。現時点ではいいねやRTはゼロであり、社会的な反響は確認できない。</div>
+        <div class="section-label">全ツイート一覧（1件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('13歳からの戦争学_039','all',this)">すべて <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('13歳からの戦争学_039','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('13歳からの戦争学_039','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('13歳からの戦争学_039','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-13歳からの戦争学_039">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-15T04:03:00.000Z</div>
+                <div class="tweet-text">#アスコム新刊情報 
+
+『Your Money』
+『行動の仕組み化』
+『笑って大往生できる人 できない人』
+『ありのままでラクに生きる練習』
+『不整脈・動悸・心房細動　自力でできるリセット法』
+
+
+@ak_tch
+ 
+@yamane_hiroshi</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2077242501594013773" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">科学的に証明された自律神経を整える習慣</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:50%;background:#27AE60;"></div>
+    <div style="width:0%;background:#BDC3C7;"></div>
+    <div style="width:50%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 1件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 1件</span>
+</div>
+        <div class="summary-text">投稿された2件のツイートは、「科学的に証明された自律神経を整える習慣」というテーマにおいて、異なる側面から言及しています。1件目のツイートは、自律神経の乱れによる身体の不調とその原因への警鐘を鳴らしています。一方、2件目のツイートは、書籍で紹介されていた「塗り絵」が自律神経を整える習慣として有効であることを具体例とともに肯定的に述べています。全体として、自律神経の不調への注意喚起と、具体的な改善策の提示という構成になっています。</div>
+        <div class="section-label">全ツイート一覧（2件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('科学的に証明された自律神経を整える習慣_288','all',this)">すべて <span class="count-badge">2</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された自律神経を整える習慣_288','positive',this)">🟢 ポジティブ <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された自律神経を整える習慣_288','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('科学的に証明された自律神経を整える習慣_288','negative',this)">🔴 ネガティブ <span class="count-badge">1</span></button>
+        </div>
+        <div id="tweets-科学的に証明された自律神経を整える習慣_288">
+            <div class="tweet-item" data-sentiment="negative">
+                <div class="tweet-meta">@yukihonya（ゆっけ | 1日2冊の速読の先生）- 2026-07-12T21:01:00.000Z</div>
+                <div class="tweet-text">7時間寝たのに、月曜の朝から
+体が鉛みたいに重い。
+
+本を開いても内容が入らない。
+昼は眠いのに、夜は目が冴える。
+布団に入っても、頭の中だけ残業中。
+
+これを「年齢のせい」「忙しいから」で
+済ませている人ほど要注意です。
+
+足りないのは、睡眠時間でも
+根性でもありません。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/yukihonya/status/2076411525418651757" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@012_shiro（白）- 2026-07-07T13:08:12.000Z</div>
+                <div class="tweet-text">科学的に証明された自律神経を整える習慣という本にも書かれていたけれど、塗り絵には自律神経を整える効果があるとのこと
+
+確かにパッと短時間でも集中して1つの絵を完成させた時の達成感、ストレス解消になって気持ちがじんわり満たされる不思議な感覚になる…こちらの本は以前献本いただきました</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/012_shiro/status/2074480604738138252" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">Your Money　／　ユアマネー</div>
+        <span class="category-badge">書籍</span>
+        
+        <div class="summary-text">本日の該当ツイートはありませんでした。</div>
+    <div class="card">
+        <div class="person-name">時間をムダにしない人の習慣</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:25%;background:#27AE60;"></div>
+    <div style="width:75%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 3件</span>
+    <span>⚪ ニュートラル 9件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">投稿データは「時間をムダにしない人の習慣」という書籍に関するものが大半を占めており、Amazonでのセール情報や書籍の紹介が中心です。多くの投稿がPRまたは商品情報として扱われており、読者からの直接的な感想や意見は限定的です。全体として、書籍のプロモーション活動に焦点を当てた投稿が見られます。</div>
+        <div class="section-label">全ツイート一覧（12件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('時間をムダにしない人の習慣_967','all',this)">すべて <span class="count-badge">12</span></button>
+            <button class="filter-btn" onclick="filterTweets('時間をムダにしない人の習慣_967','positive',this)">🟢 ポジティブ <span class="count-badge">3</span></button>
+            <button class="filter-btn" onclick="filterTweets('時間をムダにしない人の習慣_967','neutral',this)">⚪ ニュートラル <span class="count-badge">9</span></button>
+            <button class="filter-btn" onclick="filterTweets('時間をムダにしない人の習慣_967','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-時間をムダにしない人の習慣_967">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-20T11:09:30.000Z</div>
+                <div class="tweet-text">Amazon今だけセール実施中!
+
+人気アイテム期間限定セール!
+
+ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣
+--
+評価 ★★★★☆
+レビュー 58件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2079161775271117073" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-19T12:49:31.000Z</div>
+                <div class="tweet-text">Amazon今ならセール実施中!
+
+納得のレビュー多数!!
+
+ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣
+
+-
+
+評価 ★★★★☆
+レビュー 58件
+
+▼在庫がなくなる前に！
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+
+-
+
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2078824556521988446" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-18T12:53:23.000Z</div>
+                <div class="tweet-text">Amazon今ならポイントUP中!!
+
+売れ筋ランキング上位アイテム
+
+ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣
+--
+評価 ★★★★☆
+レビュー 58件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2078463142481592452" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@audible_review（オーディブル新着）- 2026-07-18T07:00:47.000Z</div>
+                <div class="tweet-text">【売れてます！】
+「ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣」
+著者：堀田 秀吾
+ナレーター：デジタルボイス
+配信日：2026年05月15日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/audible_review/status/2078374407438016768" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@business_rev55（ビジネス本新刊）- 2026-07-18T04:11:14.000Z</div>
+                <div class="tweet-text">【売れてます！】
+「ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣」
+著者：堀田 秀吾(著)、デジタルボイス(ナレーション)
+発売日：2026年05月15日</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/business_rev55/status/2078331736157794684" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@loverchiek（Chie Ishikawa∣自分の想いを言葉にする魔術師）- 2026-07-14T14:31:50.000Z</div>
+                <div class="tweet-text">この記事を書きながら、何度も逃げ出しそうになりました。さっさと書けばいいのに、気がついたら別のことをしてしまいました。その理由がわかり、対策を練ることにしました。【時間をムダにしない人の習慣】堀田秀吾著</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/loverchiek/status/2077038365116129468" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-14T12:35:51.000Z</div>
+                <div class="tweet-text">Amazon今ならポイントUP中!!
+
+売れ筋ランキング上位アイテム
+
+ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣
+--
+評価 ★★★★☆
+レビュー 57件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2077009178649145498" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@qfsTa2a1cT90952（るぱん）- 2026-07-14T12:01:00.000Z</div>
+                <div class="tweet-text">「時間をムダにしない人の習慣」を読んだけど、科学的な根拠があるから納得感すごかった。
+
+ダラダラしちゃう自分に刺さりまくりで、明日からすぐ実践できそうなことばかり。
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ/
+ref=nosim?tag=skugms-22-22
+…
+時間をムダにしない人の習慣 　Audible
+ 
+Amazon PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/qfsTa2a1cT90952/status/2077000406253936997" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@hiromarkyi（居宅ケアマネ8年生）- 2026-07-13T13:58:49.000Z</div>
+                <div class="tweet-text">ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/hiromarkyi/status/2076667668925759692" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@email238281984（email23さん）- 2026-07-13T12:54:32.000Z</div>
+                <div class="tweet-text">【Amazon】プライムデーSALE実施中！
+7/13(月)23:59まで
+
+配送料無料あり
+30日間返品送料0円
+
+ハーバード、スタンフォード、科学的に証明された時間をムダにしない人の習慣
+--
+評価 ★★★★☆
+レビュー 57件
+
+▼在庫がなくなる前に
+
+https://
+amazon.co.jp/dp/B0GYVQH9XZ?
+tag=swork2014-22&linkCode=ogi&th=1&psc=1
+…
+--
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/email238281984/status/2076651491256127755" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@seijou_sanseido（三省堂書店 成城店）- 2026-07-13T02:02:16.000Z</div>
+                <div class="tweet-text">【ビジネス 今週のベスト】 
+第1位:時間をムダにしない人の習慣（#堀田秀吾）
+第2位:考えてはいけないことリスト（#堀田秀吾）
+第3位:すごい習慣大百科（#堀田秀吾）
+第4位：ママ投資家が育休中に1億貯めた株式投資（#ちょる子）
+第5位：人新世の「黙示録」（#斎藤幸平）</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/seijou_sanseido/status/2076487344081993984" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@chiyomamanosu（ちよまま(りなねぇ)）- 2026-07-11T02:49:18.000Z</div>
+                <div class="tweet-text">'26上半期読書
+私的に面白かった順
+Audible
+【小説】
+インザメガチャージ
+熟柿
+ババヤガの夜
+教場
+成瀬は都を駆け抜ける
+五分後の世界
+＃ 真相をお話しします
+ドールハウス
+ほどなく、お別れです
+こころ
+52ヘルツのクジラたち
+【他】
+時間をムダにしない人の習慣
+境界知能 存在の気づかれない人たち
+↓</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/chiyomamanosu/status/2075774405146558630" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">老いることの驚きと幸せ</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:0%;background:#27AE60;"></div>
+    <div style="width:100%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 0件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">AIと終活、そして「老いることの驚きと幸せ」というテーマから、AIとウェルビーイングの関係性について言及しているツイートです。現時点では1件のみのデータのため、全体的な傾向を把握するには不十分ですが、AI技術が人間のウェルビーイング、特に老いというテーマにどう関わってくるかという関心が示唆されます。</div>
+        <div class="section-label">全ツイート一覧（1件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('老いることの驚きと幸せ_224','all',this)">すべて <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('老いることの驚きと幸せ_224','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('老いることの驚きと幸せ_224','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('老いることの驚きと幸せ_224','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-老いることの驚きと幸せ_224">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KaoriRei4（Kaori Rei）- 2026-07-13T00:40:00.000Z</div>
+                <div class="tweet-text">AIと終活、そして『老いることの驚きと幸せ』から学んだ、AIとウェルビーイングについて｜Kaori Rei- DevRel × AI Adoption Discovery  
+@KaoriRei4</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KaoriRei4/status/2076466638418022551" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">鎌田式長生き常備菜</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:80%;background:#27AE60;"></div>
+    <div style="width:20%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 4件</span>
+    <span>⚪ ニュートラル 1件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">「鎌田式長生き常備菜」に関する投稿は、主に書籍の紹介や内容のポジティブな評価に集中しています。著者の鎌田實氏が医師であり、健康に関する専門家であることが強調されており、読者からの実用性や著者の魅力への言及も見られます。全体として、書籍への好意的な関心を示す投稿が多い傾向にあります。</div>
+        <div class="section-label">全ツイート一覧（5件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('栄養まるっとおにぎり_327','all',this)">すべて <span class="count-badge">5</span></button>
+            <button class="filter-btn" onclick="filterTweets('栄養まるっとおにぎり_327','positive',this)">🟢 ポジティブ <span class="count-badge">4</span></button>
+            <button class="filter-btn" onclick="filterTweets('栄養まるっとおにぎり_327','neutral',this)">⚪ ニュートラル <span class="count-badge">1</span></button>
+            <button class="filter-btn" onclick="filterTweets('栄養まるっとおにぎり_327','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-栄養まるっとおにぎり_327">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@NaNa_Bookaholic（なな猫々@読書×感情のアンチエイジング）- 2026-07-12T13:09:31.000Z</div>
+                <div class="tweet-text">あ、今あるものでサクっと作れそう。
+そう思いながらページをめくった。
+　
+そして何より著者の鎌田先生の笑顔がカワイイ！
+めっちゃチャーミングなおじいちゃんだ。
+最高じゃないか。
+料理家さんではなく医師なのだ。
+「健康」に関してはプロ中のプロだ。
+　
+５０年もかけてたどりついた長生き食事術</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/NaNa_Bookaholic/status/2076292873364897977" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kagayabook（加賀谷書店）- 2026-07-07T05:43:35.000Z</div>
+                <div class="tweet-text">【東通店】【料理】【健康】
+
+さっと一品足すだけでたんぱく質も野菜も簡単たっぷり
+鎌田實先生の『鎌田式長生き常備菜』再入荷しています</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kagayabook/status/2074368713441349769" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@riei_books（理瑛読書0→半年で50冊｜本紹介継続中！）- 2026-07-06T10:43:15.000Z</div>
+                <div class="tweet-text">＼毎日ラクして、おいしく長生き！／
+筋肉、脳、血管、腸、骨
+5つの力が毎日高まる！
+
+【鎌田式 長生き常備菜】
+
+著者：鎌田 實
+出版社：アスコム
+
+＊＊＊
+
+著者の鎌田先生は医師。
+
+脳卒中の死亡率が全国ワーストクラスだった長野県で減塩運動をスタートさせ、</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/riei_books/status/2074081739048374284" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kbc_toyama（くまざわ書店富山店）- 2026-07-06T05:47:47.000Z</div>
+                <div class="tweet-text">＼＼おすすめ実用書！！／／
+
+『#長生き常備菜』
+シリーズ22万部のベストセラー、待望の実践編！
+「わかっているけど、続かない」
+「毎日、栄養のことを考えて料理をするのは大変」
+そんな声に応えて生まれた、
+鎌田式「長生き食事術」の完成形が、ここにあります
+
+ご来店お待ちしております</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kbc_toyama/status/2074007380380274809" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@shigakusatsuten（ジュンク堂書店　滋賀草津店）- 2026-07-06T00:02:09.000Z</div>
+                <div class="tweet-text">週間ベスト6/28〜7/4【実用】
+1位『ミャクミャクシール帳BOOK』
+宝島社
+2位『こむら返りと手足のつりリセット法』北城雅照　アスコム
+3位『体力低下を食い止める30秒習慣』
+吉原潔　アスコム
+4位『鎌田式長生き常備菜』
+鎌田實　アスコム
+5位『新型RAV4のすべて』
+三栄</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/shigakusatsuten/status/2073920401600913822" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">もし人生にいきづまったら</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:100%;background:#27AE60;"></div>
+    <div style="width:0%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 5件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">「もし人生にいきづまったら」という書籍に関するX（旧Twitter）の投稿は、主にアスコム社からの献本報告と、読書感想の共有が中心でした。投稿者は書籍の内容に触れ、人生の行き詰まりに対する新たな視点や、立ち止まって自分を責めずに休むことの重要性を述べています。全体的に、書籍のポジティブなメッセージが共有されている傾向が見られます。</div>
+        <div class="section-label">全ツイート一覧（5件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('target_51fc0253','all',this)">すべて <span class="count-badge">5</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_51fc0253','positive',this)">🟢 ポジティブ <span class="count-badge">5</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_51fc0253','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_51fc0253','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-target_51fc0253">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-13T22:32:05.000Z</div>
+                <div class="tweet-text">おはようございます
+
+アスコム｜出版社 公式
+@AscomBooks
+
+献本いただきました
+
+『もし人生にいきづまったら　人生をシフトして、やりたいことを実現する12の法則』
+
+主人公が人生に行きづまり、最初にやったことは転職ではなった
+名刺を破った
+このシーンの意味を知ったとき、鳥肌が立った
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2076796834421625334" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kunioist（阿久津 邦夫|読書・本好き）- 2026-07-12T09:07:15.000Z</div>
+                <div class="tweet-text">野澤友宏さん
+
+もし人生にいきづまったら
+
+先日、アスコム様に献本して頂きました。
+
+年齢に関係なくやり直していいはずです。
+また行き詰まるからこそ、深みが出るとも思っています。
+
+#読書 #読書記録 #読書レビュー #読書垢とつながりたい #book #Bookish #bookstagram #BooksToRead #books</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kunioist/status/2076231904169480553" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@DelightingAll（かず｜ 宿泊・飲食・観光・地域の再生と改善の専門家｜(株)ディライティングオール代表）- 2026-07-12T02:12:31.000Z</div>
+                <div class="tweet-text">アスコム様 
+@AscomBooks
+ から、3冊の本をご献本いただきました
+
+・もし人生にいきづまったら
+
+・質問の魔力
+
+・小さな会社の「人材育成」はなぜやりきれないのか
+
+いずれも私の仕事に役立ちそうな、またお取引先スタッフさん達へのアドバイスにも使えそうです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DelightingAll/status/2076127532722925808" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-09T12:14:36.000Z</div>
+                <div class="tweet-text">アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+ありがとうございます
+
+『質問の魔力』
+『もし人生にいきづまったら』
+『小さな会社の「人材育成」はなぜやりきれないのか』
+『ポケット版「のび太」が教えてくれたこと』
+『ポケット版「スネ夫」という生きかた』
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2075191891742830698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@TSUTAYAMeRISE（TSUTAYA BOOKSTORE 梅田MeRISE）- 2026-07-08T02:56:11.000Z</div>
+                <div class="tweet-text">オススメ
+もし人生にいきづまったら
+野澤友宏著
+『もし人生にいきづまったら』を読んで、心に残ったのは、立ち止まることが一番の最優先事項だということ。
+自分を責めるよりも少し視点を変えて休む事が大切なんだと、優しく背中を押してくれる一冊です。
+#野澤友宏
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/TSUTAYAMeRISE/status/2074688973902057590" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">質問の魔力</div>
+        <span class="category-badge">書籍</span>
+        <div style="display:flex;border-radius:6px;overflow:hidden;height:10px;margin:8px 0 4px;">
+    <div style="width:100%;background:#27AE60;"></div>
+    <div style="width:0%;background:#BDC3C7;"></div>
+    <div style="width:0%;background:#E74C3C;"></div>
+</div>
+<div style="font-size:11px;color:#666;display:flex;gap:12px;margin-bottom:12px;">
+    <span>🟢 ポジティブ 9件</span>
+    <span>⚪ ニュートラル 0件</span>
+    <span>🔴 ネガティブ 0件</span>
+</div>
+        <div class="summary-text">『質問の魔力』に関する直近の投稿は、献本されたという報告が多く見られます。書籍の内容については、「質問を変えることで人生が変わる」「良い質問が良い人生を作る」といったポジティブな評価が中心です。特に、居酒屋でのラストオーダーの例や、会議での質問内容の変化が具体例として挙げられ、質問の持つ影響力の大きさが強調されています。</div>
+        <div class="section-label">全ツイート一覧（9件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('target_20588194','all',this)">すべて <span class="count-badge">9</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_20588194','positive',this)">🟢 ポジティブ <span class="count-badge">9</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_20588194','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_20588194','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-target_20588194">
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-20T22:29:36.000Z</div>
+                <div class="tweet-text">おはようございます
+
+アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+『質問の魔力』
+
+「答え」を探しているうちは、なかなか変われない
+人生を変える人は、答えではなく「質問」を変えている
+
+「どうして自分ばかり？」ではなく「この出来事から何を得られる？」
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2079332927830413667" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@M_KUMAZAKI（二日酔いの救世主 | オルニ熊崎）- 2026-07-19T03:15:59.000Z</div>
+                <div class="tweet-text">『質問の魔力』を読みました。
+
+一番刺さったのは、
+答えを変えるな。質問を変えろ。
+
+居酒屋のラストオーダーの例が象徴的でした。
+
+「何かご注文はありますか?」
+→「シメは何にされますか?」
+
+聞き方をひとつ変えただけで、
+お客様の脳が動き出し、注文が増え、客単価が上がる。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/M_KUMAZAKI/status/2078680222027993420" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@akkimanradio（あっきー｜読書で思考をととのえる）- 2026-07-13T21:02:40.000Z</div>
+                <div class="tweet-text">アスコム様より『質問の魔力「よい質問」がすべてを解決する』をご恵贈いただきました。「同じように聞いているのに、あの人はなぜ上手くいくのか？」その答えがこの本にある。質問の力は相手を変えるだけでなく、理想の自分に変えることもできる。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/akkimanradio/status/2076774334203629698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@bookrabbit888（就職氷河期AI投資家ぶっひー書評）- 2026-07-13T03:56:02.000Z</div>
+                <div class="tweet-text">#読了
+またまたええ本に出会いました。
+【書評】145　『質問の魔力』を読んで思った。「良い質問が、良い人生をつくる。」
+#PR</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/bookrabbit888/status/2076515973365223832" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@DelightingAll（かず｜ 宿泊・飲食・観光・地域の再生と改善の専門家｜(株)ディライティングオール代表）- 2026-07-12T02:12:31.000Z</div>
+                <div class="tweet-text">アスコム様 
+@AscomBooks
+ から、3冊の本をご献本いただきました
+
+・もし人生にいきづまったら
+
+・質問の魔力
+
+・小さな会社の「人材育成」はなぜやりきれないのか
+
+いずれも私の仕事に役立ちそうな、またお取引先スタッフさん達へのアドバイスにも使えそうです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DelightingAll/status/2076127532722925808" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@kunioist（阿久津 邦夫|読書・本好き）- 2026-07-11T07:39:05.000Z</div>
+                <div class="tweet-text">河田真誠さん
+
+質問の魔力
+
+アスコム様から献本して頂きました。
+
+質問ができるということは、ある程度自分の中で明確になっている状況だと考えます。
+
+分からない時は質問もできない。
+何が分からないか分からない。
+
+質問と相談の組み合わせで展開していくと、開けてくるのかもしれません。
+
+#読書</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kunioist/status/2075847331015221378" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-09T12:14:36.000Z</div>
+                <div class="tweet-text">アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+ありがとうございます
+
+『質問の魔力』
+『もし人生にいきづまったら』
+『小さな会社の「人材育成」はなぜやりきれないのか』
+『ポケット版「のび太」が教えてくれたこと』
+『ポケット版「スネ夫」という生きかた』
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2075191891742830698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@_naakaa_（中條克己｜健康を人事・経営の言葉に翻訳します｜産業医 × 経営士 × 労働衛生コンサルタント）- 2026-07-09T05:11:39.000Z</div>
+                <div class="tweet-text">河田真誠さんの新刊
+『質問の魔力』。
+
+問活パートナーとして、
+巻末に掲載いただきました。
+
+問いは、
+相手の答えを引き出すだけのものではない。
+自分の見方や、
+次の行動も変えていく。
+
+実践的で、とても読みやすい一冊でした。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/_naakaa_/status/2075085452084994453" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="positive">
+                <div class="tweet-meta">@blX9DAIbsapp5OO（柿内尚文@編集者）- 2026-07-07T09:21:04.000Z</div>
+                <div class="tweet-text">ある居酒屋でラストオーダーのとり方を変えたら、客単価が上がった
+
+ある会議で参加メンバーへの質問内容を変えたら、アイデアがよく出る会議に変化した
+
+「質問の技術」について丁寧に、わかりやすくまとめました。質問のすごい魔力を実感してください
+
+#質問の魔力
+#アスコム
+#河田真誠</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/blX9DAIbsapp5OO/status/2074423443349745824" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">行動の仕組み化</div>
+        <span class="category-badge">書籍</span>
+        
+        <div class="summary-text">API無料枠の上限により分析をスキップしました。</div>
+        <div class="section-label">全ツイート一覧（2件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('target_53431490','all',this)">すべて <span class="count-badge">2</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_53431490','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_53431490','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('target_53431490','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-target_53431490">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@AscomBooks（アスコム｜出版社 公式）- 2026-07-15T04:03:00.000Z</div>
+                <div class="tweet-text">#アスコム新刊情報 
+
+『Your Money』
+『行動の仕組み化』
+『笑って大往生できる人 できない人』
+『ありのままでラクに生きる練習』
+『不整脈・動悸・心房細動　自力でできるリセット法』
+
+
+@ak_tch
+ 
+@yamane_hiroshi</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/AscomBooks/status/2077242501594013773" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@KT_ADHD_Rx（KT | 大人のADHDの備忘録）- 2026-07-14T12:43:38.000Z</div>
+                <div class="tweet-text">【多くの人が抜け出せない泥沼『スマホ依存』 ‐  そのメカニズムと具体的対策】
+
+『スマホ依存』は、現代の非常に多くの人を悩ませている現象ですし、特にADHDの人が陥るリスクが統計的にも有意に高いことが研究で明らかになっています。
+この『スマホ依存』について以下の３つの視点から解剖します。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/KT_ADHD_Rx/status/2077011134830555637" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">ボスマネジメント</div>
+        <span class="category-badge">書籍</span>
+        
+        <div class="summary-text">API無料枠の上限により分析をスキップしました。</div>
+        <div class="section-label">全ツイート一覧（17件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('ボスマネジメント_343','all',this)">すべて <span class="count-badge">17</span></button>
+            <button class="filter-btn" onclick="filterTweets('ボスマネジメント_343','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('ボスマネジメント_343','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('ボスマネジメント_343','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-ボスマネジメント_343">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kunikiti92_JM（江原 邦義丨介護士×動画クリエイター）- 2026-07-19T04:35:06.000Z</div>
+                <div class="tweet-text">『ボスマネジメント』をもう少し丁寧にすれば色々とやりやすい面があるなぁ…と思う方がけっこういる気がする。
+
+・ディレクター、プロデューサーが何を重視してるかと把握
+・報連相の先回り
+・時間の負担軽減のため結論から話す
+・完成品など期待するところのすり合わせ</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kunikiti92_JM/status/2078700131227144377" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@digi_kuma_（デジ熊｜仕事術＋思考法）- 2026-07-18T07:28:43.000Z</div>
+                <div class="tweet-text">ボスマネジメント大事ですよね！</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/digi_kuma_/status/2078381434553930212" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@xORMRha7Ck16551（メカとら｜人事×社労士×AIでスキル爆上げ）- 2026-07-18T03:30:05.000Z</div>
+                <div class="tweet-text">ボスマネジメントしましょう
+大雑把でよいところまで細かく見なくてよい‥</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/xORMRha7Ck16551/status/2078321380903309351" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kenken0506102（マン坊｜組織の「不条理」を解決するマネジメント実践）- 2026-07-16T20:39:39.000Z</div>
+                <div class="tweet-text">ボスマネジメント、マイクロマネジメント型の組織では、この状態が起こりやすい。
+辞めないのではなく、
+「考えること」や「挑戦すること」を諦めてしまう。
+離職率は低くても、組織の成長は止まっている。
+本当に見るべきは、何人残っているかではなく、何人が主体的に働けているか。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kenken0506102/status/2077855703474335850" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@SaltyDog157（ソルティドッグ）- 2026-07-16T09:19:26.000Z</div>
+                <div class="tweet-text">難波 猛さんの
+『ボスマネジメント
+「成果を出している人」が上司と話していること』が届いたので読む
+……上長のことを考えるとイライラしてきた</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/SaltyDog157/status/2077684522024616083" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@keru_career（ける）- 2026-07-15T23:21:53.000Z</div>
+                <div class="tweet-text">ボスマネジメントしなきゃです</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/keru_career/status/2077534143966302231" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@SaltyDog157（ソルティドッグ）- 2026-07-15T23:09:38.000Z</div>
+                <div class="tweet-text">上長に直接「馬鹿野郎テメェいい加減にしろよ私のこと舐めてんだろ」とは言えないので
+難波 猛さんの
+『ボスマネジメント
+「成果を出している人」が上司と話していること』
+をAmazonで注文した</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/SaltyDog157/status/2077531061199032344" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kenken0506102（マン坊｜組織の「不条理」を解決するマネジメント実践）- 2026-07-13T22:35:25.000Z</div>
+                <div class="tweet-text">私はこれを「ボスマネジメント」の一つだと考えています。
+成果を出す人を評価することは大切です。
+でも、
+「成果を出しながら、人も育てられる人」
+を評価しなければ、組織は強くなりません。
+人は、評価される行動を繰り返します。
+だから組織文化は、
+「何を評価するか」で決まる。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kenken0506102/status/2076797675002122394" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@50career（ズーさん｜50代人生リブート）- 2026-07-11T12:11:13.000Z</div>
+                <div class="tweet-text">ボスマネジメントが一番悩んだ！</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/50career/status/2075915814251962432" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@50career（ズーさん｜50代人生リブート）- 2026-07-11T01:22:53.000Z</div>
+                <div class="tweet-text">これ本当に難しいです。特にボスマネジメント。
+コミュニケーション取るしかないですね。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/50career/status/2075752654077374706" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@mouribooks（やんうぇんりー【フォロバ100%】）- 2026-07-10T20:58:09.000Z</div>
+                <div class="tweet-text">「真面目に指示通り働くのに評価されない…」それ、キャリアの危険信号です。40年前から世界標準のスキル『ボスマネジメント』を知っていますか？ジョブ型社会では「察して動く」は美徳ではなくリスク。上司を最強のサポーターに変える3つの逆転思考をまとめました</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/mouribooks/status/2075686031836516357" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kenken0506102（マン坊｜組織の「不条理」を解決するマネジメント実践）- 2026-07-10T02:12:08.000Z</div>
+                <div class="tweet-text">ボスマネジメント型の組織で、すり減っているリーダーへ。
+​「もっと管理しろ」「なぜ動かせない」
+正論や恐怖で人を動かそうとする環境に、あなたの心まで付き合わせる必要はありません。
+​変えるべきはあなたの能力ではなく、組織の「水質」です。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kenken0506102/status/2075402663605481614" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@tenshoku_saas（すなぎも | SaaSキャリア）- 2026-07-09T22:57:48.000Z</div>
+                <div class="tweet-text">【出世する人が無意識にやっている「ボスマネジメント」の鉄則】
+
+成果を出しているのに社内評価が上がらない人と、トントン拍子で役職（打席）を掴み取る人。この両者の決定的な差は、上司を「評価してくる裁判官」と捉えているか、「利用すべきリソース」と捉えているかです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/tenshoku_saas/status/2075353758285082724" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@spin_my_story_s（しおり）- 2026-07-08T03:19:33.000Z</div>
+                <div class="tweet-text">『ボスマネジメント 「成果を出している人」が上司と話していること』
+こちらもKindleで
+
+去年の社外メンタリングで一番の学びだった「ボスマネジメント」の概念。既に出来てることもあったけど、自分のキャリア自律のために改めて色々試してみようと思った</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/spin_my_story_s/status/2074694852516749668" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kenken0506102（マン坊｜組織の「不条理」を解決するマネジメント実践）- 2026-07-07T09:24:42.000Z</div>
+                <div class="tweet-text">ボスマネジメント型の組織を変えたい人へ。
+組織構造を変えることは大切です。
+でも、現場が「どうせ変わらない」と諦めていたら、改革は機能しません。
+主体性のない現場から、 顧客は創造は出来ません。
+本当の変革は、 現場を生き返らせることから始まります。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kenken0506102/status/2074424356793668067" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@noda_chiho（野田千帆｜人と数字で組織を動かす）- 2026-07-07T09:01:00.000Z</div>
+                <div class="tweet-text">難波猛さんの『ボスマネジメント』を読了。
+
+「上司攻略」ではない。上司の機嫌を取ることでも、都合よく動かすことでもない。相手が前に進むために、自分に何ができるかを考えて動くこと。
+
+相手は何を見ているのか。
+何に困っているのか。
+どこで迷っているのか。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/noda_chiho/status/2074418392795320726" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@kenken0506102（マン坊｜組織の「不条理」を解決するマネジメント実践）- 2026-07-06T06:20:04.000Z</div>
+                <div class="tweet-text">ボスマネジメント型の組織にいる人へ。
+
+「今すぐ逃げよう」とまでは言いません。
+でも自分を消耗品のように扱う組織に、未来まで預ける必要はない。
+
+あなたは使い潰されるための人材じゃない。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/kenken0506102/status/2074015505002942540" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="person-name">小さな会社の「人材育成」はなぜやりきれないのか</div>
+        <span class="category-badge">書籍</span>
+        
+        <div class="summary-text">API無料枠の上限により分析をスキップしました。</div>
+        <div class="section-label">全ツイート一覧（4件）</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTweets('すべての答えは個客の中にある_015','all',this)">すべて <span class="count-badge">4</span></button>
+            <button class="filter-btn" onclick="filterTweets('すべての答えは個客の中にある_015','positive',this)">🟢 ポジティブ <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('すべての答えは個客の中にある_015','neutral',this)">⚪ ニュートラル <span class="count-badge">0</span></button>
+            <button class="filter-btn" onclick="filterTweets('すべての答えは個客の中にある_015','negative',this)">🔴 ネガティブ <span class="count-badge">0</span></button>
+        </div>
+        <div id="tweets-すべての答えは個客の中にある_015">
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@degashi（でがし@札幌移住民）- 2026-07-18T10:12:30.000Z</div>
+                <div class="tweet-text">『小さな会社の「人材育成」はなぜやりきれないのか』 大神千穂 #ブクログ</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/degashi/status/2078422652683788625" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@M_KUMAZAKI（二日酔いの救世主 | オルニ熊崎）- 2026-07-12T06:21:39.000Z</div>
+                <div class="tweet-text">『小さな会社の「人材育成」はなぜやりきれないのか』を読みました。
+
+オルニも3期目に入り、社員・アルバイトを含め40人を超える組織になった今だからこそ、とても考えさせられる一冊でした。
+
+この本で一番印象に残ったのは、
+
+「人の育て方に、たったひとつの正解はない。」</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/M_KUMAZAKI/status/2076190230122791264" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@DelightingAll（かず｜ 宿泊・飲食・観光・地域の再生と改善の専門家｜(株)ディライティングオール代表）- 2026-07-12T02:12:31.000Z</div>
+                <div class="tweet-text">アスコム様 
+@AscomBooks
+ から、3冊の本をご献本いただきました
+
+・もし人生にいきづまったら
+
+・質問の魔力
+
+・小さな会社の「人材育成」はなぜやりきれないのか
+
+いずれも私の仕事に役立ちそうな、またお取引先スタッフさん達へのアドバイスにも使えそうです。</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/DelightingAll/status/2076127532722925808" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+            <div class="tweet-item" data-sentiment="neutral">
+                <div class="tweet-meta">@jicoboh（じこぼー）- 2026-07-09T12:14:36.000Z</div>
+                <div class="tweet-text">アスコム｜出版社 公式
+@AscomBooks
+ 
+様より献本いただきました！
+
+ありがとうございます
+
+『質問の魔力』
+『もし人生にいきづまったら』
+『小さな会社の「人材育成」はなぜやりきれないのか』
+『ポケット版「のび太」が教えてくれたこと』
+『ポケット版「スネ夫」という生きかた』
+
+#アスコム</div>
+                <div class="tweet-stats">❤ 0　🔄 0　
+                    <a href="https://x.com/jicoboh/status/2075191891742830698" target="_blank" class="tweet-link">元のツイートを見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">X有名人モニタリングシステム - 自動生成</div>
+</div>
+
+<script>
+function filterTweets(tid, sentiment, btn) {
+    const container = document.getElementById('tweets-' + tid);
+    const items = container.querySelectorAll('.tweet-item');
+    items.forEach(item => {
+        item.style.display = (sentiment === 'all' || item.dataset.sentiment === sentiment) ? '' : 'none';
+    });
+    btn.closest('.filter-bar').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+</script>
+</body>
+</html>
