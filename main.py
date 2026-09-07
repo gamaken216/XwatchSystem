@@ -111,6 +111,27 @@ def load_config():
             except ImportError:
                 RECIPIENTS = []
 
+    # settings.json / config.py は .gitignore 対象でGitHub Actions上に存在せず、
+    # ワークフローも REPORT_RECIPIENTS を渡していないため RECIPIENTS が空になる。
+    # 日次レポートは targets.json 側の recipients で送られるので気づきにくいが、
+    # アラートはこの RECIPIENTS を使うため、空だと異常を検知しても無言で止まる
+    # （2026-09-05〜07の収集ゼロが3日間気づかれなかった原因）。targets.json から拾う。
+    if not RECIPIENTS:
+        try:
+            targets_file = os.path.join(SCRIPT_DIR, "targets.json")
+            with open(targets_file, "r", encoding="utf-8") as f:
+                targets_data = json.load(f)
+            fallback = set()
+            for t in targets_data.get("targets", []):
+                for r in t.get("recipients", []):
+                    if r.strip():
+                        fallback.add(r.strip())
+            RECIPIENTS = sorted(fallback)
+            if RECIPIENTS:
+                logger.info(f"REPORT_RECIPIENTS未設定のため targets.json から宛先を補完: {len(RECIPIENTS)}件")
+        except Exception as e:
+            logger.warning(f"targets.json からの宛先補完に失敗: {e}")
+
     # その他設定
     # 2.0系はGoogleが無料枠を廃止（limit: 0）したため使用不可（2026-06-11確認）。
     # 2.5-flash は無料枠RPDが小さくすぐ枯渇するため、RPDの大きい 2.5-flash-lite を使う。
@@ -130,6 +151,29 @@ def load_config():
     }
 
 
+LAST_RUN_FILE = os.path.join(SCRIPT_DIR, ".last_run")
+
+
+def _already_ran_today(report_type):
+    """今日すでに同じ種類のレポートを送ったかを .last_run で判定する"""
+    today = datetime.now().strftime("%Y-%m-%d")
+    try:
+        with open(LAST_RUN_FILE, "r", encoding="utf-8") as f:
+            return f.read().strip() == f"{today} {report_type}"
+    except OSError:
+        return False
+
+
+def _mark_ran_today(report_type):
+    """レポート送信完了を .last_run に記録する"""
+    today = datetime.now().strftime("%Y-%m-%d")
+    try:
+        with open(LAST_RUN_FILE, "w", encoding="utf-8") as f:
+            f.write(f"{today} {report_type}")
+    except OSError as e:
+        logger.warning(f"⚠️ .last_run の書き込みに失敗: {e}")
+
+
 def main():
     # 引数チェック
     args = sys.argv[1:]
@@ -141,6 +185,16 @@ def main():
     logger.info(f"レポートタイプ: {report_type}")
     logger.info(f"テストモード: {test_mode}")
     logger.info("=" * 60)
+
+    # 同じ日に2通目を送らないための重複防止。
+    # ローカル運用では3台のPCそれぞれにタスクを登録しており（どれか1台が
+    # その日に起動していればレポートが出る）、フォルダはDropbox同期なので
+    # このファイルも共有される。2台が同時刻に走ると二重配信になるため、
+    # 実行時刻はPCごとにずらしてある。GitHub Actions上ではこのファイルが
+    # チェックアウトに含まれない（.gitignore対象）ので影響しない。
+    if not test_mode and _already_ran_today(report_type):
+        logger.info(f"本日はすでに{report_type}レポートを送信済みです。スキップします。")
+        return
 
     # 設定読み込み
     cfg = load_config()
@@ -225,6 +279,8 @@ def main():
         GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
         analyzed, report_type, generate_email_html
     )
+    if not test_mode:
+        _mark_ran_today(report_type)
 
     logger.info("\n" + "=" * 60)
     logger.info("処理完了")
@@ -248,9 +304,11 @@ def main():
                     check=True, env=env, capture_output=True
                 )
 
-            # git ユーザー情報を設定（GitHub Actions環境で必要）
-            subprocess.run(["git", "-C", script_dir, "config", "user.email", "action@github.com"], env=env, capture_output=True)
-            subprocess.run(["git", "-C", script_dir, "config", "user.name", "GitHub Actions"], env=env, capture_output=True)
+            # git ユーザー情報を設定（GitHub Actions環境でのみ必要。
+            # ローカル実行時に上書きすると本人の設定を壊すのでやらない）
+            if github_token:
+                subprocess.run(["git", "-C", script_dir, "config", "user.email", "action@github.com"], env=env, capture_output=True)
+                subprocess.run(["git", "-C", script_dir, "config", "user.name", "GitHub Actions"], env=env, capture_output=True)
 
             subprocess.run(["git", "-C", script_dir, "add", "docs/"], check=True, env=env)
             result = subprocess.run(
@@ -258,6 +316,15 @@ def main():
                 env=env, capture_output=True, text=True, encoding="utf-8", errors="replace"
             )
             if result.returncode == 0 or "nothing to commit" in result.stdout:
+                # ローカル実行だとリモートが先に進んでいてpushが弾かれることがある。
+                # Dropbox上のリポジトリでrebaseは.git/rebase-mergeの削除に失敗するので
+                # マージで取り込む。失敗してもpushは試す（弾かれたら次回に持ち越す）。
+                pull = subprocess.run(
+                    ["git", "-C", script_dir, "pull", "--no-rebase", "--no-edit", "origin", "master"],
+                    env=env, capture_output=True, text=True, encoding="utf-8", errors="replace"
+                )
+                if pull.returncode != 0:
+                    logger.warning(f"⚠️ pull に失敗（pushは試行します）: {pull.stderr.strip()[:200]}")
                 subprocess.run(
                     ["git", "-C", script_dir, "push", "origin", "master"],
                     check=True, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace"

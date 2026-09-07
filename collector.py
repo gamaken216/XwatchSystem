@@ -56,9 +56,33 @@ def build_query(target, days_back=14):
     return query
 
 
+def _proxy_from_env():
+    """住宅用プロキシの設定を環境変数から読む（未設定なら None＝直結）。
+
+    GitHub ActionsのデータセンターIPは x.com/search でCloudflareのbot判定を
+    受けるため（2026-09-05〜）、Actions上で走らせる場合はここに住宅用プロキシを
+    与えて出口IPを変える。ローカル実行では未設定のままでよい。
+        X_PROXY_SERVER   例: http://gate.example.com:8000
+        X_PROXY_USERNAME / X_PROXY_PASSWORD  （任意）
+    """
+    server = os.environ.get("X_PROXY_SERVER", "").strip()
+    if not server:
+        return None
+    proxy = {"server": server}
+    user = os.environ.get("X_PROXY_USERNAME", "").strip()
+    password = os.environ.get("X_PROXY_PASSWORD", "").strip()
+    if user:
+        proxy["username"] = user
+        proxy["password"] = password
+    return proxy
+
+
 async def _create_browser_context(playwright, cookies):
     """Playwright のブラウザコンテキストを作成する"""
-    browser = await playwright.chromium.launch(headless=True)
+    proxy = _proxy_from_env()
+    if proxy:
+        print(f"  プロキシ経由で接続します: {proxy['server']}")
+    browser = await playwright.chromium.launch(headless=True, proxy=proxy)
     context = await browser.new_context(
         user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
