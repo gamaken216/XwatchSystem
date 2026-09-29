@@ -117,22 +117,6 @@
             "enabled": true
         },
         {
-            "id": "13歳からの戦争学_039",
-            "name": "笑って大往生できる人できない人",
-            "keywords": [
-                "笑って大往生できる人できない人"
-            ],
-            "x_account": "",
-            "exclude_keywords": [],
-            "category": "書籍",
-            "client": "ascom",
-            "recipients": [
-                "matsmoto.norihito@gmail.com",
-                "pr_all@ascom-inc.jp"
-            ],
-            "enabled": true
-        },
-        {
             "id": "科学的に証明された自律神経を整える習慣_288",
             "name": "科学的に証明された自律神経を整える習慣",
             "keywords": [
