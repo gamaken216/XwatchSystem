@@ -275,6 +275,11 @@ def main():
     logger.info(f"  ウェブレポート: {web_report_path}")
     email_html = generate_email_html(analyzed, report_type)
 
+    # 収集〜分析の間に他のPCが送信を終えている場合がある（.last_run はDropbox共有）
+    if not test_mode and _already_ran_today(report_type):
+        logger.info(f"処理中に他のPCが{report_type}レポートを送信済みです。送信せず終了します。")
+        return
+
     send_all_reports(
         GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS,
         analyzed, report_type, generate_email_html

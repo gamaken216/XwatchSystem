@@ -12,6 +12,9 @@ if (-not $time) { $time = "08:30" }
 $action   = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "`"$dir\run_silent.vbs`"" -WorkingDirectory $dir
 $trigger  = New-ScheduledTaskTrigger -Daily -At $time
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 2) -MultipleInstances IgnoreNew
+# スリープ中のPCを起こして実行する（完全にシャットダウンしている日は動かない）。
+# 不要なら次の1行を消すか、タスクスケジューラの「条件」タブでチェックを外す。
+$settings.WakeToRun = $true
 
 Register-ScheduledTask -TaskName "XwatchSystem-Daily" -Action $action -Trigger $trigger -Settings $settings -Description "アスコム著者X投稿監視の日次レポート。PCが落ちていた日は起動後にできるだけ早く実行される。" -Force | Out-Null
 
@@ -19,3 +22,4 @@ Get-ScheduledTask -TaskName "XwatchSystem-Daily" | Select-Object TaskName, State
 Write-Host ""
 Write-Host "登録しました。Enterで閉じます。"
 Read-Host
+
