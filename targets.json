@@ -186,10 +186,10 @@
             "enabled": true
         },
         {
-            "id": "target_51fc0253",
-            "name": "驚くほど伝わる「説明」の正解",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "驚くほど伝わる「説明」の正解"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -201,10 +201,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "target_51fc0253",
+            "name": "驚くほど伝わる「説明」の正解",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "驚くほど伝わる「説明」の正解"
             ],
             "x_account": "",
             "exclude_keywords": [],
