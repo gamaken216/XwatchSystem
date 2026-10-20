@@ -259,6 +259,21 @@
                 "pr_all@ascom-inc.jp"
             ],
             "enabled": true
+        },
+        {
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
+            "keywords": [
+                "なぜ人は糖質をやめると若くなるのか"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         }
     ]
 }
