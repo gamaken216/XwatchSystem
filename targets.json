@@ -246,10 +246,10 @@
             "enabled": true
         },
         {
-            "id": "ボスマネジメント_343",
-            "name": "ボスマネジメント",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "ボスマネジメント"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -261,10 +261,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "ボスマネジメント_343",
+            "name": "ボスマネジメント",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "ボスマネジメント"
             ],
             "x_account": "",
             "exclude_keywords": [],
