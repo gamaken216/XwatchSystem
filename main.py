@@ -258,9 +258,17 @@ def main():
                 )
             detail = "\n".join(detail_lines)
 
-            logger.error(f"  収集失敗を検出（{reason}）。アラートメールを送信します。")
-            if not test_mode:
-                send_alert(GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS, reason, detail)
+            # Cookie失効以外は一時的な詰まりのことが多いので、run_silent.vbs に時間をおいてやり直させる（終了コード75）。
+            # アラートはやり直しが残っていないとき（最後の回・手動実行）だけ送る（2026-10-14追加）
+            retry = "login" not in failed and os.environ.get("XRETRY_REMAIN", "0") != "0"
+            if retry:
+                logger.error(f"  収集失敗を検出（{reason}）。時間をおいて再実行します（残り{os.environ.get('XRETRY_REMAIN')}回）。")
+            else:
+                logger.error(f"  収集失敗を検出（{reason}）。アラートメールを送信します。")
+                if not test_mode:
+                    send_alert(GMAIL_USER, GMAIL_APP_PASSWORD, RECIPIENTS, reason, detail)
+            if "login" not in failed and not test_mode:
+                sys.exit(75)
         else:
             logger.info("  新規ツイートが0件（収集は正常・新規投稿なし）のため、レポートをスキップします。")
         return

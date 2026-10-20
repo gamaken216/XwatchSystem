@@ -20,3 +20,4 @@
 - **収集失敗の切り分け手順：** ①`logs/run_*.log` のサイズを見る（成功日は約5.4KB、失敗日は約2.3KB）②`logs/debug/*.png` を見る — ログイン画面ならCookie失効／「人間であることを確認します」ならbot判定／スピナーのままなら一時的な詰まり ③`Get-ScheduledTaskInfo -TaskName XwatchSystem-Daily` の `LastTaskResult`（0なら起動自体は成功）
 - **3連続失敗で打ち切ったあと、30秒待って未収集ぶんをもう一巡試す**（2026-09-09に追加）。先頭3件がたまたま詰まっただけで残り15件が全滅した実績があるため。Cookie失効時は回復不能なので再試行しない
 - ターゲット別の収集結果はログファイルにも記録される（`print()` は run_silent.vbs 経由だと捨てられるため）
+- **時間差リトライ（2026-10-14追加）：** 収集失敗（Cookie失効以外）で `main.py` が終了コード75を返し、`run_silent.vbs` が60分後・さらに120分後にやり直す。アラートは最後の回だけ。同じPCではX要約（x_summary2）と `%TEMP%\x_scrape.lock` で順番待ち。`run_silent.vbs` はcp932（ANSI）で保存すること

@@ -15,8 +15,11 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatt
 # スリープ中のPCを起こして実行する（完全にシャットダウンしている日は動かない）。
 # 不要なら次の1行を消すか、タスクスケジューラの「条件」タブでチェックを外す。
 $settings.WakeToRun = $true
+# 2026-09-30追加：高速スタートアップで起動した朝は StartWhenAvailable の追い付き実行が働かなかったため、
+# ログオン時トリガーを併設する。配信済みの日は .last_run のガードでスキップされる。
+$logon = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 
-Register-ScheduledTask -TaskName "XwatchSystem-Daily" -Action $action -Trigger $trigger -Settings $settings -Description "アスコム著者X投稿監視の日次レポート。PCが落ちていた日は起動後にできるだけ早く実行される。" -Force | Out-Null
+Register-ScheduledTask -TaskName "XwatchSystem-Daily" -Action $action -Trigger @($trigger, $logon) -Settings $settings -Description "アスコム著者X投稿監視の日次レポート。PCが落ちていた日は起動後にできるだけ早く実行される。" -Force | Out-Null
 
 Get-ScheduledTask -TaskName "XwatchSystem-Daily" | Select-Object TaskName, State, @{n='次回';e={($_ | Get-ScheduledTaskInfo).NextRunTime}} | Format-Table -AutoSize
 Write-Host ""
