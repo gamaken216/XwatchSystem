@@ -65,10 +65,10 @@
             "enabled": true
         },
         {
-            "id": "aiアウトプットの全技法_567",
-            "name": "AIアウトプットの全技法",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "AIアウトプットの全技法"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -80,10 +80,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "aiアウトプットの全技法_567",
+            "name": "AIアウトプットの全技法",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "AIアウトプットの全技法"
             ],
             "x_account": "",
             "exclude_keywords": [],
