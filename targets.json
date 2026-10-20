@@ -201,10 +201,10 @@
             "enabled": true
         },
         {
-            "id": "target_20588194",
-            "name": "質問の魔力",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "質問の魔力"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -216,10 +216,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "target_20588194",
+            "name": "質問の魔力",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "質問の魔力"
             ],
             "x_account": "",
             "exclude_keywords": [],
