@@ -231,10 +231,10 @@
             "enabled": true
         },
         {
-            "id": "target_53431490",
-            "name": "行動の仕組み化",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "行動の仕組み化"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -246,10 +246,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "target_53431490",
+            "name": "行動の仕組み化",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "行動の仕組み化"
             ],
             "x_account": "",
             "exclude_keywords": [],
