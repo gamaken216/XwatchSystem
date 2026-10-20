@@ -171,10 +171,10 @@
             "enabled": true
         },
         {
-            "id": "栄養まるっとおにぎり_327",
-            "name": "うんちざえもん",
+            "id": "target_7f05d5d9",
+            "name": "なぜ人は糖質をやめると若くなるのか",
             "keywords": [
-                "うんちざえもん"
+                "なぜ人は糖質をやめると若くなるのか"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -186,10 +186,10 @@
             "enabled": true
         },
         {
-            "id": "target_7f05d5d9",
-            "name": "なぜ人は糖質をやめると若くなるのか",
+            "id": "栄養まるっとおにぎり_327",
+            "name": "うんちざえもん",
             "keywords": [
-                "なぜ人は糖質をやめると若くなるのか"
+                "うんちざえもん"
             ],
             "x_account": "",
             "exclude_keywords": [],
