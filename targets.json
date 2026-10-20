@@ -90,7 +90,6 @@
             "category": "書籍",
             "client": "ascom",
             "recipients": [
-                "matsmoto.norihito@gmail.com",
                 "pr_all@ascom-inc.jp"
             ],
             "enabled": true
