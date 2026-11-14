@@ -30,3 +30,7 @@ create_shortcut.ps1
 
 # ローカル運用の重複配信防止（Dropbox同期で3台共有・リポジトリには入れない）
 .last_run
+
+# 設定ファイルのバックアップ（秘密情報を含む）
+config.py.bak*
+*.bak_*

@@ -62,13 +62,19 @@ def load_config():
             return None
 
     # Gemini API Key
+    # 平文ファイルには置かず、Windowsのユーザー環境変数だけから読む（2026-11-14）
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-    if not GEMINI_API_KEY:
+    if not GEMINI_API_KEY and sys.platform == "win32":
+        # setx直後で親プロセスに反映されていない場合に備えてレジストリも見る
         try:
-            from config import GEMINI_API_KEY
-        except ImportError:
-            logger.error("GEMINI_API_KEY 環境変数が設定されていません。")
-            return None
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+                GEMINI_API_KEY = winreg.QueryValueEx(k, "GEMINI_API_KEY")[0]
+        except OSError:
+            pass
+    if not GEMINI_API_KEY:
+        logger.error("GEMINI_API_KEY 環境変数が設定されていません（管理画面の設定から登録できます）。")
+        return None
 
     # Gmail
     GMAIL_USER = os.environ.get("GMAIL_USER")
@@ -135,7 +141,7 @@ def load_config():
     # その他設定
     # 2.0系はGoogleが無料枠を廃止（limit: 0）したため使用不可（2026-06-11確認）。
     # 2.5-flash は無料枠RPDが小さくすぐ枯渇するため、RPDの大きい 2.5-flash-lite を使う。
-    GEMINI_MODEL = "gemini-2.5-flash-lite"
+    GEMINI_MODEL = "gemini-3.5-flash-lite"
     MAX_TWEETS_PER_PERSON = 100
     SEARCH_INTERVAL_SEC = 15
 

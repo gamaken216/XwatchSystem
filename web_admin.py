@@ -11,6 +11,7 @@ import asyncio
 import json
 import os
 import sys
+import subprocess
 import io
 import uuid
 from datetime import datetime
@@ -78,18 +79,46 @@ def _git_push_targets():
         print(f"  ⚠ git操作エラー: {e}")
 
 
+def get_gemini_key():
+    """Gemini APIキーはWindowsのユーザー環境変数だけに置く（2026-11-14）"""
+    key = os.environ.get("GEMINI_API_KEY", "")
+    if not key and sys.platform == "win32":
+        try:
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+                key = winreg.QueryValueEx(k, "GEMINI_API_KEY")[0]
+        except OSError:
+            pass
+    return key
+
+
+def set_gemini_key(key):
+    """管理画面で入力されたキーをユーザー環境変数に登録する（ファイルには書かない）"""
+    subprocess.run(["setx", "GEMINI_API_KEY", key], capture_output=True)
+    os.environ["GEMINI_API_KEY"] = key
+
+
 def load_settings():
+    s = _load_settings_file()
+    s.setdefault("max_tweets", 100)
+    if not s.get("gemini_model"):
+        s["gemini_model"] = "gemini-3.5-flash-lite"
+    s.setdefault("search_interval", 5)
+    s["gemini_api_key"] = get_gemini_key()
+    return s
+
+
+def _load_settings_file():
     if os.path.exists(SETTINGS_FILE):
         with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     # config.py からフォールバック読み込み
     try:
-        from config import (X_COOKIES, GEMINI_API_KEY, GEMINI_MODEL,
+        from config import (X_COOKIES, GEMINI_MODEL,
                             GMAIL_USER, GMAIL_APP_PASSWORD,
                             MAX_TWEETS_PER_PERSON, SEARCH_INTERVAL_SEC)
         return {
             "x_cookies": X_COOKIES,
-            "gemini_api_key": GEMINI_API_KEY,
             "gemini_model": GEMINI_MODEL,
             "gmail_user": GMAIL_USER,
             "gmail_app_password": GMAIL_APP_PASSWORD,
@@ -109,6 +138,10 @@ def load_settings():
 
 
 def save_settings(data):
+    data = dict(data)
+    key = data.pop("gemini_api_key", "")
+    if key and key != get_gemini_key():
+        set_gemini_key(key)
     with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     # config.py も同期更新
@@ -120,7 +153,7 @@ Web管理画面から自動生成 ({datetime.now():%Y-%m-%d %H:%M})
 
 X_COOKIES = {json.dumps(data["x_cookies"], ensure_ascii=False, indent=4)}
 
-GEMINI_API_KEY = "{data["gemini_api_key"]}"
+# GEMINI_API_KEY はWindowsのユーザー環境変数に置く（平文で書かない）
 GEMINI_MODEL = "{data.get("gemini_model", "gemini-2.5-flash")}"
 
 GMAIL_USER = "{data["gmail_user"]}"
@@ -489,7 +522,7 @@ SETTINGS_PAGE = """
         <div class="form-row">
             <div class="form-group">
                 <label>APIキー</label>
-                <input type="text" name="gemini_api_key" value="{{ settings.gemini_api_key }}">
+                <input type="password" name="gemini_api_key" value="" placeholder="{{ '登録済み（変更時のみ入力）' if settings.gemini_api_key else '未登録：キーを入力' }}">
             </div>
             <div class="form-group">
                 <label>モデル</label>
@@ -998,11 +1031,11 @@ def save_settings_page():
             "twid": request.form.get("twid", "").strip(),
         },
         "gemini_api_key": request.form.get("gemini_api_key", "").strip(),
-        "gemini_model": request.form.get("gemini_model", "gemini-2.5-flash").strip(),
+        "gemini_model": request.form.get("gemini_model", "").strip() or "gemini-3.5-flash-lite",
         "gmail_user": request.form.get("gmail_user", "").strip(),
         "gmail_app_password": request.form.get("gmail_app_password", "").strip(),
-        "max_tweets": int(request.form.get("max_tweets", 100)),
-        "search_interval": int(request.form.get("search_interval", 5)),
+        "max_tweets": int(request.form.get("max_tweets") or 100),
+        "search_interval": int(request.form.get("search_interval") or 5),
     }
     save_settings(data)
     flash("✅ 設定を保存しました", "success")
@@ -1028,7 +1061,7 @@ def test_connection():
             from google import genai
             client = genai.Client(api_key=s["gemini_api_key"])
             response = client.models.generate_content(
-                model=s.get("gemini_model", "gemini-2.5-flash"),
+                model=s.get("gemini_model") or "gemini-3.5-flash-lite",
                 contents="テスト。「OK」とだけ返してください。"
             )
             results.append(f"✅ Gemini API OK: {response.text.strip()[:30]}")
