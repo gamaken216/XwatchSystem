@@ -231,21 +231,6 @@
             "enabled": true
         },
         {
-            "id": "target_20588194",
-            "name": "質問の魔力",
-            "keywords": [
-                "質問の魔力"
-            ],
-            "x_account": "",
-            "exclude_keywords": [],
-            "category": "書籍",
-            "client": "ascom",
-            "recipients": [
-                "pr_all@ascom-inc.jp"
-            ],
-            "enabled": true
-        },
-        {
             "id": "target_2a233305",
             "name": "失敗知らずの反則おやつ",
             "keywords": [
@@ -257,6 +242,21 @@
             ],
             "category": "書籍",
             "client": "default",
+            "recipients": [
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
+        },
+        {
+            "id": "target_20588194",
+            "name": "質問の魔力",
+            "keywords": [
+                "質問の魔力"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
             "recipients": [
                 "pr_all@ascom-inc.jp"
             ],
