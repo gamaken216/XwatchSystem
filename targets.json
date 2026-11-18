@@ -216,10 +216,10 @@
             "enabled": true
         },
         {
-            "id": "target_20588194",
-            "name": "質問の魔力",
+            "id": "target_86175008",
+            "name": "人生は老いてからがおもしろい",
             "keywords": [
-                "質問の魔力"
+                "人生は老いてからがおもしろい"
             ],
             "x_account": "",
             "exclude_keywords": [],
@@ -231,10 +231,10 @@
             "enabled": true
         },
         {
-            "id": "target_86175008",
-            "name": "人生は老いてからがおもしろい",
+            "id": "target_20588194",
+            "name": "質問の魔力",
             "keywords": [
-                "人生は老いてからがおもしろい"
+                "質問の魔力"
             ],
             "x_account": "",
             "exclude_keywords": [],
