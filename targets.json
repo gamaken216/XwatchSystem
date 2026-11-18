@@ -274,6 +274,21 @@
                 "pr_all@ascom-inc.jp"
             ],
             "enabled": true
+        },
+        {
+            "id": "target_86175008",
+            "name": "人生は老いてからがおもしろい",
+            "keywords": [
+                "人生は老いてからがおもしろい"
+            ],
+            "x_account": "",
+            "exclude_keywords": [],
+            "category": "書籍",
+            "client": "ascom",
+            "recipients": [
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         }
     ]
 }
