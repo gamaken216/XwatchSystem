@@ -289,6 +289,23 @@
                 "pr_all@ascom-inc.jp"
             ],
             "enabled": true
+        },
+        {
+            "id": "target_2a233305",
+            "name": "失敗知らずの反則おやつ",
+            "keywords": [
+                "失敗知らずの反則おやつ"
+            ],
+            "x_account": "",
+            "exclude_keywords": [
+                "ascom"
+            ],
+            "category": "書籍",
+            "client": "default",
+            "recipients": [
+                "pr_all@ascom-inc.jp"
+            ],
+            "enabled": true
         }
     ]
 }
